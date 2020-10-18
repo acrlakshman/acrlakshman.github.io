@@ -68,7 +68,23 @@ const isValidSlug = (slug) => {
   return RegExp(`^[a-zA-Z0-9-_]+$`).test(slug);
 };
 
-converter = new showdown.Converter();
+const processProfileSummary = (jsonObj) => {
+  let summary = jsonObj['basics']['summary']['value'];
+
+  if (isValidFilePath(summary)) {
+    let fileAbs = appendToRootFolder(`profile/${summary}`, 2);
+    try {
+      fs.accessSync(fileAbs, fs.constants.F_OK);
+      summary = fs.readFileSync(fileAbs, 'utf8');
+    } catch (err) {
+      // continue with what is stored in jsonObj['basics']['summary']['value']
+      summary = jsonObj['basics']['summary']['value'];
+    }
+  }
+  jsonObj['basics']['summary']['value'] = summary;
+
+  return jsonObj;
+};
 
 const processProjectsMarkdownFields = (jsonObj) => {
   let list = jsonObj['projects']['list'];
@@ -167,6 +183,10 @@ const processMarkdownFieldsAndSlugs = (jsonObj) => {
   jsonObj['slugMap'] = {};
 
   for (key in jsonObj) {
+    if (key === 'basics') {
+      jsonObj = processProfileSummary(jsonObj);
+    }
+
     if (key === 'projects') {
       jsonObj = processProjectsMarkdownFields(jsonObj);
       jsonObj = processSlug(jsonObj, 'projects');
@@ -197,15 +217,3 @@ const processProfile = (relativeFilePath, depth, outFile) => {
 }
 
 processProfile(process.argv[2], 2, 'profile_web.json');
-
-// text =
-//   '<iframe width="560" height="315" src="https://www.youtube.com/embed/jzSb0A9fl70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-// let html = converter.makeHtml(text);
-// console.log(html);
-
-// console.log(filePath);
-// let md = fs.readFileSync(filePath, 'utf8');
-// html = converter.makeHtml(md);
-
-// console.log(md);
-// console.log(html);

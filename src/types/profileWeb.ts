@@ -58,11 +58,11 @@ export interface Basics extends OptionalArgs {
   };
   location: {
     value: {
-      address: string;
-      postalCode: string;
-      city: string;
-      countryName: string;
-      region: string;
+      address?: string;
+      postalCode?: string;
+      city?: string;
+      countryName?: string;
+      region?: string;
     };
     render: boolean;
   };
@@ -90,16 +90,16 @@ export interface Education extends OptionalArgs {
   label: string;
   list: {
     value: {
-      institution: string;
-      url: string;
+      institution?: string;
+      url?: string;
       major: string;
-      minor: string;
-      studyType: string;
-      startDate: string;
-      endDate: string;
-      grade: number;
-      gradeTotal: number;
-      courses: string[];
+      minor?: string;
+      studyType?: string;
+      startDate?: string;
+      endDate?: string;
+      grade?: number;
+      gradeTotal?: number;
+      courses?: string[];
     };
     render: boolean;
   }[];
@@ -111,8 +111,8 @@ export interface Project {
   team?: string;
   hightlights?: string[];
   keywords?: string[];
-  startDate: string;
-  endDate: string;
+  startDate?: string;
+  endDate?: string;
   url?: string;
   roles?: string[];
   type?: string;

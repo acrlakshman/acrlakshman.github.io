@@ -11,7 +11,7 @@ basics:
     value: CEO
     render: true
   image:
-    value: https://avatars0.githubusercontent.com/u/2924807?s=460&u=7172ff75dedfd5a0dfb0af60fca7ed1560f1fb04&v=4
+    value: pic.png
     render: true
   email:
     value: anumolu@uwalumni.com
@@ -24,11 +24,11 @@ basics:
     render: false
   summary:
     label: About me
-    value: 'I am currently employed at Convergent Science. Before this I was in graduate school at University of Wisconsin-Madison where I earned a PhD. in Mechanical Engineer with a minor in Computer Science under the supervision of Prof. Mario F. Trujillo.'
+    value: summary.md
     render: true
   location:
     value:
-      address: 1111 University Ave
+      address: Street
       postalCode: WI 53705
       city: Madison
       countryName: USA
@@ -90,6 +90,15 @@ education:
         courses:
           - CS521 - Computer Graphics
           - ME801 - HPC
+      render: false
+    - value:
+        institution: University of Wisconsin-Madison
+        url: https://wisc.edu
+        major: Mechanical Engineering
+        minor: Computer Science
+        studyType: MS
+        startDate: June 2009
+        endDate: August 2011
       render: false
 projects:
   label: Projects

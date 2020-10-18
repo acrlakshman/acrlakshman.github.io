@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from './Markdown';
 
 interface Props {
   class: string
@@ -9,7 +10,7 @@ const SectionBody = (props: Props): JSX.Element => {
   return (
     <div className="content-body">
       <div className={props.class}>
-        {props.value}
+        <Markdown content={props.value} />
       </div>
     </div>
   );

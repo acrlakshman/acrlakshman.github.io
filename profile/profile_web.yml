@@ -1,0 +1,337 @@
+config:
+  homepage: https://lakshmananumolu.com
+  theme:
+    value: basic
+    render: true
+basics:
+  name:
+    value: Lakshman Anumolu
+    render: true
+  label:
+    value: CEO
+    render: true
+  image:
+    value: https://avatars0.githubusercontent.com/u/2924807?s=460&u=7172ff75dedfd5a0dfb0af60fca7ed1560f1fb04&v=4
+    render: true
+  email:
+    value: anumolu@uwalumni.com
+    render: true
+  phone:
+    value: 206-486-2546
+    render: false
+  url:
+    value: 'https://lakshmananumolu.com'
+    render: false
+  summary:
+    label: About me
+    value: 'I am currently employed at Convergent Science. Before this I was in graduate school at University of Wisconsin-Madison where I earned a PhD. in Mechanical Engineer with a minor in Computer Science under the supervision of Prof. Mario F. Trujillo.'
+    render: true
+  location:
+    value:
+      address: 1111 University Ave
+      postalCode: WI 53705
+      city: Madison
+      countryName: USA
+      region: Wisconsin
+    render: false
+  profiles:
+    - value:
+        network: googlescholar
+        url: https://scholar.google.com/citations?user=VcGv5cEAAAAJ&hl=en
+      render: true
+    - value: # if username is provided but not url, then we generate
+        network: github
+        username: acrlakshman
+      render: true
+    - value:
+        network: linkedin
+        url: https://www.linkedin.com/in/lakshmananumolu/
+      render: true
+    - value:
+        network: twitter
+        username: acrlakshman
+        url: https://twitter.com/acrlakshman
+      render: true
+    - value:
+        network: vimeo
+        url: https://vimeo.com/user24179204
+      render: false
+work:
+  label: Experience
+  rank: 2
+  list:
+    - value: # check
+        name: Convergent Science
+        location: Madison, WI
+        description: CFD company
+        position: Senior Software Engineer
+        url: https://convergecfd.com
+        startDate: March, 2017
+        endData: Present
+        highlights:
+          - Implemented interface reconstruction algorithm for photo-realistic rendering
+          - Implemented new data structures
+      render: false
+      # - value: # provide an example for university jobs
+education:
+  label: Education
+  rank: 1
+  list:
+    - value:
+        institution: University of Wisconsin-Madison
+        url: https://wisc.edu
+        major: Mechanical Engineering
+        minor: Computer Science
+        studyType: PhD
+        startDate: September 2011
+        endDate: May 2017
+        grade: 3.9
+        gradeTotal: 4.0
+        courses:
+          - CS521 - Computer Graphics
+          - ME801 - HPC
+      render: false
+projects:
+  label: Projects
+  rank: 4
+  list:
+    - value:
+        name: Basic Model Viewer
+        description: Viewer for 3D models
+        team: "member1; member 2"
+        highlights:
+          - This does so and so
+        keywords:
+          - ModernGL
+        startDate: '2014'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/BasicModelViewer
+        roles:
+          - Architect
+        # entity: <value> # what is this?
+        type: application
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: basic-model-viewer
+          detail: project/basic-model-viewer.md
+      render: true
+    - value:
+        name: Basic Model Viewer2
+        description: Viewer for 3D models
+        team: "member11; member 22"
+        highlights:
+          - This does so and so
+        keywords:
+          - ModernGL
+        startDate: '2014'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/BasicModelViewer
+        roles:
+          - Architect
+        # entity: <value> # what is this?
+        type: application
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: basic-model-viewer2
+          detail: project/basic-model-viewer.md
+      render: true
+awards:
+  label: Awards & Achievements
+  rank: 11
+  list:
+    - value:
+        title: Marshal award
+        date: May 2014
+        awarder: ILASS
+        summary: Best paper for numerical work
+      render: false
+publications:
+  # Format extends: http://web.mit.edu/rsi/www/pdfs/bibtex-format.pdf
+  label: Publications
+  rank: 3
+  list:
+    - value:
+        type: article
+        author: L. Anumolu, M.F. Trujillo
+        title: Gradient augmented reinitialization
+        journal: Journal of Computational Physics
+        volume: 13
+        year: 2018
+        number: 3
+        pages: 1-50
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+        webPage:
+          slug: gradient-augmented-level-set
+          detail: project/basic-model-viewer.md
+      render: true
+    - value:
+        type: book
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        edition: 5
+        publisher: Cambridge
+        address: Cambridge MA
+        year: 2017
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: book
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        series: Lecture notes in computational physics
+        volume: 1
+        publisher: Cambridge
+        address: Cambridge MA
+        year: 2017
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: thesis
+        category: phd # php, masters, bachelors
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        publisher: Cambridge
+        address: Cambridge MA
+        year: 2017
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: techreport
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        series: Lecture notes in computational physics
+        volume: 1
+        publisher: Cambridge
+        address: Cambridge MA
+        year: 2017
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: incollection
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        editor: Thome
+        booktitle: Heat and mass transfer
+        publisher: Cambridge
+        address: Cambridge MA
+        year: 2017
+        pages: "129-158"
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: misc
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        howpublished: Available at https://lakshmananumolu.com
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: unpublished
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        journal: Nature
+        note: (in press)
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: unpublished
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        note: Manuscript submitted for publication
+        year: 2015
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+    - value:
+        type: unpublished
+        author: L. Anumolu
+        title: Gradient augmented reinitialization
+        note: Unpublished Manuscript
+        year: 2015
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com
+      render: true
+gallery:
+  label: Gallery
+  rank: 5
+  list:
+    - value:
+        type: image
+        src: intro/pic1.png
+        caption:
+          title: Basic Model Viewer
+          description: A project
+      render: true
+    - value:
+        type: video
+        platform: youtube
+        videoId: Wsije1KetVw
+      render: true
+    - value:
+        type: video
+        platform: vimeo
+        videoId: '459803240'
+      render: true
+skills:
+  label: Skills
+  rank: 6
+  list:
+    - value:
+        name: Web development
+        level: Master
+        keywords:
+          - HTML
+          - CSS
+          - Javascript
+      render: false
+languages:
+  label: Languages
+  rank: 7
+  list:
+    - value:
+        language: English
+        fluency: Native speaker
+      render: false
+interests:
+  label: Interests
+  rank: 8
+  list:
+    - value:
+        name: Wildlife
+        keywords:
+          - Ferrets
+          - Unicorns
+      render: false
+references:
+  label: References
+  rank: 9
+  list:
+    - value:
+        name: David
+        title: Professor
+        affiliation: University
+        address: 1111 University Ave
+        postalCode: WI 53705
+        city: Madison
+        countryName: USA
+        region: Wisconsin
+        phoneNumber: '1111111111'
+        email: email@email.com
+      render: false
+custom:
+  - label: Custom
+    rank: 10
+    value: project/basic-model-viewer.md
+    render: true
+  - label: Custom2
+    rank: 11
+    value: project/basic-model-viewer.md
+    render: true

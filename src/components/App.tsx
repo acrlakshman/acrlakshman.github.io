@@ -15,11 +15,11 @@ class _App extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/project/:id" component={Project} />
-            <Route path="/publication/:id" component={Publication} />
+            <Route path="/project/:id" exact component={Project} />
+            <Route path="/publication/:id" exact component={Publication} />
           </Switch>
         </BrowserRouter>
       </div>

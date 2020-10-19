@@ -134,7 +134,7 @@ body {
 
 @media (min-width: 992px) {
   .content .content-body .content-list .image-item {
-    max-width: 75%;
+    max-width: 100%;
     height: auto;
     display: inherit;
   }
@@ -222,7 +222,7 @@ body {
 
 @media (min-width: 992px) {
   .content .content-body .content-bubble-list .content-bubble .image-item {
-    max-width: 75%;
+    max-width: 100%;
     height: auto;
     display: inherit;
   }

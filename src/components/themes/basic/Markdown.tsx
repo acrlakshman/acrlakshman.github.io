@@ -5,13 +5,14 @@ import { Modal } from 'react-bootstrap';
 import Highlight from 'react-highlight.js';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
-import { isRenderVideo } from '../../../auxiliaries/regex';
+import { isRenderVideo, isLinkAFile } from '../../../auxiliaries/regex';
 
 import 'react-image-gallery/styles/css/image-gallery.css';
 import './styles.css';
 import ReactPlayer from 'react-player';
 
 interface ComponentProps {
+  className?: string;
   content: string;
 }
 
@@ -131,11 +132,22 @@ class Markdown extends Component<ComponentProps, ComponentState> {
         </div>
       );
     } else {
-        return (
-          <a href={linkProps.href} title={linkProps.title}>
-            {linkProps.children}
-          </a>
-        );
+      let url = linkProps.href;
+      if (!re_weburl.test(url)) {
+        url = `${process.env.PUBLIC_URL}/${linkProps.href}`;
+
+        if (linkProps.title) {
+          if (isLinkAFile(linkProps.title)) {
+            url = `${process.env.PUBLIC_URL}/${config.filesPath}/${linkProps.href}`;
+          }
+        }
+      }
+
+      return (
+        <a href={url} title={linkProps.title}>
+          {linkProps.children}
+        </a>
+      );
     }
   };
 
@@ -150,7 +162,7 @@ class Markdown extends Component<ComponentProps, ComponentState> {
   renderSectionBody = (content: string): JSX.Element => {
     this.imageCounter = 0;
     return (
-      <div className="content-body text-left">
+      <div className={`content-body text-left ${this.props.className}`}>
         <ReactMarkdown
           source={content}
           renderers={this.renderers}

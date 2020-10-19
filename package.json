@@ -46,9 +46,9 @@
   },
   "scripts": {
     "profile": "nodemon --watch profile -e js,yml,md ./src/preprocessor/profile.js ./profile/profile_web.yml",
-    "copy-images": "node ./scripts/createDirectory ./public/images && node ./scripts/createDirectory ./public/videos && ncp './profile/images' './public/images' && ncp './profile/videos' './public/videos'",
+    "copy-images": "node ./scripts/createDirectory ./public/images && node ./scripts/createDirectory ./public/videos && node ./scripts/createDirectory ./public/files && ncp './profile/images' './public/images' && ncp './profile/videos' './public/videos' && ncp './profile/files' './public/files'",
     "start": "concurrently npm:profile npm:copy-images \"react-scripts start\"",
-    "build": "node ./src/preprocessor/profile.js ./profile/profile_web.yml && react-scripts build && node ./scripts/createDirectory ./build/images && node ./scripts/createDirectory ./build/videos && ncp './profile/images' './build/images' && ncp './profile/videos' './build/videos'",
+    "build": "node ./src/preprocessor/profile.js ./profile/profile_web.yml && react-scripts build && node ./scripts/createDirectory ./build/images && node ./scripts/createDirectory ./build/videos && node ./scripts/createDirectory ./build/files && ncp './profile/images' './build/images' && ncp './profile/videos' './build/videos' && ncp './profile/files' './build/files'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

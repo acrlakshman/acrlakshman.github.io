@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
+import config from '../../../config';
+import Markdown from './Markdown';
 
 import {
   ArticleTypeWeb,
@@ -60,7 +62,9 @@ const renderAuthors = (
   publicationDetail: Publication
 ): JSX.Element | undefined => {
   if (publicationDetail.author) {
-    return <div className="content-text">{publicationDetail.author}</div>;
+    return (
+      <Markdown className="content-text" content={publicationDetail.author} />
+    );
   }
 };
 
@@ -183,6 +187,11 @@ const renderPublication = (
   publicationDetail: Publication,
   key: string
 ): JSX.Element => {
+  let imageSrc = publicationDetail.thumbnail;
+  if (imageSrc && !re_weburl.test(imageSrc)) {
+    imageSrc = `${process.env.PUBLIC_URL}/${config.imagesPath}/${imageSrc}`;
+  }
+
   return (
     <div
       key={key}
@@ -191,8 +200,8 @@ const renderPublication = (
       <div className="col-md-2 content-card-img">
         <img
           className="img-fluid border rounded image-item"
-          alt=""
-          src="assets/img/avatar.png"
+          alt="thumbnail"
+          src={imageSrc}
         />
       </div>
       <div className="col-md-10">

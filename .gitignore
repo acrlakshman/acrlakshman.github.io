@@ -26,5 +26,6 @@ yarn-error.log*
 src/preprocessor/*.json
 public/images
 public/videos
+public/files
 *.mp4
 *.avi

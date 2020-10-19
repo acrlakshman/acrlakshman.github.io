@@ -8,8 +8,8 @@ basics:
     value: Lakshman Anumolu
     render: true
   label:
-    value: CEO
-    render: true
+    value: Senior Research Engineer
+    render: false
   image:
     value: pic.png
     render: true
@@ -101,48 +101,123 @@ education:
         endDate: August 2011
       render: false
 projects:
-  label: Projects
+  label: "Projects"
   rank: 4
   list:
     - value:
-        name: Basic Model Viewer
-        description: Viewer for 3D models
-        team: "member1; member 2"
+        name: MeshIO
+        description: A header only C++ library to read/write various surface mesh formats
+        team: "with Pradeep Garigipati"
+        thumbnail: meshio_t.png
         highlights:
-          - This does so and so
+          - Read and write STL file format
+        keywords:
+          - STL
+          - OBJ
+          - TLGF
+          - surface mesh
+        startDate: '2015'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://github.com/acrlakshman/MeshIO
+        roles:
+          - Architect
+          - Developer
+        type: application
+      render: true
+    - value:
+        name: Basic Model Viewer
+        description: Qt based Visualization application written in Modern OpenGL
+        team: "Lakshman Anumolu"
+        thumbnail: bmv_t.gif
+        highlights:
+          - Visualizes 3D surface mesh
         keywords:
           - ModernGL
+          - Qt
         startDate: '2014'
         endDate: present
         # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com/BasicModelViewer
+        url: https://lakshmananumolu.com/project/basic-model-viewer
         roles:
           - Architect
-        # entity: <value> # what is this?
         type: application
         webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
           slug: basic-model-viewer
-          detail: project/basic-model-viewer.md
+          detail: project/basic-model-viewer.md # If this is empty url above will be used.
       render: true
     - value:
-        name: Basic Model Viewer2
-        description: Viewer for 3D models
-        team: "member11; member 22"
+        name: Weak Formulation of Gradient Augmented Level Set Method to Stephan Type Problems
+        description: "This was my final project for [Prof. Eftychios Sifakis's](http://pages.cs.wisc.edu/~sifakis) course [CS838](http://pages.cs.wisc.edu/~sifakis/courses/cs838-f12/) (_Advanced Modelling and Simulation_) (**Fall-2012**).  \n
+        *Video along with the related files are included*"
+        team: "Lakshman Anumolu"
+        thumbnail: crystal_growth_t.png
         highlights:
-          - This does so and so
+          - 3D Crystal growth simulated using PhysBAM
+        keywords:
+          - PhysBAM
+        startDate: '2012'
+        endDate: '2012'
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/crystal-growth
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: crystal-growth
+          detail: project/crystal-growth.md
+      render: true
+    - value:
+        name: Simulation of Smoke in OpenFOAM Framework
+        description: "My project for [Prof. Mario F. Trujillo's](http://www.engr.wisc.edu/me/faculty/trujillo_mario.html) course ME964 (_Two-Phase Flows Fundamentals_) (Fall-2012), completed in collaboration with [Imaduddin Ahmed](https://multiphaseflow.erc.wisc.edu/)"
+        team: "with Imaduddin Ahmed"
+        thumbnail: taup_0_frame20.png
+        highlights:
+          - Smoke simulation using OpenFOAM
+        keywords:
+          - OpenFOAM
+        startDate: '2012'
+        endDate: '2012'
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/smoke-simulation-openfoam
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: smoke-simulation-openfoam
+          detail: project/smoke-simulation-openfoam.md
+      render: true
+    - value:
+        name: Screensaver using ModernGL
+        description: "My final project for [Perry Kivolowitz's](https://www.carthage.edu/live/profiles/1477-perry-kivolowitz) course CS559 (_Computer Graphics_) at [UW-Madison](https://wisc.edu) (Fall-2013).  \n
+        _Video and executables (along with required dlls) are included._"
+        team: "Lakshman Anumolu"
+        thumbnail: screensaver_t.png
+        highlights:
+          - Screensaver in ModernGL
         keywords:
           - ModernGL
-        startDate: '2014'
-        endDate: present
+        startDate: '2013'
+        endDate: '2013'
         # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com/BasicModelViewer
+        url: https://lakshmananumolu.com/project/cs559-f13
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: cs559-f13
+          detail: project/screen-saver-cs559-f13.md
+      render: true
+    - value:
+        name: Desktop, web apps, games built while learning app development
+        description: Apps written during hackathons or free time
+        team: "Lakshman Anumolu"
+        thumbnail: apps_t.jpg
+        highlights:
+          - Facebook friend sentiment analysis
+          - Facebook speech-to-text enabled chat
+          - Air hockey
+        startDate: '2013'
+        endDate: '2014'
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/basic-model-viewer
         roles:
           - Architect
-        # entity: <value> # what is this?
         type: application
         webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
-          slug: basic-model-viewer2
-          detail: project/basic-model-viewer.md
+          slug: initial-apps
+          detail: project/initial-apps.md
       render: true
 awards:
   label: Awards & Achievements
@@ -161,18 +236,91 @@ publications:
   list:
     - value:
         type: article
-        author: L. Anumolu, M.F. Trujillo
-        title: Gradient augmented reinitialization
+        author: "**Lakshman Anumolu**, Mario F. Trujillo"
+        title: "Gradient augmented level set method for phase change simulations"
         journal: Journal of Computational Physics
-        volume: 13
+        volume: 353
         year: 2018
-        number: 3
-        pages: 1-50
+        number: 0
+        pages: 377-406
+        thumbnail: jet_paper.jpg
         # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-        webPage:
-          slug: gradient-augmented-level-set
-          detail: project/basic-model-viewer.md
+        url: https://www.sciencedirect.com/science/article/pii/S0021999117307696
+      render: true
+    - value:
+        type: book
+        author: "Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner"
+        title: "Direct Numerical Simulations for Two-Phase Flows with Phase Change"
+        series: "Encyclopedia of Two-Phase Heat Transfer and Flow"
+        volume: 3
+        publisher: World Scientific
+        address: ''
+        year: 2018
+        thumbnail: jet_paper.jpg
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://www.worldscientific.com/doi/abs/10.1142/9789813229440_0008
+      render: true
+    - value:
+        type: article
+        author: "Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner"
+        title: "The distortion of the level set gradient under advection"
+        journal: Journal of Computational Physics
+        volume: 334
+        year: 2017
+        number: 0
+        pages: 81-101
+        thumbnail: jet_paper.jpg
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://www.sciencedirect.com/science/article/pii/S0021999116307045
+      render: true
+    - value:
+        type: article
+        author: Steven R. Lewis, **Lakshman Anumolu**, Mario F. Trujillo
+        title: Numerical Simulation of Droplet Train and Free Surface Jet Impingement
+        journal: International Journal of Heat and Fluid Flow
+        volume: 44
+        year: 2013
+        number: 0
+        pages: 610-623
+        thumbnail: jet_paper.jpg
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://www.sciencedirect.com/science/article/pii/S0142727X13001707
+      render: true
+    - value:
+        type: article
+        author: "**Lakshman Anumolu**, Mario F. Trujillo"
+        title: Gradient Augmented Reinitialization Scheme for the Level Set Method
+        journal: International Journal of Numerical Methods in Fluids
+        volume: 73
+        year: 2013
+        number: 12
+        pages: 1011-1041
+        thumbnail: gals_reinit.jpg
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: http://onlinelibrary.wiley.com/doi/10.1002/fld.3834/abstract
+      render: true
+    - value:
+        type: article
+        author: "Suraj S. Deshpande, **Lakshman Anumolu**, Mario F. Trujillo"
+        title: Evaluating the performance of the two-phase flow solver interFoam
+        journal: "Computational Science & Discovery"
+        volume: 5
+        year: 2012
+        number: 0
+        pages: "014016: 1-36"
+        thumbnail: interfoam_thumbnail.png
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: http://iopscience.iop.org/1749-4699/5/1/014016
+      render: true
+    - value:
+        type: thesis
+        category: masters # php, masters, bachelors
+        author: "**Lakshman Anumolu**"
+        title: "Local, Higher Order Accurate, Level Set Redistancing Methods"
+        publisher: "University of Wisconsin-Madison"
+        address: "Madison WI"
+        year: 2011
+        thumbnail: "ms_thesis_thumbnail.png"
       render: true
     - value:
         type: book
@@ -197,77 +345,6 @@ publications:
         # If webPage is not provided, then url will be linked in the homepage for this project
         url: https://lakshmananumolu.com
       render: true
-    - value:
-        type: thesis
-        category: phd # php, masters, bachelors
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        publisher: Cambridge
-        address: Cambridge MA
-        year: 2017
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
-    - value:
-        type: techreport
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        series: Lecture notes in computational physics
-        volume: 1
-        publisher: Cambridge
-        address: Cambridge MA
-        year: 2017
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
-    - value:
-        type: incollection
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        editor: Thome
-        booktitle: Heat and mass transfer
-        publisher: Cambridge
-        address: Cambridge MA
-        year: 2017
-        pages: "129-158"
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
-    - value:
-        type: misc
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        howpublished: Available at https://lakshmananumolu.com
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
-    - value:
-        type: unpublished
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        journal: Nature
-        note: (in press)
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
-    - value:
-        type: unpublished
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        note: Manuscript submitted for publication
-        year: 2015
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
-    - value:
-        type: unpublished
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        note: Unpublished Manuscript
-        year: 2015
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
 gallery:
   label: Gallery
   rank: 5
@@ -278,17 +355,17 @@ gallery:
         caption:
           title: Basic Model Viewer
           description: A project
-      render: true
+      render: false
     - value:
         type: video
         platform: youtube
         videoId: Wsije1KetVw
-      render: true
+      render: false
     - value:
         type: video
         platform: vimeo
         videoId: '459803240'
-      render: true
+      render: false
 skills:
   label: Skills
   rank: 6
@@ -339,8 +416,8 @@ custom:
   - label: Custom
     rank: 10
     value: project/basic-model-viewer.md
-    render: true
+    render: false
   - label: Custom2
     rank: 11
     value: project/basic-model-viewer.md
-    render: true
+    render: false

@@ -109,6 +109,7 @@ export interface Project {
   name: string;
   description: string;
   team?: string;
+  thumbnail?: string;
   hightlights?: string[];
   keywords?: string[];
   startDate?: string;
@@ -176,6 +177,7 @@ export interface ArticleType {
 }
 
 export interface ArticleTypeWeb extends ArticleType {
+  thumbnail?: string;
   url?: string;
   webPage?: WebPageType;
 }
@@ -193,6 +195,7 @@ export interface BookType {
 }
 
 export interface BookTypeWeb extends BookType {
+  thumbnail?: string;
   url?: string;
   webPage?: WebPageType;
 }
@@ -208,6 +211,7 @@ export interface ThesisType {
 }
 
 export interface ThesisTypeWeb extends ThesisType {
+  thumbnail?: string;
   url?: string;
   webPage?: WebPageType;
 }
@@ -224,6 +228,7 @@ export interface TechReportType {
 }
 
 export interface TechReportTypeWeb extends TechReportType {
+  thumbnail?: string;
   url?: string;
   webPage?: WebPageType;
 }
@@ -241,6 +246,7 @@ export interface InCollectionType {
 }
 
 export interface InCollectionTypeWeb extends InCollectionType {
+  thumbnail?: string;
   url?: string;
   webPage?: WebPageType;
 }
@@ -254,6 +260,7 @@ export interface MiscType {
 }
 
 export interface MiscTypeWeb extends MiscType {
+  thumbnail?: string;
   url?: string;
   webPage?: WebPageType;
 }
@@ -268,6 +275,7 @@ export interface UnPublishedType {
 }
 
 export interface UnPublishedTypeWeb extends UnPublishedType {
+  thumbnail?: string;
   url?: string;
   webPage?: WebPageType;
 }

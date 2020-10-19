@@ -10,7 +10,7 @@ import {
 import sectionRanksTheme from './ranking';
 
 import { Basics, ProfileSectionsWeb } from '../../../types/profileWeb';
-import SocialProfiles from './SocialProfiles';
+// import SocialProfiles from './SocialProfiles';
 
 interface Props {
   basics: Basics;
@@ -49,7 +49,6 @@ class Body extends Component<Props, State> {
     return (
       <>
         <Introduction basics={this.props.basics} />
-        <SocialProfiles profiles={this.props.basics.profiles} />
         {this.renderSections()}
       </>
     );

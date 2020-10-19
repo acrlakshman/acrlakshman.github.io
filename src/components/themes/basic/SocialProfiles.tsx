@@ -187,15 +187,17 @@ const SocialProfiles: FunctionComponent<ComponentProps> = ({
   profiles,
 }: ComponentProps) => {
   return (
-    <section id="social-presence" className="content-section">
-      <div className="container">
-        <div className="content">
+    // <section id="social-presence" className="content-section">
+    //   <div className="container">
+    //     <div className="content">
+    <>
           <ButtonGroup size="lg" className="mb-2">
             {profiles.map((profile) => renderProfileItem(profile))}
           </ButtonGroup>
-        </div>
-      </div>
-    </section>
+          </>
+    //     </div>
+    //   </div>
+    // </section>
   );
 };
 

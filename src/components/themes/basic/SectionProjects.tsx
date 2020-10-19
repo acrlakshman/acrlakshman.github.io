@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
+import config from '../../../config';
+import Markdown from './Markdown';
 
 import { Project, Projects } from '../../../types/profileWeb';
 import {ProfileField} from '../../../types/fields'
@@ -14,6 +16,7 @@ interface Props {
 }
 
 const renderTitle = (projectDetail: Project) => {
+  console.log(projectDetail);
   if (projectDetail.webPage) {
     if (
       projectDetail.webPage.slug &&
@@ -48,23 +51,22 @@ const renderTitle = (projectDetail: Project) => {
 
 const renderTeam = (projectDetail: Project): JSX.Element | undefined => {
   if (projectDetail.team) {
-    return (
-      <div className="content-text">
-        {projectDetail.team}
-      </div>
-    );
+    return <Markdown className="content-text" content={projectDetail.team} />;
   }
 }
 
 const renderDescription = (projectDetail: Project): JSX.Element => {
   return (
-    <div className="content-text">
-      {projectDetail.description}
-    </div>
-  )
+    <Markdown className="content-text" content={projectDetail.description} />
+  );
 }
 
 const renderProject = (projectDetail: Project, key: string): JSX.Element => {
+  let imageSrc = projectDetail.thumbnail;
+  if (imageSrc && !re_weburl.test(imageSrc)) {
+    imageSrc = `${process.env.PUBLIC_URL}/${config.imagesPath}/${imageSrc}`;
+  }
+
   return (
     <div
       key={key}
@@ -73,8 +75,8 @@ const renderProject = (projectDetail: Project, key: string): JSX.Element => {
       <div className="col-md-2 content-card-img">
         <img
           className="img-fluid border rounded image-item"
-          alt="Avatar.png"
-          src={process.env.PUBLIC_URL + '/images/pic1.png'}
+          alt="thumbnail"
+          src={imageSrc}
         />
       </div>
       <div className="col-md-10">

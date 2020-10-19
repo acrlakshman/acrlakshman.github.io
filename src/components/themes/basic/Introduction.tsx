@@ -4,6 +4,7 @@ import SectionLabel from './SectionLabel'
 import SectionBody from './SectionBody';
 import config from '../../../config';
 import re_weburl from '../../../auxiliaries/regex-weburl'
+import SocialProfiles from './SocialProfiles';
 
 import { Basics, BasicValueType } from '../../../types/profileWeb';
 
@@ -71,6 +72,7 @@ class Introduction extends Component<ComponentProps, ComponentState> {
           <div className="container">
             {this.getAvatarElement(this.props.basics.image)}
             {this.getLabelElement(this.props.basics.label)}
+            <SocialProfiles profiles={this.props.basics.profiles} />
           </div>
         </section>
         {this.getSummary(this.props.basics.summary)}

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
-import Markdown from './Markdown';
+import Card from './Card'
 
 import './styles.css';
 
@@ -31,82 +30,41 @@ interface Props {
   sectionDetail: Publications;
 }
 
-const renderTitle = (publicationDetail: Publication) => {
-  if (publicationDetail.webPage) {
-    if (
-      publicationDetail.webPage.slug &&
-      publicationDetail.webPage.detail &&
-      publicationDetail.webPage.slug !== '' &&
-      publicationDetail.webPage.detail !== ''
-    ) {
-      if (!re_weburl.test(publicationDetail.webPage.slug)) {
-        return (
-          <Link to={`/publication/${publicationDetail.webPage.slug}`}>
-            {publicationDetail.title}
-          </Link>
-        );
-      } else {
-        return (
-          <a href={publicationDetail.webPage.slug}>{publicationDetail.title}</a>
-        );
-      }
-    }
-  }
-
-  if (publicationDetail.url && publicationDetail.url !== '') {
-    return <a href={publicationDetail.url}>{publicationDetail.title}</a>;
-  }
-
+const renderTitle = (publicationDetail: Publication): string => {
   return publicationDetail.title;
 };
 
 const renderAuthors = (
   publicationDetail: Publication
-): JSX.Element | undefined => {
-  if (publicationDetail.author) {
-    return (
-      <Markdown className="content-text" content={publicationDetail.author} />
-    );
-  }
+): string => {
+  return publicationDetail.author ? publicationDetail.author : '';
 };
 
-const renderArticleMeta = (publicationDetail: ArticleTypeWeb): JSX.Element => {
+const renderArticleMeta = (publicationDetail: ArticleTypeWeb): string => {
   return (
-    <div className="content-text">
-      <i>{publicationDetail.journal}</i>, {publicationDetail.volume}:
-      {publicationDetail.pages}, {publicationDetail.year}.
-    </div>
+    `_${publicationDetail.journal}_, ${publicationDetail.volume}: ${publicationDetail.pages}, ${publicationDetail.year}.`
   );
 };
 
-const renderBookMeta = (publicationDetail: BookTypeWeb): JSX.Element => {
+const renderBookMeta = (publicationDetail: BookTypeWeb): string => {
   if (!publicationDetail.series) {
     return (
-      <div className="content-text">
-        {publicationDetail.address},{' '}
-        {publicationDetail.edition
-          ? (() => `${publicationDetail.edition} edition, `)()
-          : ''}
-        {publicationDetail.year}
-      </div>
+      `${publicationDetail.address},${' '}${publicationDetail.edition ? (() => `${publicationDetail.edition} edition, `)() : ''}${publicationDetail.year}`
     );
   } else {
     return (
-      <div className="content-text">
-        {publicationDetail.volume
+      `${publicationDetail.volume
           ? (() => `Volume ${publicationDetail.volume} of `)()
           : ''}
-        <i>{publicationDetail.series}.</i> {publicationDetail.publisher},{' '}
-        {publicationDetail.address}, {publicationDetail.year}.
-      </div>
+        _${publicationDetail.series}._ ${publicationDetail.publisher},${' '}
+        ${publicationDetail.address}, ${publicationDetail.year}.`
     );
   }
 };
 
-const renderThesisMeta = (publicationDetail: ThesisTypeWeb): JSX.Element => {
+const renderThesisMeta = (publicationDetail: ThesisTypeWeb): string => {
   return (
-    <div className="content-text">
-      {(() => {
+    `${(() => {
         switch (publicationDetail.category) {
           case ThesisTypes.PhD:
             return 'PhD Thesis';
@@ -117,54 +75,39 @@ const renderThesisMeta = (publicationDetail: ThesisTypeWeb): JSX.Element => {
           default:
             return 'Thesis';
         }
-      })()}
-      , {publicationDetail.address}, {publicationDetail.year}
-    </div>
+      })()}, ${publicationDetail.address}, ${publicationDetail.year}`
   );
 };
 
 const renderTechReportMeta = (
   publicationDetail: TechReportTypeWeb
-): JSX.Element => {
+): string => {
   return (
-    <div className="content-text">
-      {publicationDetail.series}, {publicationDetail.address},{' '}
-      {publicationDetail.year}
-    </div>
+    `${publicationDetail.series}, ${publicationDetail.address},${' '}${publicationDetail.year}`
   );
 };
 
 const renderInCollectionMeta = (
   publicationDetail: InCollectionTypeWeb
-): JSX.Element => {
+): string => {
   return (
-    <div className="content-text">
-      In {publicationDetail.editor}, editor,{' '}
-      <i>{publicationDetail.booktitle}</i>, pages {publicationDetail.year}.{' '}
-      {publicationDetail.publisher}, {publicationDetail.address},{' '}
-      {publicationDetail.year}
-    </div>
+    `In ${publicationDetail.editor}, editor,${' '}_${publicationDetail.booktitle}_, pages ${publicationDetail.year}.${' '}${publicationDetail.publisher}, ${publicationDetail.address},${' '}${publicationDetail.year}`
   );
 };
 
-const renderMiscMeta = (publicationDetail: MiscTypeWeb): JSX.Element => {
-  return <div className="content-text">{publicationDetail.howpublished}</div>;
+const renderMiscMeta = (publicationDetail: MiscTypeWeb): string => {
+  return publicationDetail.howpublished;
 };
 
 const renderUnPublishedMeta = (
   publicationDetail: UnPublishedTypeWeb
-): JSX.Element => {
+): string => {
   return (
-    <div className="content-text">
-      {publicationDetail.note}
-      {(() => {
-        return publicationDetail.year ? `, ${publicationDetail.year}.` : '.';
-      })()}
-    </div>
+    `${publicationDetail.note}${publicationDetail.year ? `, ${publicationDetail.year}.` : '.'}`
   );
 };
 
-const renderPublicationMeta = (publicationDetail: Publication): JSX.Element => {
+const renderPublicationMeta = (publicationDetail: Publication): string => {
   switch (publicationDetail.type) {
     case PublicationTypes.Article:
       return renderArticleMeta(publicationDetail as ArticleTypeWeb);
@@ -181,7 +124,7 @@ const renderPublicationMeta = (publicationDetail: Publication): JSX.Element => {
     case PublicationTypes.UnPublished:
       return renderUnPublishedMeta(publicationDetail as UnPublishedTypeWeb);
     default:
-      return <div></div>;
+      return '';
   }
 };
 
@@ -194,26 +137,20 @@ const renderPublication = (
     imageSrc = `${process.env.PUBLIC_URL}/${config.imagesPath}/${imageSrc}`;
   }
 
+  let title = renderTitle(publicationDetail);
+  let authors = renderAuthors(publicationDetail);
+  let description = renderPublicationMeta(publicationDetail);
   return (
-    <div
-      key={key}
-      className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
-    >
-      <div className="col-md-2 content-card-img">
-        <img
-          className="img-fluid rounded image-item"
-          alt="thumbnail"
-          src={imageSrc}
-        />
-      </div>
-      <div className="col-md-10">
-        <div className="content-text-bold">
-          {renderTitle(publicationDetail)}
-        </div>
-        {renderAuthors(publicationDetail)}
-        {renderPublicationMeta(publicationDetail)}
-      </div>
-    </div>
+    <Card
+      id={key}
+      slugPrefix={`/publication`}
+      url={publicationDetail.url}
+      webPage={publicationDetail.webPage}
+      title={title}
+      team={authors}
+      description={description}
+      thumbnail={publicationDetail.thumbnail}
+    />
   );
 };
 

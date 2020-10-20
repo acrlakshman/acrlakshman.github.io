@@ -3,6 +3,8 @@ config:
   theme:
     value: basic
     render: true
+  meta:
+    creditProfileIO: true
 basics:
   name:
     value: Lakshman Anumolu

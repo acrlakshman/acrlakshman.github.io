@@ -195,11 +195,11 @@ const renderPublication = (
   return (
     <div
       key={key}
-      className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start content-item"
+      className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
     >
       <div className="col-md-2 content-card-img">
         <img
-          className="img-fluid border rounded image-item"
+          className="img-fluid rounded image-item"
           alt="thumbnail"
           src={imageSrc}
         />

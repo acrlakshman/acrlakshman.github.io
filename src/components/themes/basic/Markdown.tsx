@@ -95,13 +95,19 @@ class Markdown extends Component<ComponentProps, ComponentState> {
       <>
         <div key={imageCount}>
           <div className="gallery-item">
-            <img className="img-fluid" alt={imageAlt} src={imageSrc}  title={imageTitle}
-              onClick={() => this.setState({showModal: true, imageStartIndex: imageCount})}
-              />
+            <img
+              className="img-fluid rounded"
+              alt={imageAlt}
+              src={imageSrc}
+              title={imageTitle}
+              onClick={() =>
+                this.setState({ showModal: true, imageStartIndex: imageCount })
+              }
+            />
           </div>
         </div>
       </>
-    )
+    );
   };
 
   renderCode = (codeProps: CodeProps): JSX.Element => {
@@ -162,7 +168,9 @@ class Markdown extends Component<ComponentProps, ComponentState> {
   renderSectionBody = (content: string): JSX.Element => {
     this.imageCounter = 0;
     return (
-      <div className={`content-body text-left ${this.props.className}`}>
+      <div
+        className={`content-body text-left markdown ${this.props.className}`}
+      >
         <ReactMarkdown
           source={content}
           renderers={this.renderers}

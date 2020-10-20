@@ -9,11 +9,13 @@ export interface OptionalArgs {
 }
 
 export interface Config extends OptionalArgs {
-  // rank: number;
   homepage: string;
   theme: {
     value: string;
     render: boolean;
+  };
+  meta?: {
+    creditProfileIO: boolean;
   };
 }
 

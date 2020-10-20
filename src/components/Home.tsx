@@ -22,9 +22,12 @@ class Home extends Component<Props> {
   renderItem = () => {
     if (this.props.config.theme.render) {
       return (
-        <div>
-          <Header renderSectionsInNavBar={true} />
-          {this.renderBody()}
+        <div className="wrapper-0">
+          <div className="wrapper-1 rounded">
+            <Header renderSectionsInNavBar={true} />
+            {this.renderBody()}
+          </div>
+          <section className="content-section" style={{padding: "1.5rem 0 1.5rem 0", background: "transparent"}}></section>
           <Footer />
         </div>
       );

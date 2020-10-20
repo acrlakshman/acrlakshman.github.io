@@ -65,7 +65,7 @@ const IconLink: FunctionComponent<IconLinkProps> = ({
   alt,
   title,
 }: IconLinkProps): JSX.Element => {
-  const [{ width }, setWitdh] = useSpring(() => ({ width: '25px' }));
+  const [{ scale }, setScale] = useSpring(() => ({ scale: '0' }));
 
   let url = profile.value.url;
   if (!url && profile.value.username) {
@@ -74,12 +74,25 @@ const IconLink: FunctionComponent<IconLinkProps> = ({
 
   return (
     <a
-      onMouseEnter={() => setWitdh({ width: '35px' })}
-      onMouseLeave={() => setWitdh({ width: '25px' })}
+      onMouseEnter={() => setScale({ scale: '1' })}
+      onMouseLeave={() => setScale({ scale: '0' })}
       href={url}
       style={{ paddingLeft: '.5rem', paddingRight: '.5rem' }}
     >
-      <animated.img src={logo} alt={alt} title={title} style={{ width }} />
+      <animated.img
+        src={logo}
+        alt={alt}
+        title={title}
+        style={{
+          width: "25px",
+          transform: scale
+            .interpolate({
+              range: [0, 1],
+              output: [1, 1.5],
+            })
+            .interpolate((scale) => `scale(${scale})`),
+        }}
+      />
     </a>
   );
 };

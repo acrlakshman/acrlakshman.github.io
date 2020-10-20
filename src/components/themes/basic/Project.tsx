@@ -16,7 +16,10 @@ const renderSectionBody = (sectionDetail: Project): JSX.Element | undefined => {
   if (sectionDetail.webPage) {
     const content = sectionDetail.webPage.detail;
     return (
-      <div className="content-body text-left">
+      <div
+        className="content-body text-left"
+        style={{ margin: '2rem 2rem 0 2rem' }}
+      >
         <Markdown content={content} />
       </div>
     );
@@ -25,12 +28,10 @@ const renderSectionBody = (sectionDetail: Project): JSX.Element | undefined => {
 
 const _Project = (props: Props) => {
   return (
-    <div style={{ paddingTop: '100px', paddingBottom: '10px' }}>
-      <Content id={ProfileField.Projects}>
-        <SectionLabel label={props.sectionDetail.name} />
-        {renderSectionBody(props.sectionDetail)}
-      </Content>
-    </div>
+    <Content id={ProfileField.Projects}>
+      <SectionLabel label={props.sectionDetail.name} />
+      {renderSectionBody(props.sectionDetail)}
+    </Content>
   );
 };
 

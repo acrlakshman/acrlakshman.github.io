@@ -8,18 +8,27 @@ interface Props {
 }
 
 const SectionLabel = ({ label }: Props): JSX.Element => {
-  const [{fontSize}, set] = useSpring(() => ({fontSize: "1rem"}));
+  const [{ scale }, setScale] = useSpring(() => ({ scale: '0' }));
 
   return (
     <div className="content-header">
       <p
-        onMouseEnter={() => set({fontSize: "1.1rem"})}
-        onMouseLeave={() => set({fontSize: "1.0rem"})}
+        onMouseEnter={() => setScale({ scale: '1' })}
+        onMouseLeave={() => setScale({ scale: '0' })}
         className="content-header-text"
       >
-        <animated.span style={{fontSize}}>
+        <animated.p
+          style={{
+            transform: scale
+              .interpolate({
+                range: [0, 1],
+                output: [1, 1.25],
+              })
+              .interpolate((scale) => `scale(${scale})`),
+          }}
+        >
           {label}
-        </animated.span>
+        </animated.p>
       </p>
     </div>
   );

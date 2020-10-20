@@ -70,7 +70,7 @@ const renderProject = (projectDetail: Project, key: string): JSX.Element => {
   return (
     <div
       key={key}
-      className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start content-item"
+      className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
     >
       <div className="col-md-2 content-card-img">
         <img
@@ -91,12 +91,10 @@ const renderProject = (projectDetail: Project, key: string): JSX.Element => {
 const renderSectionBody = (sectionDetail: Projects, keyPrefix: string): JSX.Element => {
   return (
     <div className="content-body">
-      <div className="content-bubble-list">
-        <div className="content-bubble">
-          {sectionDetail.list.map((project, index) => {
-            return (project.render) ? renderProject(project.value, `${keyPrefix}_${index}`) : '';
-          })}
-        </div>
+      <div className="content-list">
+        {sectionDetail.list.map((project, index) => {
+          return (project.render) ? renderProject(project.value, `${keyPrefix}_${index}`) : '';
+        })}
       </div>
     </div>
   )

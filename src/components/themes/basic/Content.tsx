@@ -7,7 +7,7 @@ interface Props {
 const Content: FunctionComponent<Props> = (props) => {
   return (
     <section id={props.id} className="content-section">
-      <div className="container bg-light border rounded shadow-sm main-container">
+      <div className="container bg-white">
         <div className="content">{props.children}</div>
       </div>
     </section>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Content from './Content'
 import SectionLabel from './SectionLabel'
 import SectionBody from './SectionBody';
 import config from '../../../config';
@@ -57,10 +56,16 @@ class Introduction extends Component<ComponentProps, ComponentState> {
   getSummary = (summary: BasicValueType) => {
     if (summary.render) {
       return (
-        <Content id="introduction">
-          <SectionLabel label={summary.label} />
-          <SectionBody class="summary text-left" value={summary.value} />
-        </Content>
+        <section id="introduction" className="content-section">
+          <div className="container bg-white">
+            <div className="container main-container">
+                <div className="content">
+                  <SectionLabel label={summary.label} />
+                  <SectionBody class="summary text-left" value={summary.value} />
+                </div>
+            </div>
+          </div>
+        </section>
       );
     }
   };

@@ -68,12 +68,10 @@ const renderSectionBody = (
 
 const _Publication = (props: Props) => {
   return (
-    <div style={{ paddingTop: '100px', paddingBottom: '10px' }}>
-      <Content id={ProfileField.Publications}>
-        <SectionLabel label={props.sectionDetail.title} />
-        {renderSectionBody(props.sectionDetail, ProfileField.Publications)}
-      </Content>
-    </div>
+    <Content id={ProfileField.Publications}>
+      <SectionLabel label={props.sectionDetail.title} />
+      {renderSectionBody(props.sectionDetail, ProfileField.Publications)}
+    </Content>
   );
 };
 

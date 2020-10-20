@@ -80,6 +80,7 @@ class Introduction extends Component<ComponentProps, ComponentState> {
             <SocialProfiles profiles={this.props.basics.profiles} />
           </div>
         </section>
+        <div className="divider"></div>
         {this.getSummary(this.props.basics.summary)}
       </div>
     );

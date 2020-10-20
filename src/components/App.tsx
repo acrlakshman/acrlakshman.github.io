@@ -7,21 +7,19 @@ import Publication from './Publication';
 
 import './App.css';
 
-type Params = {
-  id: string;
-};
-
 class _App extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/project/:id" exact component={Project} />
-            <Route path="/publication/:id" exact component={Publication} />
-          </Switch>
-        </BrowserRouter>
+        {/* <ConnectedRouter history={history}> */}
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/project/:id" component={Project} />
+              <Route exact path="/publication/:id" component={Publication} />
+            </Switch>
+          </BrowserRouter>
+        {/* </ConnectedRouter> */}
       </div>
     );
   }

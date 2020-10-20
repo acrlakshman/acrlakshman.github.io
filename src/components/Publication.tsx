@@ -25,7 +25,9 @@ class Publication extends Component<ComponentProps, ComponentState> {
     this.state = { slug: this.props.match.params.id };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   renderBody = (): JSX.Element => {
     const idx = this.props.slugMap[ProfileField.Publications as string][
@@ -52,10 +54,13 @@ class Publication extends Component<ComponentProps, ComponentState> {
       return (
         <div className="wrapper-0">
           <div className="wrapper-1 rounded">
-              <Header renderSectionsInNavBar={false} />
-              {this.renderBody()}
+            <Header renderSectionsInNavBar={false} />
+            {this.renderBody()}
           </div>
-          <section className="content-section" style={{padding: "1.5rem 0 1.5rem 0", background: "transparent"}}></section>
+          <section
+            className="content-section"
+            style={{ padding: '1.5rem 0 1.5rem 0', background: 'transparent' }}
+          ></section>
           <Footer />
         </div>
       );

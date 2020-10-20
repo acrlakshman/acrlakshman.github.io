@@ -145,14 +145,14 @@ body:after {
 
 .content .content-body .summary {
   font-size: 1em;
-  font-weight: 300;
+  font-weight: normal;
   margin-bottom: 10px;
   margin-top: 10px;
   /* text-align: center; */
 }
 
 .content .content-header .content-header-text {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   font-weight: bold;
   margin-bottom: 1.5rem;
@@ -160,16 +160,21 @@ body:after {
 }
 
 .content .content-body .content-list .content-text {
+  color: #000;
   text-align: left;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
 .content .content-body .content-list .content-text-bold {
+  color: #000;
   text-align: left;
   font-weight: bold;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.content-list a {
+  text-decoration: none;
 }
 
 .content .content-body .content-list .image-item {
@@ -329,9 +334,8 @@ body:after {
   margin-left: 0%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-
 .content-item:hover {
-  box-shadow:  0 5px 10px rgba(0,0,0,0.12)
+  box-shadow:  0 5px 10px rgba(1, 104, 189, 0.5)
 }
 
 .main-container { 
@@ -445,6 +449,40 @@ body:after {
 .markdown pre code {
   padding: 1.5rem;
   font-family: 'Fira Code';
+}
+
+.divider {
+  display: table; 
+  font-size: 24px; 
+  text-align: center; 
+  width: 75%;
+  margin: 40px auto;
+}
+.divider span { display: table-cell; position: relative; }
+.divider span:first-child, .divider span:last-child {
+  width: 50%;
+  top: 17px;
+  -moz-background-size: 100% 2px;
+  background-size: 100% 2px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+}
+.divider span:first-child {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#000));
+  background-image: -webkit-linear-gradient(180deg, transparent, #000);
+  background-image: -moz-linear-gradient(180deg, transparent, #000);
+  background-image: -o-linear-gradient(180deg, transparent, #000);
+  background-image: linear-gradient(90deg, transparent, #000);
+}
+.divider span:nth-child(2) {
+  color: #000; padding: 0px 5px; width: auto; white-space: nowrap;
+}
+.divider span:last-child {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
+  background-image: -webkit-linear-gradient(180deg, #000, transparent);
+  background-image: -moz-linear-gradient(180deg, #000, transparent);
+  background-image: -o-linear-gradient(180deg, #000, transparent);
+  background-image: linear-gradient(90deg, #000, transparent);
 }
 
 footer {

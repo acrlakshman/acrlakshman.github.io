@@ -123,6 +123,12 @@ const RenderImage = (props: ImageProps) => {
 [2]     25 |   },
 ```
 
+## section dividers
+
+* https://uicookies.com/css-divider/
+  * https://codepen.io/stg/pen/ZYYQMJ
+  * https://codepen.io/isabelc/pen/MmrJgx
+
 ## References
 * https://fettblog.eu/typescript-react/components/
 * https://www.newline.co/@dmitryrogozhny/how-to-render-markdown-in-react-with-react-markdown--5d1c3849

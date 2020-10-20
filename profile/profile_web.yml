@@ -4,7 +4,7 @@ config:
     value: basic
     render: true
   meta:
-    creditProfileIO: true
+    creditProfileIO: false
 basics:
   name:
     value: Lakshman Anumolu

@@ -6,6 +6,8 @@ import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
 import Markdown from './Markdown';
 
+import './styles.css';
+
 import {
   ArticleTypeWeb,
   BookTypeWeb,
@@ -235,8 +237,14 @@ const renderSectionBody = (
 };
 
 const Section = (props: Props) => {
+  // TODO: divider component
   return (
     <Content id={ProfileField.Publications}>
+      <div className="divider">
+        <span></span>
+        <span>&#10038;</span>
+        <span></span>
+      </div>
       <SectionLabel label={props.sectionDetail.label} />
       {renderSectionBody(props.sectionDetail, ProfileField.Publications)}
     </Content>

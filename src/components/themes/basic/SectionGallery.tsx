@@ -119,6 +119,11 @@ const renderSectionBody = (
 const Section = (props: ComponentProps) => {
   return (
     <Content id={ProfileField.Gallery}>
+      <div className="divider">
+        <span></span>
+        <span>&#10038;</span>
+        <span></span>
+      </div>
       <SectionLabel label={props.sectionDetail.label} />
       {renderSectionBody(props.sectionDetail, ProfileField.Gallery)}
     </Content>

@@ -103,6 +103,11 @@ const renderSectionBody = (sectionDetail: Projects, keyPrefix: string): JSX.Elem
 const Section = (props: Props) => {
   return (
     <Content id={ProfileField.Projects}>
+      <div className="divider">
+        <span></span>
+        <span>&#10038;</span>
+        <span></span>
+      </div>
       <SectionLabel label={props.sectionDetail.label} />
       {renderSectionBody(props.sectionDetail, ProfileField.Projects)}
     </Content>

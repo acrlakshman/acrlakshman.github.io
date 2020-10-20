@@ -30,6 +30,11 @@ const _Project = (props: Props) => {
   return (
     <Content id={ProfileField.Projects}>
       <SectionLabel label={props.sectionDetail.name} />
+      <div className="divider">
+        <span></span>
+        <span>&#10038;</span>
+        <span></span>
+      </div>
       {renderSectionBody(props.sectionDetail)}
     </Content>
   );

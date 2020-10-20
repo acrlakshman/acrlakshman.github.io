@@ -25,7 +25,9 @@ class Project extends Component<ComponentProps, ComponentState> {
     this.state = { slug: this.props.match.params.id };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   renderBody = (): JSX.Element => {
     const idx = this.props.slugMap[ProfileField.Projects as string][
@@ -55,7 +57,10 @@ class Project extends Component<ComponentProps, ComponentState> {
             <Header renderSectionsInNavBar={false} />
             {this.renderBody()}
           </div>
-          <section className="content-section" style={{padding: "1.5rem 0 1.5rem 0", background: "transparent"}}></section>
+          <section
+            className="content-section"
+            style={{ padding: '1.5rem 0 1.5rem 0', background: 'transparent' }}
+          ></section>
           <Footer />
         </div>
       );

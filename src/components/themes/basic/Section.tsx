@@ -73,7 +73,11 @@ class Section extends Component<Props> {
   };
 
   renderCustomSection = (sectionDetail: CustomSection, key: string) => {
-    if (sectionDetail && this.props.sectionName === ProfileField.Custom) {
+    if (
+      sectionDetail &&
+      this.props.sectionName === ProfileField.Custom &&
+      sectionDetail.render
+    ) {
       return (
         <SectionCustom
           class=""

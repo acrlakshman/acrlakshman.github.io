@@ -415,7 +415,9 @@ references:
         email: email@email.com
       render: false
 custom:
-  - label: Custom
+  # TODO: make value as optional.
+  # TODO: Make rank for custom sections in home page as relative to pages within custom section.
+  - label: Custom # rendered in home page
     rank: 10
     value: project/basic-model-viewer.md
     render: false
@@ -423,3 +425,9 @@ custom:
     rank: 11
     value: project/basic-model-viewer.md
     render: false
+  - label: Custom page 1 # rendered as another page
+    value: project/basic-model-viewer.md
+    webPage:
+      slug: custom-page-1
+      detail: project/basic-model-viewer.md
+    render: true

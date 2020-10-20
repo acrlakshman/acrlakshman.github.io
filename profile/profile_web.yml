@@ -324,29 +324,6 @@ publications:
         year: 2011
         thumbnail: "ms_thesis_thumbnail.png"
       render: true
-    - value:
-        type: book
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        edition: 5
-        publisher: Cambridge
-        address: Cambridge MA
-        year: 2017
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
-    - value:
-        type: book
-        author: L. Anumolu
-        title: Gradient augmented reinitialization
-        series: Lecture notes in computational physics
-        volume: 1
-        publisher: Cambridge
-        address: Cambridge MA
-        year: 2017
-        # If webPage is not provided, then url will be linked in the homepage for this project
-        url: https://lakshmananumolu.com
-      render: true
 gallery:
   label: Gallery
   rank: 5
@@ -430,4 +407,4 @@ custom:
     webPage:
       slug: custom-page-1
       detail: project/basic-model-viewer.md
-    render: true
+    render: false

@@ -8,7 +8,7 @@ _Sample results_
 |-|-|-|
 |![teapot](bmv/teapot.gif)|![bunny](bmv/bunny.gif)|![cubehandle](bmv/cubehandle.gif)|
 
--------------
+---
 
 ##### Goal of this project
 
@@ -17,9 +17,13 @@ _Sample results_
 * Visualize objects that are defined in standard formats like Wavefront OBJ, PLY etc.
 * Open source, easy to understand and also act as a learning platform for computer graphics.
 
+---
+
 ##### Motivation
 
 While rendering results obtained from [OpenFOAM](http://www.openfoam.com/) using [POV-Ray](http://www.povray.org/), I observed the trouble that my friends faced in deciding the camera settings and material properties. Apart from this, the route that we have taken to generate POV-Ray compatible files, which is via [EnSight](https://www.ansys.com/products/fluids/ansys-ensight). Though Basic Model Viewer is not yet fully equipped to address all these issues, I have made some progress along with completing some useful functionalities which can come handy for photo-realistic rendering.
+
+---
 
 ##### Basic usage
 
@@ -147,7 +151,7 @@ Currently GUI for _Basic Model Viewer_ is not complete, hence for the time being
 * Some default shaders are available in the folder `Shaders`.
 * Texture mapping is under development.
 
------------------
+---
 
 ##### Acknowledgements
 

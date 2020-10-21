@@ -7,6 +7,8 @@ My project for the course ME964 (_Two-Phase Flows Fundamentals_) taught by [Prof
 
 Source code: [[12/2012](smoke-simulation/ME964_ProjectCode.zip "file")]; [[Report](smoke-simulation/ME964_ProjectReport.pdf "file")]
 
+---
+
 ##### Some rendered results (using Mitsuba)
 
 | | | |

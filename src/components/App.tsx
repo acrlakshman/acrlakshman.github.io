@@ -12,7 +12,6 @@ class _App extends Component {
   render() {
     return (
       <div>
-        {/* <ConnectedRouter history={history}> */}
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -21,9 +20,9 @@ class _App extends Component {
             <Route exact path="/:id" component={Custom} />
             <Route exact path="/:id/:id" component={Custom} />
             <Route exact path="/:id/:id/:id" component={Custom} />
+            <Route component={Custom} />
           </Switch>
         </BrowserRouter>
-        {/* </ConnectedRouter> */}
       </div>
     );
   }

@@ -56,7 +56,14 @@ class Custom extends Component<ComponentProps> {
         </Content>
       );
     } else {
-      return <div>Page not found</div>;
+      return (
+        <Content id="">
+          <SectionLabel label="" />
+          <div className="" style={{ margin: '2rem 2rem 0 2rem' }}>
+            <Markdown className="" content="Page Not Found" />
+          </div>
+        </Content>
+      );
     }
   };
 

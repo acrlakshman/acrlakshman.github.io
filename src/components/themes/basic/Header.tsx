@@ -115,16 +115,22 @@ class Header extends Component<ComponentProps, ComponentState> {
               </Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            {this.props.renderSectionsInNavBar && ((): JSX.Element => 
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ml-auto">
-                {this.renderNavLink(ProfileField.Basics)}
-                {this.renderNavLink(ProfileField.Publications)}
-                {this.renderNavLink(ProfileField.Projects)}
-                {this.renderNavLink(ProfileField.Gallery)}
-              </Nav>
-            </Navbar.Collapse>)()
-            }
+            {this.props.renderSectionsInNavBar &&
+              ((): JSX.Element => (
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="ml-auto">
+                    {this.renderNavLink(ProfileField.Basics)}
+                    {this.renderNavLink(ProfileField.Publications)}
+                    {this.renderNavLink(ProfileField.Projects)}
+                    {this.renderNavLink(ProfileField.Gallery)}
+                    <Nav.Link>
+                      <a className="nav-link active" href="/files/resume.pdf">
+                        CV
+                      </a>
+                    </Nav.Link>
+                  </Nav>
+                </Navbar.Collapse>
+              ))()}
           </div>
         </Navbar>
       </>

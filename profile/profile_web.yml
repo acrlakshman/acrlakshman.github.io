@@ -3,6 +3,10 @@ config:
   theme:
     value: basic
     render: true
+  analytics: # TODO
+    ga:
+      trackingId: "UA-37418034-1"
+      enable: true
   meta:
     creditProfileIO: false
 basics:
@@ -245,7 +249,7 @@ publications:
         year: 2018
         number: 0
         pages: 377-406
-        thumbnail: jet_paper.jpg
+        thumbnail: gals_phase_change.png
         # If webPage is not provided, then url will be linked in the homepage for this project
         url: https://www.sciencedirect.com/science/article/pii/S0021999117307696
       render: true
@@ -258,7 +262,7 @@ publications:
         publisher: World Scientific
         address: ''
         year: 2018
-        thumbnail: jet_paper.jpg
+        thumbnail: dns_phasechange.png
         # If webPage is not provided, then url will be linked in the homepage for this project
         url: https://www.worldscientific.com/doi/abs/10.1142/9789813229440_0008
       render: true
@@ -271,7 +275,7 @@ publications:
         year: 2017
         number: 0
         pages: 81-101
-        thumbnail: jet_paper.jpg
+        thumbnail: levelset_deformation.png
         # If webPage is not provided, then url will be linked in the homepage for this project
         url: https://www.sciencedirect.com/science/article/pii/S0021999116307045
       render: true

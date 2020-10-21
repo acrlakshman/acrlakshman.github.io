@@ -14,6 +14,13 @@ export interface Config extends OptionalArgs {
     value: string;
     render: boolean;
   };
+  analytics?: {
+    ga?: {
+      // google analytics
+      trackingId: string;
+      enable: boolean;
+    };
+  };
   meta?: {
     creditProfileIO: boolean;
   };

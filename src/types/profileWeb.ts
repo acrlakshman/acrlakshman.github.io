@@ -22,7 +22,7 @@ export interface Config extends OptionalArgs {
     };
   };
   meta?: {
-    creditProfileIO: boolean;
+    hideFooterCredit: boolean;
   };
 }
 

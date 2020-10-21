@@ -8,7 +8,7 @@ config:
       trackingId: "UA-37418034-1"
       enable: true
   meta:
-    creditProfileIO: false
+    hideFooterCredit: true
 basics:
   name:
     value: Lakshman Anumolu

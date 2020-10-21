@@ -4,8 +4,7 @@ import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
 import Card from './Card'
-
-import './styles.css';
+import Divider from './SectionDivider';
 
 import {
   ArticleTypeWeb,
@@ -174,14 +173,9 @@ const renderSectionBody = (
 };
 
 const Section = (props: Props) => {
-  // TODO: divider component
   return (
     <Content id={ProfileField.Publications}>
-      <div className="divider">
-        <span></span>
-        <span>&#10038;</span>
-        <span></span>
-      </div>
+      <Divider />
       <SectionLabel label={props.sectionDetail.label} />
       {renderSectionBody(props.sectionDetail, ProfileField.Publications)}
     </Content>

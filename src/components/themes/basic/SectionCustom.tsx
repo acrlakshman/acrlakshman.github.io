@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Markdown from './Markdown';
 import Content from './Content';
 import SectionLabel from './SectionLabel';
+import Divider from './SectionDivider';
 
 import 'react-image-gallery/styles/css/image-gallery.css';
 import './styles.css';
@@ -17,11 +18,7 @@ class Section extends Component<ComponentProps> {
   render() {
     return (
       <Content id={this.props.id}>
-        <div className="divider">
-          <span></span>
-          <span>&#10038;</span>
-          <span></span>
-        </div>
+        <Divider />
         <SectionLabel label={this.props.label} />
         <Markdown content={this.props.content} />
       </Content>

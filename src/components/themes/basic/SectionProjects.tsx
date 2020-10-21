@@ -4,6 +4,7 @@ import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
 import Card from './Card';
+import Divider from './SectionDivider';
 
 import { Project, Projects } from '../../../types/profileWeb';
 import {ProfileField} from '../../../types/fields'
@@ -49,11 +50,7 @@ const renderSectionBody = (sectionDetail: Projects, keyPrefix: string): JSX.Elem
 const Section = (props: Props) => {
   return (
     <Content id={ProfileField.Projects}>
-      <div className="divider">
-        <span></span>
-        <span>&#10038;</span>
-        <span></span>
-      </div>
+      <Divider />
       <SectionLabel label={props.sectionDetail.label} />
       {renderSectionBody(props.sectionDetail, ProfileField.Projects)}
     </Content>

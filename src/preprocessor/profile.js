@@ -197,7 +197,6 @@ const processSlug = (jsonObj, section) => {
       if (!(section in jsonObj['slugMap'])) jsonObj['slugMap'][section] = {};
 
       const slug = item['webPage']['slug'];
-      console.log(slug);
       jsonObj['slugMap'][section] = Object.assign(jsonObj['slugMap'][section], {
         [slug]: { position: i },
       });

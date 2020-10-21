@@ -3,6 +3,7 @@ import SectionLabel from './SectionLabel';
 import Content from './Content';
 import { ProfileField } from '../../../types/fields';
 import Markdown from './Markdown';
+import Divider from './SectionDivider';
 
 import { Project } from '../../../types/profileWeb';
 
@@ -30,11 +31,7 @@ const _Project = (props: Props) => {
   return (
     <Content id={ProfileField.Projects}>
       <SectionLabel label={props.sectionDetail.name} />
-      <div className="divider">
-        <span></span>
-        <span>&#10038;</span>
-        <span></span>
-      </div>
+      <Divider />
       {renderSectionBody(props.sectionDetail)}
     </Content>
   );

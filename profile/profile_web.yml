@@ -396,7 +396,7 @@ custom:
   # TODO: Make rank for custom sections in home page as relative to pages within custom section.
   - label: Custom # rendered in home page
     rank: 10
-    value: project/basic-model-viewer.md
+    value: project/crystal-growth.md
     render: false
   - label: Custom2
     rank: 11

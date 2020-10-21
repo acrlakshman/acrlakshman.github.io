@@ -20,7 +20,12 @@ class Section extends Component<ComponentProps> {
       <Content id={this.props.id}>
         <Divider />
         <SectionLabel label={this.props.label} />
-        <Markdown content={this.props.content} />
+        <div
+          className="content-body text-left"
+          style={{ margin: '2rem 2rem 0' }}
+        >
+          <Markdown content={this.props.content} className="" />
+        </div>
       </Content>
     );
   }

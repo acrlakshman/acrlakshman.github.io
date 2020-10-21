@@ -168,9 +168,7 @@ class Markdown extends Component<ComponentProps, ComponentState> {
   renderSectionBody = (content: string): JSX.Element => {
     this.imageCounter = 0;
     return (
-      <div
-        className={`content-body text-left markdown ${this.props.className}`}
-      >
+      <div className={`content-body markdown ${this.props.className}`}>
         <ReactMarkdown
           source={content}
           renderers={this.renderers}

@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import Highlight from 'react-highlight.js';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
+import Divider from './SectionDivider';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
 
@@ -60,7 +61,6 @@ const renderSectionBody = (
     return (
       <div className="content-body text-left">
         <ReactMarkdown source={content} renderers={renderers}></ReactMarkdown>
-        {/* {renderProject(sectionDetail, `${keyPrefix}`)} */}
       </div>
     );
   }
@@ -70,6 +70,7 @@ const _Publication = (props: Props) => {
   return (
     <Content id={ProfileField.Publications}>
       <SectionLabel label={props.sectionDetail.title} />
+      <Divider />
       {renderSectionBody(props.sectionDetail, ProfileField.Publications)}
     </Content>
   );

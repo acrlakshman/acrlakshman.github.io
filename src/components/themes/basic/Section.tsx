@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import SectionPublications from './SectionPublications';
-import SectionProjects from './SectionProjects';
-import SectionCustom from './SectionCustom';
-import SectionGallery from './SectionGallery';
+import Loadable from 'react-loadable';
+// import SectionPublications from './SectionPublications';
+// import SectionProjects from './SectionProjects';
+// import SectionCustom from './SectionCustom';
+// import SectionGallery from './SectionGallery';
 
 import {
   CustomSection,
@@ -47,6 +48,34 @@ const sectionCustomHasRender = <T extends ProfileCustomSection[K], K extends key
   return false;
 }
 
+const LoadableSectionPublications = Loadable({
+  loader: () => import('./SectionPublications'),
+  loading() {
+    return <div></div>;
+  },
+});
+
+const LoadableSectionProjects = Loadable({
+  loader: () => import('./SectionProjects'),
+  loading() {
+    return <div></div>;
+  },
+});
+
+const LoadableSectionGallery = Loadable({
+  loader: () => import('./SectionGallery'),
+  loading() {
+    return <div></div>;
+  },
+});
+
+const LoadableSectionCustom = Loadable({
+  loader: () => import('./SectionCustom'),
+  loading() {
+    return <div></div>;
+  },
+});
+
 class Section extends Component<Props> {
   renderSection = <
     T extends ProfileSections[K],
@@ -58,14 +87,20 @@ class Section extends Component<Props> {
       switch (this.props.sectionName) {
         case ProfileField.Publications:
           return (
-            <SectionPublications
+            <LoadableSectionPublications
               sectionDetail={sectionDetail as Publications}
             />
           );
         case ProfileField.Projects:
-          return <SectionProjects sectionDetail={sectionDetail as Projects} />;
+          return (
+            <LoadableSectionProjects
+              sectionDetail={sectionDetail as Projects}
+            />
+          );
         case ProfileField.Gallery:
-          return <SectionGallery sectionDetail={sectionDetail as Gallery} />;
+          return (
+            <LoadableSectionGallery sectionDetail={sectionDetail as Gallery} />
+          );
         default:
           return <div></div>;
       }
@@ -80,7 +115,7 @@ class Section extends Component<Props> {
     ) {
       if (sectionDetail.value) {
         return (
-          <SectionCustom
+          <LoadableSectionCustom
             class=""
             id={sectionDetail.label}
             key={key}

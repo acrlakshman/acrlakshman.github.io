@@ -78,15 +78,17 @@ class Section extends Component<Props> {
       this.props.sectionName === ProfileField.Custom &&
       sectionDetail.render
     ) {
-      return (
-        <SectionCustom
-          class=""
-          id={sectionDetail.label}
-          key={key}
-          label={sectionDetail.label}
-          content={sectionDetail.value}
-        />
-      );
+      if (sectionDetail.value) {
+        return (
+          <SectionCustom
+            class=""
+            id={sectionDetail.label}
+            key={key}
+            label={sectionDetail.label}
+            content={sectionDetail.value}
+          />
+        );
+      }
     }
   };
 

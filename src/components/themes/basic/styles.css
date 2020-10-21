@@ -448,6 +448,9 @@ body:after {
 
 .markdown pre code {
   padding: 1.5rem;
+}
+
+.markdown code {
   font-family: 'Fira Code';
 }
 

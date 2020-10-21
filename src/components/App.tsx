@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Project from './Project';
 import Publication from './Publication';
+import Custom from './Custom';
 
 import './App.css';
 
@@ -12,13 +13,14 @@ class _App extends Component {
     return (
       <div>
         {/* <ConnectedRouter history={history}> */}
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/project/:id" component={Project} />
-              <Route exact path="/publication/:id" component={Publication} />
-            </Switch>
-          </BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/project/:id" component={Project} />
+            <Route exact path="/publication/:id" component={Publication} />
+            <Route exact path="/:id" component={Custom} />
+          </Switch>
+        </BrowserRouter>
         {/* </ConnectedRouter> */}
       </div>
     );

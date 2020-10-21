@@ -392,19 +392,19 @@ references:
         email: email@email.com
       render: false
 custom:
-  # TODO: make value as optional.
+  # In the home page, these sections are always rendered at the end.
   # TODO: Make rank for custom sections in home page as relative to pages within custom section.
   - label: Custom # rendered in home page
-    rank: 10
+    rank: 1
     value: project/crystal-growth.md
     render: false
   - label: Custom2
-    rank: 11
+    rank: 2
     value: project/basic-model-viewer.md
     render: false
   - label: Custom page 1 # rendered as another page
-    value: project/basic-model-viewer.md
+    # value: project/basic-model-viewer.md
     webPage:
       slug: custom-page-1
       detail: project/basic-model-viewer.md
-    render: false
+    render: true

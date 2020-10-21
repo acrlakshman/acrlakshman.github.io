@@ -140,16 +140,37 @@ const processCustomSectionsMarkdownFields = (jsonObj) => {
   let list = jsonObj['custom'];
 
   for (let i = 0; i < list.length; i++) {
-    let fileAbs = appendToRootFolder(
-      `profile/${jsonObj['custom'][i]['value']}`,
-      2
-    );
+    if ('value' in jsonObj['custom'][i]) {
+      let fileAbs = appendToRootFolder(
+        `profile/${jsonObj['custom'][i]['value']}`,
+        2
+      );
 
-    try {
-      fs.accessSync(fileAbs, fs.constants.F_OK);
-      jsonObj['custom'][i]['value'] = fs.readFileSync(fileAbs, 'utf8');
-    } catch (err) {
-      throw new Error(`${fileAbs} NOT found`);
+      try {
+        fs.accessSync(fileAbs, fs.constants.F_OK);
+        jsonObj['custom'][i]['value'] = fs.readFileSync(fileAbs, 'utf8');
+      } catch (err) {
+        throw new Error(`${fileAbs} NOT found`);
+      }
+    }
+
+    if ('webPage' in jsonObj['custom'][i]) {
+      if ('detail' in jsonObj['custom'][i]['webPage']) {
+        let fileAbs = appendToRootFolder(
+          `profile/${jsonObj['custom'][i]['webPage']['detail']}`,
+          2
+        );
+
+        try {
+          fs.accessSync(fileAbs, fs.constants.F_OK);
+          jsonObj['custom'][i]['webPage']['detail'] = fs.readFileSync(
+            fileAbs,
+            'utf8'
+          );
+        } catch (err) {
+          throw new Error(`${fileAbs} NOT found`);
+        }
+      }
     }
   }
 
@@ -157,19 +178,25 @@ const processCustomSectionsMarkdownFields = (jsonObj) => {
 };
 
 const processSlug = (jsonObj, section) => {
-  const list = jsonObj[section]['list'];
+  let list = {};
+  if (section === 'custom') {
+    list = jsonObj[section];
+  } else {
+    list = jsonObj[section]['list'];
+  }
 
   for (let i = 0; i < list.length; i++) {
-    const item = list[i];
+    let item = {};
+    item = section === 'custom' ? list[i] : list[i]['value'];
     if (
-      'webPage' in item['value'] &&
-      'slug' in item['value']['webPage'] &&
-      !isValidUrl(item['value']['webPage']['slug']) &&
-      isValidSlug(item['value']['webPage']['slug'])
+      'webPage' in item &&
+      'slug' in item['webPage'] &&
+      !isValidUrl(item['webPage']['slug']) &&
+      isValidSlug(item['webPage']['slug'])
     ) {
       if (!(section in jsonObj['slugMap'])) jsonObj['slugMap'][section] = {};
 
-      const slug = item['value']['webPage']['slug'];
+      const slug = item['webPage']['slug'];
       jsonObj['slugMap'][section] = Object.assign(jsonObj['slugMap'][section], {
         [slug]: { position: i },
       });
@@ -199,6 +226,7 @@ const processMarkdownFieldsAndSlugs = (jsonObj) => {
 
     if (key === 'custom') {
       jsonObj = processCustomSectionsMarkdownFields(jsonObj);
+      jsonObj = processSlug(jsonObj, 'custom');
     }
   }
 

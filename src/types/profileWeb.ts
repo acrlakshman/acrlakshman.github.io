@@ -355,7 +355,8 @@ export interface References extends OptionalArgs {
 
 export interface CustomSection extends OptionalArgs {
   label: string;
-  value: string;
+  value?: string;
+  webPage?: WebPageType;
   render: boolean;
 }
 

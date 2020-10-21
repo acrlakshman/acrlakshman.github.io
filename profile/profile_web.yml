@@ -111,6 +111,53 @@ projects:
   rank: 4
   list:
     - value:
+        name: ProfileIO
+        description: "Delightfully simple website and resume generator for students and researchers"
+        team: "_Lakshman Anumolu_"
+        thumbnail: profileio.png
+        highlights:
+          - Website and resume generator via YAML
+        keywords:
+          - resume
+          - website
+          - YAML
+          - markdown
+        startDate: '2020'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://github.com/acrlakshman/profileio
+        roles:
+          - Architect
+          - Developer
+        type: application
+        webPage:
+          slug: profileio
+          detail: project/profileio.md
+      render: false
+    - value:
+        name: Framework to Photorealistic Render Computational Fluid Dynamics Results
+        description: "Scene templates to kick-start scalable rendering of CFD results photorealistically."
+        team: "_Lakshman Anumolu_"
+        thumbnail: scene_templates.png
+        highlights:
+          - Scene templates to process CFD results photorealistically
+        keywords:
+          - CFD
+          - photorealistic
+          - mitsuba
+        startDate: '2020'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://github.com/acrlakshman/scene_templates
+        roles:
+          - Architect
+          - Developer
+        type: application
+        webPage:
+          slug: photorealistic-computational-fluid-dynamics
+          detail: project/photorealistic-cfd.md
+      render: true
+    - value:
         name: MeshIO
         description: A header only C++ library to read/write various surface mesh formats
         team: "_with [Pradeep Garigipati](//pradeepgarigipati.com)_"

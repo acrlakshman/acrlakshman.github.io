@@ -15,11 +15,15 @@ interface ComponentProps extends RouteComponentProps<{ id: string }> {
 }
 
 class Custom extends Component<ComponentProps> {
+  componentDidMount() {
+    console.log(this.props);
+  }
   renderItem = () => {
     if (this.props.config.theme.value === WebThemes.BASIC) {
       return (
         <CustomBasic
           slug={this.props.match.params.id}
+          url={this.props.match.url}
           config={this.props.config}
           basics={this.props.basics}
           sections={this.props.sections}
@@ -34,10 +38,6 @@ class Custom extends Component<ComponentProps> {
   render() {
     return this.renderItem();
   }
-
-  // render() {
-  //   return this.renderItem();
-  // }
 }
 
 const mapStateToProps = (state: StoreState) => {

@@ -19,6 +19,8 @@ class _App extends Component {
             <Route exact path="/project/:id" component={Project} />
             <Route exact path="/publication/:id" component={Publication} />
             <Route exact path="/:id" component={Custom} />
+            <Route exact path="/:id/:id" component={Custom} />
+            <Route exact path="/:id/:id/:id" component={Custom} />
           </Switch>
         </BrowserRouter>
         {/* </ConnectedRouter> */}

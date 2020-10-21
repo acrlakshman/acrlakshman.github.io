@@ -405,6 +405,6 @@ custom:
   - label: Custom page 1 # rendered as another page
     # value: project/basic-model-viewer.md
     webPage:
-      slug: custom-page-1
+      slug: custom/custom-page-1
       detail: project/basic-model-viewer.md
     render: true

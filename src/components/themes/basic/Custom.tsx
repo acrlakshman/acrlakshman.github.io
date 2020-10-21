@@ -17,6 +17,7 @@ import Footer from './Footer';
 
 interface ComponentProps {
   slug: string;
+  url: string;
   config: Config;
   basics: Basics;
   sections?: CustomSection[];
@@ -30,9 +31,9 @@ class Custom extends Component<ComponentProps> {
   }
 
   renderBody = (): JSX.Element => {
-    const idx = this.props.slugMap[ProfileField.Custom as string][
-      this.props.slug
-    ]?.position;
+    const url = this.props.url.replace('/', '');
+    const idx = this.props.slugMap[ProfileField.Custom as string][url]
+      ?.position;
 
     if (
       this.props.sections &&

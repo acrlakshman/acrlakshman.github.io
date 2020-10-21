@@ -65,7 +65,7 @@ const isValidFilePath = (filePath, ext = 'md') => {
 };
 
 const isValidSlug = (slug) => {
-  return RegExp(`^[a-zA-Z0-9-_]+$`).test(slug);
+  return RegExp(`^[a-zA-Z0-9-_/]+$`).test(slug);
 };
 
 const processProfileSummary = (jsonObj) => {
@@ -197,6 +197,7 @@ const processSlug = (jsonObj, section) => {
       if (!(section in jsonObj['slugMap'])) jsonObj['slugMap'][section] = {};
 
       const slug = item['webPage']['slug'];
+      console.log(slug);
       jsonObj['slugMap'][section] = Object.assign(jsonObj['slugMap'][section], {
         [slug]: { position: i },
       });

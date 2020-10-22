@@ -10,9 +10,14 @@ import { Project, Projects } from '../../../types/profileWeb';
 import {ProfileField} from '../../../types/fields'
 
 import './styles.css';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 interface Props {
   sectionDetail: Projects;
+  limitItemsToRender?: boolean;
+  renderDividerAboveLabel?: boolean;
+  renderDividerBelowLabel?: boolean;
 }
 
 const renderProject = (projectDetail: Project, key: string): JSX.Element => {
@@ -36,24 +41,45 @@ const renderProject = (projectDetail: Project, key: string): JSX.Element => {
   );
 };
 
-const renderSectionBody = (sectionDetail: Projects, keyPrefix: string): JSX.Element => {
+const renderOverflowButton = () => {
+  return (
+    <Link to="/projects">
+      <div style={{textAlign: "end"}}>
+        <Button variant="primary">Full Projects List {">>"}</Button>
+      </div>
+    </Link>
+  )
+}
+
+const renderSectionBody = (sectionDetail: Projects, keyPrefix: string, limitItemsToRender: boolean): JSX.Element => {
   return (
     <div className="content-body">
       <div className="content-list">
-        {sectionDetail.list.map((project, index) => {
-          return (project.render) ? renderProject(project.value, `${keyPrefix}_${index}`) : '';
-        })}
+        {(() => {
+          let count = 0;
+          let maxItems = sectionDetail.maxItemsToRender ? sectionDetail.maxItemsToRender : (
+            sectionDetail.list.length <= config.maxItemsToRenderInHomePage.projects
+              ? sectionDetail.list.length
+              : config.maxItemsToRenderInHomePage.projects)
+              
+          return sectionDetail.list.map((project, index) => {
+            return project.render && count < maxItems
+              ?  (limitItemsToRender && ++count, renderProject(project.value, `${keyPrefix}_${index}`))
+              : (project.render && count === maxItems ? (++count, renderOverflowButton()) : '');
+          });
+        })()}
       </div>
     </div>
-  )
+  );
 }
 
 const Section = (props: Props) => {
   return (
     <Content id={ProfileField.Projects}>
-      <Divider />
+      {props.renderDividerAboveLabel && <Divider />}
       <SectionLabel label={props.sectionDetail.label} />
-      {renderSectionBody(props.sectionDetail, ProfileField.Projects)}
+      {props.renderDividerBelowLabel && <Divider />}
+      {renderSectionBody(props.sectionDetail, ProfileField.Projects, props.limitItemsToRender || false)}
     </Content>
   );
 };

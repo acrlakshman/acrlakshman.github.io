@@ -89,12 +89,16 @@ class Section extends Component<Props> {
           return (
             <LoadableSectionPublications
               sectionDetail={sectionDetail as Publications}
+              limitItemsToRender={true}
+              renderDividerAboveLabel={true}
             />
           );
         case ProfileField.Projects:
           return (
             <LoadableSectionProjects
               sectionDetail={sectionDetail as Projects}
+              limitItemsToRender={true}
+              renderDividerAboveLabel={true}
             />
           );
         case ProfileField.Gallery:

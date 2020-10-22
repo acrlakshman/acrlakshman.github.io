@@ -6,6 +6,7 @@ export type BasicValueType = {
 
 export interface OptionalArgs {
   rank?: number;
+  maxItemsToRender?: number;
 }
 
 export interface Config extends OptionalArgs {

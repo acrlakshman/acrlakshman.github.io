@@ -24,9 +24,14 @@ import {
 } from '../../../types/fields';
 
 import './styles.css';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 interface Props {
   sectionDetail: Publications;
+  limitItemsToRender?: boolean;
+  renderDividerAboveLabel?: boolean;
+  renderDividerBelowLabel?: boolean;
 }
 
 const renderTitle = (publicationDetail: Publication): string => {
@@ -154,19 +159,43 @@ const renderPublication = (
   );
 };
 
+const renderOverflowButton = () => {
+  return (
+    <Link to="/publications">
+      <div style={{ textAlign: 'end' }}>
+        <Button variant="primary">Full Publications List {'>>'}</Button>
+      </div>
+    </Link>
+  );
+};
+
 const renderSectionBody = (
   sectionDetail: Publications,
-  keyPrefix: string
+  keyPrefix: string,
+  limitItemsToRender: boolean
 ): JSX.Element => {
   return (
     <div className="content-body">
       <div className="content-list">
         <div className="content">
-          {sectionDetail.list.map((publication, index) => {
-            return publication.render
-              ? renderPublication(publication.value, `${keyPrefix}_${index}`)
-              : '';
-          })}
+          {(() => {
+            let count = 0;
+            let maxItems = sectionDetail.maxItemsToRender
+              ? sectionDetail.maxItemsToRender
+              : sectionDetail.list.length <=
+                config.maxItemsToRenderInHomePage.publications
+              ? sectionDetail.list.length
+              : config.maxItemsToRenderInHomePage.publications;
+
+            return sectionDetail.list.map((publication, index) => {
+              return publication.render && count < maxItems
+                ? (limitItemsToRender && ++count,
+                  renderPublication(publication.value, `${keyPrefix}_${index}`))
+                : publication.render && count === maxItems
+                ? (++count, renderOverflowButton())
+                : '';
+            });
+          })()}
         </div>
       </div>
     </div>
@@ -176,9 +205,14 @@ const renderSectionBody = (
 const Section = (props: Props) => {
   return (
     <Content id={ProfileField.Publications}>
-      <Divider />
+      {props.renderDividerAboveLabel && <Divider />}
       <SectionLabel label={props.sectionDetail.label} />
-      {renderSectionBody(props.sectionDetail, ProfileField.Publications)}
+      {props.renderDividerBelowLabel && <Divider />}
+      {renderSectionBody(
+        props.sectionDetail,
+        ProfileField.Publications,
+        props.limitItemsToRender || false
+      )}
     </Content>
   );
 };

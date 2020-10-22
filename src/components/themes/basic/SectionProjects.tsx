@@ -43,12 +43,12 @@ const renderProject = (projectDetail: Project, key: string): JSX.Element => {
 
 const renderOverflowButton = () => {
   return (
-    <Link to="/projects">
-      <div style={{textAlign: "end"}}>
-        <Button variant="primary">Full Projects List {">>"}</Button>
+    <Link key={'projects'} to="/projects">
+      <div style={{ textAlign: 'end' }}>
+        <Button variant="primary">Full Projects List {'>>'}</Button>
       </div>
     </Link>
-  )
+  );
 }
 
 const renderSectionBody = (sectionDetail: Projects, keyPrefix: string, limitItemsToRender: boolean): JSX.Element => {

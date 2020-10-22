@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import SectionPublications from './SectionPublications';
-import SectionProjects from './SectionProjects';
+import loadable from '@loadable/component';
 
 import {
   Basics,
@@ -14,6 +13,7 @@ import { ProfileField } from '../../../types/fields';
 import './styles.css';
 import Header from './Header';
 import Footer from './Footer';
+import LoadSpinner from './LoadSpinner';
 
 interface ComponentProps {
   config: Config;
@@ -21,6 +21,17 @@ interface ComponentProps {
   profileSectionName: string;
   profileSectionData: PublicationsType | ProjectsType;
 }
+
+const LoadableSectionPublications = loadable(
+  () => import('./SectionPublications'),
+  {
+    fallback: <LoadSpinner below={true} label={'Publications'} />,
+  }
+);
+
+const LoadableSectionProjects = loadable(() => import('./SectionProjects'), {
+  fallback: <LoadSpinner below={true} label={'Publications'} />,
+});
 
 export const sectionListHasRender = <
   T extends ProfileSections[K],
@@ -48,7 +59,7 @@ const renderBody = <
     switch (profileSectionName) {
       case ProfileField.Publications:
         return (
-          <SectionPublications
+          <LoadableSectionPublications
             sectionDetail={profileSectionData as PublicationsType}
             limitItemsToRender={false}
             renderDividerBelowLabel={true}
@@ -56,7 +67,7 @@ const renderBody = <
         );
       case ProfileField.Projects:
         return (
-          <SectionProjects
+          <LoadableSectionProjects
             sectionDetail={profileSectionData as ProjectsType}
             limitItemsToRender={false}
             renderDividerBelowLabel={true}

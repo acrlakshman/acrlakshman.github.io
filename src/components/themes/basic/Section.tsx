@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import Loadable from 'react-loadable';
-// import SectionPublications from './SectionPublications';
-// import SectionProjects from './SectionProjects';
-// import SectionCustom from './SectionCustom';
-// import SectionGallery from './SectionGallery';
+import loadable from '@loadable/component';
+import LoadSpinner from './LoadSpinner';
 
 import {
   CustomSection,
@@ -48,32 +45,23 @@ const sectionCustomHasRender = <T extends ProfileCustomSection[K], K extends key
   return false;
 }
 
-const LoadableSectionPublications = Loadable({
-  loader: () => import('./SectionPublications'),
-  loading() {
-    return <div></div>;
-  },
+const LoadableSectionPublications = loadable(
+  () => import('./SectionPublications'),
+  {
+    fallback: <LoadSpinner above={true} label={'Publications'} />,
+  }
+);
+
+const LoadableSectionProjects = loadable(() => import('./SectionProjects'), {
+  fallback: <LoadSpinner above={true} label={'Publications'} />,
 });
 
-const LoadableSectionProjects = Loadable({
-  loader: () => import('./SectionProjects'),
-  loading() {
-    return <div></div>;
-  },
+const LoadableSectionGallery = loadable(() => import('./SectionGallery'), {
+  fallback: <LoadSpinner above={true} label={'Publications'} />,
 });
 
-const LoadableSectionGallery = Loadable({
-  loader: () => import('./SectionGallery'),
-  loading() {
-    return <div></div>;
-  },
-});
-
-const LoadableSectionCustom = Loadable({
-  loader: () => import('./SectionCustom'),
-  loading() {
-    return <div></div>;
-  },
+const LoadableSectionCustom = loadable(() => import('./SectionCustom'), {
+  fallback: <LoadSpinner above={true} label={'Publications'} />,
 });
 
 class Section extends Component<Props> {

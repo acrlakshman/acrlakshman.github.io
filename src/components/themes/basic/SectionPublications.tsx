@@ -161,7 +161,7 @@ const renderPublication = (
 
 const renderOverflowButton = () => {
   return (
-    <Link to="/publications">
+    <Link key={'publications'} to="/publications">
       <div style={{ textAlign: 'end' }}>
         <Button variant="primary">Full Publications List {'>>'}</Button>
       </div>

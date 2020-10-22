@@ -6,8 +6,6 @@ import Project from './Project';
 import Publication from './Publication';
 import Custom from './Custom';
 
-import './App.css';
-
 class _App extends Component {
   render() {
     return (

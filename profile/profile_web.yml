@@ -463,8 +463,8 @@ custom:
       detail: project/basic-model-viewer.md
     render: true
   - label: blog # rendered as section and another page
-    value: "[Blog](blog)"
+    value: "[Blog](blog/blog-1/blog-1-1)"
     webPage:
-      slug: blog
+      slug: blog/blog-1/blog-1-1
       detail: project/crystal-growth.md
     render: true

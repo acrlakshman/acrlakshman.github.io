@@ -23,6 +23,7 @@ const renderProject = (projectDetail: Project, key: string): JSX.Element => {
 
   return (
     <Card
+      key={key}
       id={key}
       slugPrefix={`/project`}
       url={projectDetail.url}

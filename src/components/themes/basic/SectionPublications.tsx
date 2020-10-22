@@ -141,6 +141,7 @@ const renderPublication = (
   let description = renderPublicationMeta(publicationDetail);
   return (
     <Card
+      key={key}
       id={key}
       slugPrefix={`/publication`}
       url={publicationDetail.url}

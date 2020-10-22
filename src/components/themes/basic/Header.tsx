@@ -123,10 +123,10 @@ class Header extends Component<ComponentProps, ComponentState> {
                     {this.renderNavLink(ProfileField.Publications)}
                     {this.renderNavLink(ProfileField.Projects)}
                     {this.renderNavLink(ProfileField.Gallery)}
-                    <Nav.Link>
-                      <a className="nav-link active" href="/files/resume.pdf">
+                    <Nav.Link href="/files/resume.pdf">
+                      <p className="nav-link active">
                         CV
-                      </a>
+                      </p>
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>

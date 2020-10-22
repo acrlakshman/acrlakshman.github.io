@@ -299,6 +299,9 @@ publications:
         thumbnail: gals_phase_change.png
         # If webPage is not provided, then url will be linked in the homepage for this project
         url: https://www.sciencedirect.com/science/article/pii/S0021999117307696
+        # webPage:
+        #   slug: gals
+        #   detail: project/basic-model-viewer.md
       render: true
     - value:
         type: book

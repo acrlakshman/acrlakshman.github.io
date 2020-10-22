@@ -103,6 +103,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.GoogleScholar as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={GoogleScholarLogo}
             alt={SocialProfileTypes.GoogleScholar as string}
@@ -113,6 +114,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.GitHub as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={GitHubLogo}
             alt={SocialProfileTypes.GitHub as string}
@@ -123,6 +125,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.GitLab as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={GitLabLogo}
             alt={SocialProfileTypes.GitLab as string}
@@ -133,6 +136,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.LinkedIn as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={LinkedInLogo}
             alt={SocialProfileTypes.LinkedIn as string}
@@ -143,6 +147,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.YouTube as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={YouTubeLogo}
             alt={SocialProfileTypes.YouTube as string}
@@ -153,6 +158,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.Vimeo as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={VimeoLogo}
             alt={SocialProfileTypes.Vimeo as string}
@@ -163,6 +169,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.Twitter as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={TwitterLogo}
             alt={SocialProfileTypes.Twitter as string}
@@ -173,6 +180,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.Facebook as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={FacebookLogo}
             alt={SocialProfileTypes.Facebook as string}
@@ -183,6 +191,7 @@ const renderProfileItem = (profile: SocialProfile): JSX.Element | undefined => {
       case SocialProfileTypes.Twitch as string:
         return (
           <IconLink
+            key={profile.value.network}
             profile={profile}
             logo={TwitchLogo}
             alt={SocialProfileTypes.Twitch as string}

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
-import { ProfileField } from '../../../types/fields';
 import Markdown from './Markdown';
 import Divider from './SectionDivider';
 import Header from './Header';
 import Footer from './Footer';
 import { StoreState } from '../../../reducers';
 
+import { ProfileField } from '../../../types/fields';
 import { Basics, Config, Project as ProjectType } from '../../../types/profileWeb';
 
 import './styles.css';
@@ -35,12 +35,15 @@ class Project extends Component<ComponentProps> {
   };
 
   renderBody = () => {
-return (<Content id={ProfileField.Projects}>
+    return (
+      <Content id={ProfileField.Projects}>
         <SectionLabel label={this.props.data.name} />
         <Divider />
         {this.renderContent(this.props.data)}
-      </Content>);
-  }
+      </Content>
+    );
+  };
+
   render() {
     return (
       <div className="wrapper-0">
@@ -54,8 +57,6 @@ return (<Content id={ProfileField.Projects}>
         ></section>
         <Footer config={this.props.config} basics={this.props.basics} />
       </div>
-
-      
     );
   }
 };

@@ -1,79 +1,72 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import Highlight from 'react-highlight.js';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
 import Divider from './SectionDivider';
-import re_weburl from '../../../auxiliaries/regex-weburl';
-import config from '../../../config';
+import Header from './Header';
+import Footer from './Footer';
+import Markdown from './Markdown';
+import { StoreState } from '../../../reducers';
 
-import { Publication } from '../../../types/profileWeb';
+import {
+  Basics,
+  Config,
+  Publication as PublicationType,
+} from '../../../types/profileWeb';
 import { ProfileField } from '../../../types/fields';
 
 import './styles.css';
 
-interface Props {
-  sectionDetail: Publication;
+interface ComponentProps {
+  config: Config;
+  basics: Basics;
+  data: PublicationType;
 }
 
-interface ImageProps {
-  src: string;
-  alt: string;
-}
+class Publication extends Component<ComponentProps> {
+  renderContent = (data: PublicationType): JSX.Element | undefined => {
+    if (data.webPage) {
+      const content = data.webPage.detail;
+      return (
+        <div
+          className="content-body text-left"
+          style={{ margin: '2rem 2rem 0 2rem' }}
+        >
+          <Markdown content={content} />
+        </div>
+      );
+    }
+  };
 
-const RenderImage = (props: ImageProps) => {
-  let imageSrc = props.src;
-  if (!re_weburl.test(props.src)) {
-    imageSrc = `${process.env.PUBLIC_URL}/${config.imagesPath}/${props.src}`;
-  }
-
-  return (
-    <img
-      className="avatar"
-      alt={props.alt}
-      src={imageSrc}
-      style={{ width: '150px', height: '150px', display: 'inherit' }}
-    />
-  );
-};
-
-interface CodeProps {
-  language: string;
-  value: string;
-}
-
-const RenderCode = (props: CodeProps) => {
-  return <Highlight language={props.language}>{props.value}</Highlight>;
-};
-
-const renderers = {
-  image: RenderImage,
-  imageReference: RenderImage,
-  code: RenderCode,
-};
-
-const renderSectionBody = (
-  sectionDetail: Publication,
-  keyPrefix: string
-): JSX.Element | undefined => {
-  if (sectionDetail.webPage) {
-    const content = sectionDetail.webPage.detail;
+  renderBody = () => {
     return (
-      <div className="content-body text-left">
-        <ReactMarkdown source={content} renderers={renderers}></ReactMarkdown>
+      <Content id={ProfileField.Projects}>
+        <SectionLabel label={this.props.data.title} />
+        <Divider />
+        {this.renderContent(this.props.data)}
+      </Content>
+    );
+  };
+
+  render() {
+    return (
+      <div className="wrapper-0">
+        <div className="wrapper-1 rounded">
+          <Header renderSectionsInNavBar={false} />
+          {this.renderBody()}
+        </div>
+        <section
+          className="content-section"
+          style={{ padding: '1.5rem 0 1.5rem 0', background: 'transparent' }}
+        ></section>
+        <Footer config={this.props.config} basics={this.props.basics} />
       </div>
     );
   }
+}
+
+const mapStateToProps = (state: StoreState) => {
+  return { config: state.config, basics: state.basics };
 };
 
-const _Publication = (props: Props) => {
-  return (
-    <Content id={ProfileField.Publications}>
-      <SectionLabel label={props.sectionDetail.title} />
-      <Divider />
-      {renderSectionBody(props.sectionDetail, ProfileField.Publications)}
-    </Content>
-  );
-};
-
-export default _Publication;
+export default connect(mapStateToProps, {})(Publication);

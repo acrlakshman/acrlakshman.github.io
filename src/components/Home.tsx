@@ -11,9 +11,6 @@ interface Props {
 }
 
 class Home extends Component<Props> {
-  componentDidMount() {
-    console.log(this.props);
-  }
   renderPage = () => {
     if (this.props.config.theme.render) {
       switch (this.props.config.theme.value) {

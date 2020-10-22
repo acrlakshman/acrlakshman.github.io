@@ -8,12 +8,12 @@ import Footer from './Footer';
 import Markdown from './Markdown';
 import { StoreState } from '../../../reducers';
 
+import { ProfileField } from '../../../types/fields';
 import {
   Basics,
   Config,
   Publication as PublicationType,
 } from '../../../types/profileWeb';
-import { ProfileField } from '../../../types/fields';
 
 import './styles.css';
 

@@ -93,7 +93,10 @@ const processProjectsMarkdownFields = (jsonObj) => {
     let item = jsonObj['projects']['list'][i];
     if (
       'webPage' in item['value'] &&
-      !isValidUrl(item['value']['webPage']['slug'])
+      !isValidUrl(
+        item['value']['webPage']['slug'] &&
+          isValidFilePath(item['value']['webPage']['detail'])
+      )
     ) {
       let file_ = item['value']['webPage']['detail'];
       let fileAbs = appendToRootFolder(`profile/${file_}`, 2);
@@ -118,7 +121,8 @@ const processPublicationsMarkdownFields = (jsonObj) => {
     let item = jsonObj['publications']['list'][i];
     if (
       'webPage' in item['value'] &&
-      !isValidUrl(item['value']['webPage']['slug'])
+      !isValidUrl(item['value']['webPage']['slug']) &&
+      isValidFilePath(item['value']['webPage']['detail'])
     ) {
       let file_ = item['value']['webPage']['detail'];
       let fileAbs = appendToRootFolder(`profile/${file_}`, 2);
@@ -140,7 +144,10 @@ const processCustomSectionsMarkdownFields = (jsonObj) => {
   let list = jsonObj['custom'];
 
   for (let i = 0; i < list.length; i++) {
-    if ('value' in jsonObj['custom'][i]) {
+    if (
+      'value' in jsonObj['custom'][i] &&
+      isValidFilePath(jsonObj['custom'][i]['value'])
+    ) {
       let fileAbs = appendToRootFolder(
         `profile/${jsonObj['custom'][i]['value']}`,
         2
@@ -155,7 +162,10 @@ const processCustomSectionsMarkdownFields = (jsonObj) => {
     }
 
     if ('webPage' in jsonObj['custom'][i]) {
-      if ('detail' in jsonObj['custom'][i]['webPage']) {
+      if (
+        'detail' in jsonObj['custom'][i]['webPage'] &&
+        isValidFilePath(jsonObj['custom'][i]['webPage']['detail'])
+      ) {
         let fileAbs = appendToRootFolder(
           `profile/${jsonObj['custom'][i]['webPage']['detail']}`,
           2

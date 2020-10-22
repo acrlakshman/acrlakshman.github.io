@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
-import { ProfileField } from '../../../types/fields';
 import Markdown from './Markdown';
 import Divider from './SectionDivider';
+import Header from './Header';
+import Footer from './Footer';
+import { StoreState } from '../../../reducers';
 
-import './styles.css';
+import { ProfileField } from '../../../types/fields';
 import {
   Basics,
   Config,
   CustomSection,
   SlugMap,
 } from '../../../types/profileWeb';
-import Header from './Header';
-import Footer from './Footer';
+
+import './styles.css';
 
 interface ComponentProps {
   slug: string;
@@ -27,7 +30,6 @@ interface ComponentProps {
 class Custom extends Component<ComponentProps> {
   componentDidMount() {
     window.scrollTo(0, 0);
-    console.log(this.props);
   }
 
   renderBody = (): JSX.Element => {
@@ -84,4 +86,13 @@ class Custom extends Component<ComponentProps> {
   }
 }
 
-export default Custom;
+const mapStateToProps = (state: StoreState) => {
+  return {
+    config: state.config,
+    basics: state.basics,
+    sections: state.sections.custom,
+    slugMap: state.slugMap,
+  };
+};
+
+export default connect(mapStateToProps, {})(Custom);

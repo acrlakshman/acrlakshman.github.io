@@ -457,8 +457,14 @@ custom:
     value: project/basic-model-viewer.md
     render: false
   - label: Custom page 1 # rendered as another page
-    # value: project/basic-model-viewer.md
+    # value: project/crystal-growth.md
     webPage:
       slug: custom/custom-page-1
       detail: project/basic-model-viewer.md
+    render: true
+  - label: blog # rendered as section and another page
+    value: "[Blog](blog)"
+    webPage:
+      slug: blog
+      detail: project/crystal-growth.md
     render: true

@@ -5,7 +5,7 @@ import Content from './Content';
 import Divider from './SectionDivider';
 import Header from './Header';
 import Footer from './Footer';
-import Markdown from './Markdown';
+import Markdown from '../../Markdown';
 import { StoreState } from '../../../reducers';
 
 import { ProfileField } from '../../../types/fields';
@@ -32,7 +32,7 @@ class Publication extends Component<ComponentProps> {
           className="content-body text-left"
           style={{ margin: '2rem 2rem 0 2rem' }}
         >
-          <Markdown content={content} />
+          <Markdown className="content-body markdown" content={content} />
         </div>
       );
     }

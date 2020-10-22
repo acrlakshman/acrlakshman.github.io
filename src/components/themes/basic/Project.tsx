@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
-import Markdown from './Markdown';
+import Markdown from '../../Markdown';
 import Divider from './SectionDivider';
 import Header from './Header';
 import Footer from './Footer';
@@ -28,7 +28,7 @@ class Project extends Component<ComponentProps> {
           className="content-body text-left"
           style={{ margin: '2rem 2rem 0 2rem' }}
         >
-          <Markdown content={content} />
+          <Markdown className="content-body markdown" content={content} />
         </div>
       );
     }

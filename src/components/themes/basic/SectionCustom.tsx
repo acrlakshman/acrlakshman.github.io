@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Markdown from './Markdown';
+import Markdown from '../../Markdown';
 import Content from './Content';
 import SectionLabel from './SectionLabel';
 import Divider from './SectionDivider';
@@ -24,7 +24,10 @@ class Section extends Component<ComponentProps> {
           className="content-body text-left"
           style={{ margin: '2rem 2rem 0' }}
         >
-          <Markdown content={this.props.content} className="" />
+          <Markdown
+            className="content-body markdown"
+            content={this.props.content}
+          />
         </div>
       </Content>
     );

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
-import Markdown from './Markdown';
+import Markdown from '../../Markdown';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
 
@@ -21,12 +21,22 @@ interface ComponentProps {
 
 const renderTeam = (cardDetail: ComponentProps): JSX.Element | undefined => {
   if (cardDetail.team) {
-    return <Markdown className="content-text" content={cardDetail.team} />;
+    return (
+      <Markdown
+        className="content-body markdown content-text"
+        content={cardDetail.team}
+      />
+    );
   }
 };
 
 const renderDescription = (cardDetail: ComponentProps): JSX.Element => {
-  return <Markdown className="content-text" content={cardDetail.description} />;
+  return (
+    <Markdown
+      className="content-body markdown content-text"
+      content={cardDetail.description}
+    />
+  );
 };
 
 const renderCardDetail = (

@@ -1,18 +1,17 @@
 import React, { Component, ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import ImageGallery from 'react-image-gallery';
+import ReactPlayer from 'react-player';
 import { Modal } from 'react-bootstrap';
 import Highlight from 'react-highlight.js';
-import re_weburl from '../../../auxiliaries/regex-weburl';
-import config from '../../../config';
-import { isRenderVideo, isLinkAFile } from '../../../auxiliaries/regex';
+import re_weburl from '../auxiliaries/regex-weburl';
+import config from '../config';
+import { isRenderVideo, isLinkAFile } from '../auxiliaries/regex';
 
 import 'react-image-gallery/styles/css/image-gallery.css';
-import './styles.css';
-import ReactPlayer from 'react-player';
 
 interface ComponentProps {
-  className?: string;
+  className: string;
   content: string;
 }
 
@@ -78,7 +77,7 @@ class Markdown extends Component<ComponentProps, ComponentState> {
     let imageSrc = imageProps.src;
     let imageTitle = imageProps.title;
     let imageCount = this.imageCounter;
-    
+
     if (!re_weburl.test(imageProps.src)) {
       imageSrc = `${process.env.PUBLIC_URL}/${config.imagesPath}/${imageProps.src}`;
     }
@@ -90,7 +89,7 @@ class Markdown extends Component<ComponentProps, ComponentState> {
       ];
 
     this.imageCounter++;
-    
+
     return (
       <>
         <div key={imageCount}>

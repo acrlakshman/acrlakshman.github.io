@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
-import Markdown from './Markdown';
+import Markdown from '../../Markdown';
 import Divider from './SectionDivider';
 import Header from './Header';
 import Footer from './Footer';
@@ -52,6 +52,7 @@ class Custom extends Component<ComponentProps> {
             style={{ margin: '2rem 2rem 0 2rem' }}
           >
             <Markdown
+              className="content-body markdown"
               content={this.props.sections[idx].webPage?.detail || ''}
             />
           </div>
@@ -62,7 +63,10 @@ class Custom extends Component<ComponentProps> {
         <Content id="">
           <SectionLabel label="" />
           <div className="" style={{ margin: '2rem 2rem 0 2rem' }}>
-            <Markdown className="" content="Page Not Found" />
+            <Markdown
+              className="content-body markdown"
+              content="Page Not Found"
+            />
           </div>
         </Content>
       );

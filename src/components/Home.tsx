@@ -1,41 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { RouteChildrenProps } from 'react-router-dom';
 import { StoreState } from '../reducers';
-import Header from './Header';
-import Body from './Body';
-import Footer from './Footer';
+import HomeBasic from './themes/basic/Home';
 
 import { Config } from '../types/profileWeb';
+import { WebThemes } from '../types/themes';
 
-interface Props extends RouteChildrenProps {
+interface Props {
   config: Config;
 }
 
 class Home extends Component<Props> {
-  componentDidMount() {}
-
-  renderBody = (): JSX.Element => {
-    return <Body />;
-  };
-
-  renderItem = () => {
+  componentDidMount() {
+    console.log(this.props);
+  }
+  renderPage = () => {
     if (this.props.config.theme.render) {
-      return (
-        <div className="wrapper-0">
-          <div className="wrapper-1 rounded">
-            <Header renderSectionsInNavBar={true} />
-            {this.renderBody()}
-          </div>
-          <section className="content-section" style={{padding: "1.5rem 0 1.5rem 0", background: "transparent"}}></section>
-          <Footer />
-        </div>
-      );
+      switch (this.props.config.theme.value) {
+        case WebThemes.BASIC:
+          return <HomeBasic />;
+        default:
+          return <div></div>;
+      }
     }
+
+    return <div></div>;
   };
 
   render() {
-    return this.renderItem();
+    return this.renderPage();
   }
 }
 

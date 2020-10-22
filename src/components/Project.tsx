@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { StoreState } from '../reducers';
-import Header from './Header';
-import Footer from './Footer';
 import ProjectBasic from './themes/basic/Project';
 
-import { Config, ProfileSectionsWeb, SlugMap } from '../types/profileWeb';
+import {
+  Config,
+  ProfileSectionsWeb,
+  Project as ProjectType,
+  SlugMap,
+} from '../types/profileWeb';
 import { ProfileField } from '../types/fields';
+import { WebThemes } from '../types/themes';
 
 interface ComponentProps extends RouteComponentProps<{ id: string }> {
   config: Config;
@@ -29,7 +33,7 @@ class Project extends Component<ComponentProps, ComponentState> {
     window.scrollTo(0, 0);
   }
 
-  renderBody = (): JSX.Element => {
+  pageContent = (): ProjectType | undefined => {
     const idx = this.props.slugMap[ProfileField.Projects as string][
       this.state.slug
     ].position;
@@ -39,36 +43,26 @@ class Project extends Component<ComponentProps, ComponentState> {
       this.props.sections.projects.list[idx].render &&
       this.props.sections.projects.list[idx].value.webPage
     ) {
-      return (
-        <ProjectBasic
-          sectionDetail={this.props.sections.projects.list[idx].value}
-        />
-      );
-    } else {
-      return <div></div>;
+      return this.props.sections.projects.list[idx].value;
     }
   };
 
-  renderItem = () => {
+  renderPage = () => {
     if (this.props.config.theme.render) {
-      return (
-        <div className="wrapper-0">
-          <div className="wrapper-1 rounded">
-            <Header renderSectionsInNavBar={false} />
-            {this.renderBody()}
-          </div>
-          <section
-            className="content-section"
-            style={{ padding: '1.5rem 0 1.5rem 0', background: 'transparent' }}
-          ></section>
-          <Footer />
-        </div>
-      );
+      switch (this.props.config.theme.value) {
+        case WebThemes.BASIC:
+          const data = this.pageContent();
+          return data ? <ProjectBasic data={data} /> : <div></div>;
+        default:
+          return <div></div>;
+      }
     }
+
+    return <div></div>;
   };
 
   render() {
-    return this.renderItem();
+    return this.renderPage();
   }
 }
 

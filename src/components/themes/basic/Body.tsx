@@ -10,7 +10,6 @@ import {
 import sectionRanksTheme from './ranking';
 
 import { Basics, ProfileSectionsWeb } from '../../../types/profileWeb';
-// import SocialProfiles from './SocialProfiles';
 
 interface Props {
   basics: Basics;

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { StoreState } from '../reducers';
-import Header from './Header';
-import Footer from './Footer';
+// import Header from './Header';
+// import Footer from './Footer';
 import PublicationBasic from './themes/basic/Publication';
 
 import { Config, ProfileSectionsWeb, SlugMap } from '../types/profileWeb';
@@ -54,14 +54,14 @@ class Publication extends Component<ComponentProps, ComponentState> {
       return (
         <div className="wrapper-0">
           <div className="wrapper-1 rounded">
-            <Header renderSectionsInNavBar={false} />
+            {/* <Header renderSectionsInNavBar={false} /> */}
             {this.renderBody()}
           </div>
           <section
             className="content-section"
             style={{ padding: '1.5rem 0 1.5rem 0', background: 'transparent' }}
           ></section>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       );
     }

@@ -19,13 +19,14 @@ body:after {
   background-image: -moz-linear-gradient( 0deg, rgb(151, 75, 75) 0%, rgb(255, 255, 255) 100%);
   background-image: -webkit-linear-gradient( 0deg, rgb(151, 72, 72) 0%, rgb(255, 255, 255) 100%);
   background-image: -ms-linear-gradient( 0deg, rgb(128, 77, 77) 0%, rgb(255, 255, 255) 100%);
-  opacity: 0.9;
+  opacity: 0.5;
   z-index: -1;
 }
 
 .wrapper-0 {
 	width: 68.75%;
-	margin: 0 auto;
+  margin: 0 auto;
+  font-family: 'Roboto';
 }
 
 @media (min-width: 360px) {
@@ -173,7 +174,10 @@ body:after {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.content-list a {
+.content-body .content-list a {
+  text-decoration: none;
+}
+.content-list .content a {
   text-decoration: none;
 }
 

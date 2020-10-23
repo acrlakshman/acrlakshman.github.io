@@ -7,6 +7,9 @@ import Project from './Project';
 import Publication from './Publication';
 import Custom from './Custom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './railscasts.css';
+
 class _App extends Component {
   render() {
     return (

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
@@ -10,8 +12,6 @@ import { Project, Projects } from '../../../types/profileWeb';
 import {ProfileField} from '../../../types/fields'
 
 import './styles.css';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 interface Props {
   sectionDetail: Projects;

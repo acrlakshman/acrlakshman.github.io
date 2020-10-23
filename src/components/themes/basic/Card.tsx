@@ -79,7 +79,10 @@ const Card: FunctionComponent<ComponentProps> = (props: ComponentProps) => {
     if (!re_weburl.test(props.webPage.slug)) {
       return (
         <Link to={`${props.slugPrefix}/${props.webPage.slug}`}>
-          <div className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item">
+          <div
+            className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
+            style={{ marginLeft: '0', marginRight: '0' }}
+          >
             {renderCardDetail(props, '#007bff')}
           </div>
         </Link>
@@ -87,7 +90,10 @@ const Card: FunctionComponent<ComponentProps> = (props: ComponentProps) => {
     } else {
       return (
         <a href={props.webPage.slug}>
-          <div className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item">
+          <div
+            className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
+            style={{ marginLeft: '0', marginRight: '0' }}
+          >
             {renderCardDetail(props, '#007bff')}
           </div>
         </a>
@@ -98,7 +104,10 @@ const Card: FunctionComponent<ComponentProps> = (props: ComponentProps) => {
   if (props.url && props.url !== '') {
     return (
       <a href={props.url}>
-        <div className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item">
+        <div
+          className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
+          style={{ marginLeft: '0', marginRight: '0' }}
+        >
           {renderCardDetail(props, '#007bff')}
         </div>
       </a>
@@ -106,7 +115,10 @@ const Card: FunctionComponent<ComponentProps> = (props: ComponentProps) => {
   }
 
   return (
-    <div className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item">
+    <div
+      className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
+      style={{ marginLeft: '0', marginRight: '0' }}
+    >
       {renderCardDetail(props)}
     </div>
   );

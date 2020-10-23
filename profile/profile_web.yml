@@ -201,7 +201,7 @@ projects:
       render: true
     - value:
         name: Weak Formulation of Gradient Augmented Level Set Method to Stephan Type Problems
-        description: "This was my final project for [Prof. Eftychios Sifakis's](http://pages.cs.wisc.edu/~sifakis) course [CS838](http://pages.cs.wisc.edu/~sifakis/courses/cs838-f12/) (_Advanced Modelling and Simulation_) (**Fall-2012**).  \n
+        description: "This was my final project for [Prof. Eftychios Sifakis's](http://pages.cs.wisc.edu/~sifakis) course [CS838](http://pages.cs.wisc.edu/~sifakis/courses/cs838-f12/) (_Advanced Modelling and Simulation_) (Fall-2012).  \n
         *Video along with the related files are included*"
         team: "_Lakshman Anumolu_"
         thumbnail: crystal_growth_t.png

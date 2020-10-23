@@ -83,7 +83,7 @@ const Card: FunctionComponent<ComponentProps> = (props: ComponentProps) => {
             className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
             style={{ marginLeft: '0', marginRight: '0' }}
           >
-            {renderCardDetail(props, '#007bff')}
+            {renderCardDetail(props, '#0028ff')}
           </div>
         </Link>
       );
@@ -94,7 +94,7 @@ const Card: FunctionComponent<ComponentProps> = (props: ComponentProps) => {
             className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
             style={{ marginLeft: '0', marginRight: '0' }}
           >
-            {renderCardDetail(props, '#007bff')}
+            {renderCardDetail(props, '#0028ff')}
           </div>
         </a>
       );
@@ -108,7 +108,7 @@ const Card: FunctionComponent<ComponentProps> = (props: ComponentProps) => {
           className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start border content-item"
           style={{ marginLeft: '0', marginRight: '0' }}
         >
-          {renderCardDetail(props, '#007bff')}
+          {renderCardDetail(props, '#0028ff')}
         </div>
       </a>
     );

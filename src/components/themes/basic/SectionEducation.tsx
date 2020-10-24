@@ -1,8 +1,6 @@
 import React from 'react';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
-import re_weburl from '../../../auxiliaries/regex-weburl';
-import config from '../../../config';
 import Divider from './SectionDivider';
 
 import { Education, EducationDetail } from '../../../types/profileWeb';
@@ -21,13 +19,6 @@ const renderItem = (
   key: string,
   className: string
 ): JSX.Element => {
-  let imageSrc = data.major;
-  if (imageSrc && !re_weburl.test(imageSrc)) {
-    imageSrc = `${process.env.PUBLIC_URL}/${config.imagesPath}/${imageSrc}`;
-  }
-
-  console.log(className)
-
   return (
     <div key={key} className={className}>
       <div
@@ -44,13 +35,15 @@ const renderItem = (
           <div className="col-md-6" style={{ textAlign: 'left' }}>
             <b>{data.studyType || ''}</b>
           </div>
-          {(data.startDate && data.endDate) ?
-            (<div className="col-md-6" style={{ textAlign: 'right' }}>
+          {data.startDate && data.endDate ? (
+            <div className="col-md-6" style={{ textAlign: 'right' }}>
               <i>
                 {data.startDate} - {data.endDate}
               </i>
-            </div>) : ''
-          }
+            </div>
+          ) : (
+            ''
+          )}
         </div>
         <div style={{ textAlign: 'left' }}>{data.major}</div>
         <div style={{ textAlign: 'left' }}>
@@ -96,7 +89,6 @@ const renderSectionBody = (
 };
 
 const Section = (props: ComponentProps) => {
-  console.log(props.sectionDetail.list.length)
   return (
     <Content id={ProfileField.Projects}>
       {props.renderDividerAboveLabel && <Divider />}
@@ -105,7 +97,11 @@ const Section = (props: ComponentProps) => {
       {renderSectionBody(
         props.sectionDetail,
         ProfileField.Projects,
-        props.sectionDetail.list.length > 2 ? "col-md-4" : (props.sectionDetail.list.length === 2 ? "col-md-6" : "offset-3 col-md-6")
+        props.sectionDetail.list.length > 2
+          ? 'col-md-4'
+          : props.sectionDetail.list.length === 2
+          ? 'col-md-6'
+          : 'offset-3 col-md-6'
       )}
     </Content>
   );

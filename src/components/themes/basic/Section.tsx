@@ -82,7 +82,6 @@ class Section extends Component<Props> {
           return (
             <LoadableSectionEducation
               sectionDetail={sectionDetail as Education}
-              limitItemsToRender={true}
               renderDividerAboveLabel={true}
             />
           );

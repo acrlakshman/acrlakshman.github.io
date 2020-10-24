@@ -89,26 +89,26 @@ education:
         major: Mechanical Engineering
         minor: ''
         studyType: B.Tech
-        startDate: September 2004
-        endDate: May 2008
+        # startDate: September 2004
+        # endDate: May 2008
       render: false
-    # - value:
-    #     institution: University of Wisconsin-Madison
-    #     url: https://wisc.edu
-    #     major: Mechanical Engineering
-    #     minor: ''
-    #     studyType: MS
-    #     startDate: June 2009
-    #     endDate: August 2011
-    #   render: true
+    - value:
+        institution: University of Wisconsin-Madison
+        url: https://wisc.edu
+        major: Mechanical Engineering
+        minor: ''
+        studyType: MS
+        # startDate: June 2009
+        # endDate: August 2011
+      render: false
     - value:
         institution: University of Wisconsin-Madison
         url: https://wisc.edu
         major: Mechanical Engineering
         minor: Computer Science
         studyType: PhD
-        startDate: September 2011
-        endDate: May 2017
+        # startDate: September 2011
+        # endDate: May 2017
         grade: 3.9
         gradeTotal: 4.0
         courses:

@@ -1,11 +1,8 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
-// import Card from './Card';
 import Divider from './SectionDivider';
 
 import { Education, EducationDetail } from '../../../types/profileWeb';
@@ -15,22 +12,24 @@ import './styles.css';
 
 interface ComponentProps {
   sectionDetail: Education;
-  limitItemsToRender?: boolean;
   renderDividerAboveLabel?: boolean;
   renderDividerBelowLabel?: boolean;
 }
 
-const renderProject = (
-  projectDetail: EducationDetail,
-  key: string
+const renderItem = (
+  data: EducationDetail,
+  key: string,
+  className: string
 ): JSX.Element => {
-  let imageSrc = projectDetail.major;
+  let imageSrc = data.major;
   if (imageSrc && !re_weburl.test(imageSrc)) {
     imageSrc = `${process.env.PUBLIC_URL}/${config.imagesPath}/${imageSrc}`;
   }
 
+  console.log(className)
+
   return (
-    <div key={key} className="col-md-6">
+    <div key={key} className={className}>
       <div
         className="col-md-12 border"
         style={{
@@ -43,92 +42,53 @@ const renderProject = (
       >
         <div className="row">
           <div className="col-md-6" style={{ textAlign: 'left' }}>
-            <b>{projectDetail.studyType}</b>
+            <b>{data.studyType || ''}</b>
           </div>
-          {/* <div className="col-md-6" style={{ textAlign: 'right' }}>
-            <i>
-              {projectDetail.startDate} - {projectDetail.endDate}
-            </i>
-          </div> */}
+          {(data.startDate && data.endDate) ?
+            (<div className="col-md-6" style={{ textAlign: 'right' }}>
+              <i>
+                {data.startDate} - {data.endDate}
+              </i>
+            </div>) : ''
+          }
         </div>
-        <div style={{ textAlign: 'left' }}>{projectDetail.major}</div>
+        <div style={{ textAlign: 'left' }}>{data.major}</div>
         <div style={{ textAlign: 'left' }}>
-          {projectDetail.minor ? `${projectDetail.minor} (minor)` : ''}&nbsp;
+          {data.minor ? `${data.minor} (minor)` : ''}&nbsp;
         </div>
-        {/* <div style={{ textAlign: 'left' }}>Computer Science (minor)</div> */}
-        {/* <div style={{ textAlign: 'right' }}>
-          <i>University of Wisconsin-Madison Madison Madison</i>
-        </div> */}
       </div>
       <div
         className="col-md-12"
         style={{
           textAlign: 'left',
-          // paddingLeft: '5px',
           marginTop: '-15px',
           fontSize: '14px',
         }}
       >
-        <b>{projectDetail.institution || ''}</b>
+        <b>{data.institution || ''}</b>
       </div>
     </div>
-  );
-
-  // return (
-  //   <Card
-  //     key={key}
-  //     id={key}
-  //     slugPrefix={`/project`}
-  //     url={projectDetail.url}
-  //     title={''}
-  //     team={''}
-  //     description={''}
-  //     thumbnail={''}
-  //   />
-  // );
-};
-
-const renderOverflowButton = () => {
-  return (
-    <Link key={'projects'} to="/projects">
-      <div style={{ textAlign: 'end' }}>
-        <Button variant="primary">Full Projects List {'>>'}</Button>
-      </div>
-    </Link>
   );
 };
 
 const renderSectionBody = (
-  sectionDetail: Education,
+  data: Education,
   keyPrefix: string,
-  limitItemsToRender: boolean
+  className: string
 ): JSX.Element => {
   return (
     <div className="content-body">
       <div className="content-list">
         <div
-          // className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start flex-nowrap row align-content-start content-item"
           className="flex-shrink-1 justify-content-start align-items-start align-content-start align-self-start row align-content-start"
           style={{ marginLeft: '5px', marginRight: '5px' }}
         >
-          {(() => {
-            let count = 0;
-            let maxItems = sectionDetail.maxItemsToRender
-              ? sectionDetail.maxItemsToRender
-              : sectionDetail.list.length <=
-                config.maxItemsToRenderInHomePage.projects
-              ? sectionDetail.list.length
-              : config.maxItemsToRenderInHomePage.projects;
-
-            return sectionDetail.list.map((project, index) => {
-              return project.render && count < maxItems
-                ? (limitItemsToRender && ++count,
-                  renderProject(project.value, `${keyPrefix}_${index}`))
-                : project.render && count === maxItems
-                ? (++count, renderOverflowButton())
+          {data.list.map((project, index) => {
+              return project.render
+                ? renderItem(project.value, `${keyPrefix}_${index}`, className)
                 : '';
-            });
-          })()}
+            })
+          }
         </div>
       </div>
     </div>
@@ -136,6 +96,7 @@ const renderSectionBody = (
 };
 
 const Section = (props: ComponentProps) => {
+  console.log(props.sectionDetail.list.length)
   return (
     <Content id={ProfileField.Projects}>
       {props.renderDividerAboveLabel && <Divider />}
@@ -144,7 +105,7 @@ const Section = (props: ComponentProps) => {
       {renderSectionBody(
         props.sectionDetail,
         ProfileField.Projects,
-        props.limitItemsToRender || false
+        props.sectionDetail.list.length > 2 ? "col-md-4" : (props.sectionDetail.list.length === 2 ? "col-md-6" : "offset-3 col-md-6")
       )}
     </Content>
   );

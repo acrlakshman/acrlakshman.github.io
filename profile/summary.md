@@ -1,4 +1,4 @@
-I am currently employed at [Convergent Science]. Before this I was in graduate school at [University of Wisconsin-Madison] where I earned a PhD. in [Mechanical Engineer](https://www.engr.wisc.edu/department/mechanical-engineering/) with a minor in [Computer Science](https://www.cs.wisc.edu/) under the supervision of [Prof. Mario F. Trujillo].
+I am currently employed at [Convergent Science]. Before this I was in graduate school at [University of Wisconsin-Madison] where I earned a PhD. in [Mechanical Engineering](https://www.engr.wisc.edu/department/mechanical-engineering/) with a minor in [Computer Science](https://www.cs.wisc.edu/) under the supervision of [Prof. Mario F. Trujillo].
 
 **My interests:**
 * Physics based Modeling and Simulations

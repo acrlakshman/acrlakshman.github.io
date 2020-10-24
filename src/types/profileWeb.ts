@@ -79,19 +79,21 @@ export interface Basics extends OptionalArgs {
   profiles: SocialProfile[];
 }
 
+export interface WorkDetail {
+  name: string;
+  location: string;
+  description: string;
+  position: string;
+  url?: string;
+  startDate: string;
+  endDate: string;
+  highlights: string[];
+}
+
 export interface Work extends OptionalArgs {
   label: string;
   list: {
-    value: {
-      name: string;
-      location: string;
-      description: string;
-      position: string;
-      url: string;
-      startDate: string;
-      endData: string;
-      highlights: string[];
-    };
+    value: WorkDetail;
     render: boolean;
   }[];
 }

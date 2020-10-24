@@ -73,11 +73,11 @@ work:
         position: Senior Software Engineer
         url: https://convergecfd.com
         startDate: March, 2017
-        endData: Present
+        endDate: Present
         highlights:
           - Implemented interface reconstruction algorithm for photo-realistic rendering
           - Implemented new data structures
-      render: false
+      render: true
       # - value: # provide an example for university jobs
 education:
   label: Education

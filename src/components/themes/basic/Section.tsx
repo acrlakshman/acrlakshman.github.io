@@ -11,6 +11,7 @@ import {
   Publications,
   Gallery,
   Education,
+  Work,
 } from '../../../types/profileWeb';
 import { ProfileField } from '../../../types/fields';
 
@@ -46,6 +47,13 @@ const sectionCustomHasRender = <T extends ProfileCustomSection[K], K extends key
   return false;
 }
 
+const LoadableSectionExperience = loadable(
+  () => import('./SectionExperience'),
+  {
+    fallback: <LoadSpinner above={true} label={'Experience'} />,
+  }
+);
+
 const LoadableSectionEducation = loadable(() => import('./SectionEducation'), {
   fallback: <LoadSpinner above={true} label={'Education'} />,
 });
@@ -78,6 +86,13 @@ class Section extends Component<Props> {
   ): JSX.Element | undefined => {
     if (sectionDetail) {
       switch (this.props.sectionName) {
+        case ProfileField.Work:
+          return (
+            <LoadableSectionExperience
+              sectionDetail={sectionDetail as Work}
+              renderDividerAboveLabel={true}
+            />
+          );
         case ProfileField.Education:
           return (
             <LoadableSectionEducation

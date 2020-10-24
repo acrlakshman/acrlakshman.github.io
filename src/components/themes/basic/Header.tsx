@@ -67,6 +67,7 @@ class Header extends Component<ComponentProps, ComponentState> {
         text = this.props.basics.summary.label;
         render = true;
         break;
+
       case ProfileField.Publications as string:
         id = ProfileField.Publications as string;
         if (this.props.sections.publications) {
@@ -74,6 +75,7 @@ class Header extends Component<ComponentProps, ComponentState> {
           render = sectionListHasRender(this.props.sections.publications);
         }
         break;
+
       case ProfileField.Projects as string:
         id = ProfileField.Projects as string;
         if (this.props.sections.projects) {
@@ -81,6 +83,7 @@ class Header extends Component<ComponentProps, ComponentState> {
           render = sectionListHasRender(this.props.sections.projects);
         }
         break;
+
       case ProfileField.Gallery as string:
         id = ProfileField.Gallery as string;
         if (this.props.sections.gallery) {
@@ -88,6 +91,15 @@ class Header extends Component<ComponentProps, ComponentState> {
           render = sectionListHasRender(this.props.sections.gallery);
         }
         break;
+
+      case ProfileField.Work as string:
+        id = ProfileField.Work as string;
+        if (this.props.sections.work) {
+          text = this.props.sections.work.label;
+          render = sectionListHasRender(this.props.sections.work);
+        }
+        break;
+
       default:
     }
 
@@ -123,10 +135,9 @@ class Header extends Component<ComponentProps, ComponentState> {
                     {this.renderNavLink(ProfileField.Publications)}
                     {this.renderNavLink(ProfileField.Projects)}
                     {this.renderNavLink(ProfileField.Gallery)}
+                    {this.renderNavLink(ProfileField.Work)}
                     <Nav.Link href="/files/resume.pdf">
-                      <p className="nav-link active">
-                        CV
-                      </p>
+                      <p className="nav-link active">CV</p>
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>

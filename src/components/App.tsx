@@ -10,7 +10,7 @@ import Custom from './Custom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './railscasts.css';
 
-class _App extends Component {
+class App extends Component {
   render() {
     return (
       <div>
@@ -32,4 +32,4 @@ class _App extends Component {
   }
 }
 
-export default connect(null, {})(_App);
+export default connect(null, {})(App);

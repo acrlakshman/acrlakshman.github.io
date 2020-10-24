@@ -48,13 +48,17 @@ body:after {
   }
 }
 
+.wrapper-0 a {
+  color: #0028ff;
+}
+
 .wrapper-1 {
   background: #fff;
   padding-bottom: 3rem;
 }
 
-.wrapper-0 a {
-  color: #0028ff;
+.wrapper-1 .nav-link {
+  padding-bottom: 0%;
 }
 
 .content-section.introduction {

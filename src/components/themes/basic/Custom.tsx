@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import loadable from '@loadable/component';
+import LoadSpinner from './LoadSpinner';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
-import Markdown from '../../Markdown';
 import Divider from './SectionDivider';
 import Header from './Header';
 import Footer from './Footer';
@@ -26,6 +27,10 @@ interface ComponentProps {
   sections?: CustomSection[];
   slugMap: SlugMap;
 }
+
+const LoadableMarkdown = loadable(() => import('../../Markdown'), {
+  fallback: <LoadSpinner below={true} label={''} />,
+});
 
 class Custom extends Component<ComponentProps> {
   componentDidMount() {
@@ -51,7 +56,7 @@ class Custom extends Component<ComponentProps> {
             className="content-body text-left"
             style={{ margin: '2rem 2rem 0 2rem' }}
           >
-            <Markdown
+            <LoadableMarkdown
               className="content-body markdown"
               content={this.props.sections[idx].webPage?.detail || ''}
             />
@@ -63,7 +68,7 @@ class Custom extends Component<ComponentProps> {
         <Content id="">
           <SectionLabel label="" />
           <div className="" style={{ margin: '2rem 2rem 0 2rem' }}>
-            <Markdown
+            <LoadableMarkdown
               className="content-body markdown"
               content="Page Not Found"
             />

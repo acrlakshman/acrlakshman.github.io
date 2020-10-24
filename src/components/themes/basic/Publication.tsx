@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import loadable from '@loadable/component';
+import LoadSpinner from './LoadSpinner';
 import SectionLabel from './SectionLabel';
 import Content from './Content';
 import Divider from './SectionDivider';
 import Header from './Header';
 import Footer from './Footer';
-import Markdown from '../../Markdown';
 import { StoreState } from '../../../reducers';
 
 import { ProfileField } from '../../../types/fields';
@@ -23,6 +24,10 @@ interface ComponentProps {
   data: PublicationType;
 }
 
+const LoadableMarkdown = loadable(() => import('../../Markdown'), {
+  fallback: <LoadSpinner below={true} label={''} />,
+});
+
 class Publication extends Component<ComponentProps> {
   renderContent = (data: PublicationType): JSX.Element | undefined => {
     if (data.webPage) {
@@ -32,7 +37,10 @@ class Publication extends Component<ComponentProps> {
           className="content-body text-left"
           style={{ margin: '2rem 2rem 0 2rem' }}
         >
-          <Markdown className="content-body markdown" content={content} />
+          <LoadableMarkdown
+            className="content-body markdown"
+            content={content}
+          />
         </div>
       );
     }

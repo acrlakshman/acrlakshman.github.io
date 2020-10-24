@@ -34,7 +34,6 @@ class List extends Component<ComponentProps, ComponentState> {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    console.log(this.props);
   }
 
   getProfileSection = (): PublicationsType | ProjectsType | undefined => {

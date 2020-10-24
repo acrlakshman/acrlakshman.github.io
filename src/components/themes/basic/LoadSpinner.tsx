@@ -13,7 +13,6 @@ const LoadSpinner = ({
   below?: boolean;
   label?: string;
 }) => {
-  console.log(`above: ${above}; below: ${below}`);
   return (
     <Content id={'spinner'}>
       {above && <Divider />}

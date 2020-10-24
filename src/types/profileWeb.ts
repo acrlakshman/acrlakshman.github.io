@@ -96,21 +96,23 @@ export interface Work extends OptionalArgs {
   }[];
 }
 
+export interface EducationDetail {
+  institution?: string;
+  url?: string;
+  major: string;
+  minor?: string;
+  studyType?: string;
+  startDate?: string;
+  endDate?: string;
+  grade?: number;
+  gradeTotal?: number;
+  courses?: string[];
+}
+
 export interface Education extends OptionalArgs {
   label: string;
   list: {
-    value: {
-      institution?: string;
-      url?: string;
-      major: string;
-      minor?: string;
-      studyType?: string;
-      startDate?: string;
-      endDate?: string;
-      grade?: number;
-      gradeTotal?: number;
-      courses?: string[];
-    };
+    value: EducationDetail;
     render: boolean;
   }[];
 }

@@ -84,6 +84,24 @@ education:
   rank: 1
   list:
     - value:
+        institution: National Institute of Technology Durgapur
+        url: https://nitdgp.ac.in
+        major: Mechanical Engineering
+        minor: ''
+        studyType: B.Tech
+        startDate: September 2004
+        endDate: May 2008
+      render: true
+    # - value:
+    #     institution: University of Wisconsin-Madison
+    #     url: https://wisc.edu
+    #     major: Mechanical Engineering
+    #     minor: ''
+    #     studyType: MS
+    #     startDate: June 2009
+    #     endDate: August 2011
+    #   render: true
+    - value:
         institution: University of Wisconsin-Madison
         url: https://wisc.edu
         major: Mechanical Engineering
@@ -96,16 +114,7 @@ education:
         courses:
           - CS521 - Computer Graphics
           - ME801 - HPC
-      render: false
-    - value:
-        institution: University of Wisconsin-Madison
-        url: https://wisc.edu
-        major: Mechanical Engineering
-        minor: Computer Science
-        studyType: MS
-        startDate: June 2009
-        endDate: August 2011
-      render: false
+      render: true
 projects:
   label: "Projects"
   rank: 4

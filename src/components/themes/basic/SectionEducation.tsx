@@ -5,7 +5,7 @@ import SectionLabel from './SectionLabel';
 import Content from './Content';
 import re_weburl from '../../../auxiliaries/regex-weburl';
 import config from '../../../config';
-import Card from './Card';
+// import Card from './Card';
 import Divider from './SectionDivider';
 
 import { Education, EducationDetail } from '../../../types/profileWeb';

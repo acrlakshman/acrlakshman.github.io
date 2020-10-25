@@ -78,7 +78,7 @@ work:
         highlights:
           - Implemented interface reconstruction algorithm for photo-realistic rendering
           - Implemented new data structures
-      render: true
+      render: false
     - value: # check
         name: University of Wisconsin-Madison
         location: Madison, WI
@@ -90,7 +90,7 @@ work:
         highlights:
           - Built in-house CFD tool
           - Particle identification algorithm
-      render: true
+      render: false
       # - value: # provide an example for university jobs
 education:
   label: Education
@@ -104,7 +104,7 @@ education:
         studyType: B.Tech
         # startDate: September 2004
         # endDate: May 2008
-      render: true
+      render: false
     # - value:
     #     institution: University of Wisconsin-Madison
     #     url: https://wisc.edu
@@ -127,7 +127,7 @@ education:
         courses:
           - CS521 - Computer Graphics
           - ME801 - HPC
-      render: true
+      render: false
 projects:
   label: "Projects"
   rank: 4

@@ -64,7 +64,7 @@ basics:
       render: false
 work:
   label: Experience
-  rank: 2
+  rank: 1
   list:
     - value: # check
         name: Convergent Science
@@ -94,7 +94,7 @@ work:
       # - value: # provide an example for university jobs
 education:
   label: Education
-  rank: 1
+  rank: 2
   list:
     - value:
         institution: National Institute of Technology Durgapur
@@ -104,16 +104,16 @@ education:
         studyType: B.Tech
         # startDate: September 2004
         # endDate: May 2008
-      render: false
-    - value:
-        institution: University of Wisconsin-Madison
-        url: https://wisc.edu
-        major: Mechanical Engineering
-        minor: ''
-        studyType: MS
-        # startDate: June 2009
-        # endDate: August 2011
-      render: false
+      render: true
+    # - value:
+    #     institution: University of Wisconsin-Madison
+    #     url: https://wisc.edu
+    #     major: Mechanical Engineering
+    #     minor: ''
+    #     studyType: MS
+    #     # startDate: June 2009
+    #     # endDate: August 2011
+    #   render: false
     - value:
         institution: University of Wisconsin-Madison
         url: https://wisc.edu
@@ -127,7 +127,7 @@ education:
         courses:
           - CS521 - Computer Graphics
           - ME801 - HPC
-      render: false
+      render: true
 projects:
   label: "Projects"
   rank: 4
@@ -406,10 +406,20 @@ gallery:
   list:
     - value:
         type: image
-        src: intro/pic1.png
+        src: pic.png
         caption:
           title: Basic Model Viewer
           description: A project
+      render: false
+    - value:
+        type: video
+        platform: youtube
+        videoId: Wsije1KetVw
+      render: false
+    - value:
+        type: video
+        platform: youtube
+        videoId: Wsije1KetVw
       render: false
     - value:
         type: video

@@ -43,7 +43,10 @@ class Home extends Component<ComponentProps, ComponentState> {
       return (
         <div className="wrapper-0">
           <div className="wrapper-1 rounded">
-            <Header renderSectionsInNavBar={true} />
+            <Header
+              sectionRanks={this.state.sectionRanks}
+              renderSectionsInNavBar={true}
+            />
             {this.renderBody()}
           </div>
           <section

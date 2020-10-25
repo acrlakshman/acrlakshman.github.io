@@ -7,11 +7,12 @@ import { StoreState } from '../../../reducers';
 import { sectionListHasRender } from './Section';
 
 import { Basics, ProfileSectionsWeb } from '../../../types/profileWeb';
-
-import './styles.css';
 import { ProfileField } from '../../../types/fields';
 
+import './styles.css';
+
 interface ComponentProps {
+  sectionRanks?: string[];
   renderSectionsInNavBar: boolean;
   basics: Basics;
   sections: ProfileSectionsWeb;
@@ -108,8 +109,7 @@ class Header extends Component<ComponentProps, ComponentState> {
     }
   };
 
-  renderItem = (): JSX.Element => {;
-    // navbar navbar-dark navbar-expand-md fixed-top bg-primary shadow-sm
+  renderItem = (): JSX.Element => {
     return (
       <>
         <Navbar
@@ -132,10 +132,11 @@ class Header extends Component<ComponentProps, ComponentState> {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto">
                     {this.renderNavLink(ProfileField.Basics)}
-                    {this.renderNavLink(ProfileField.Publications)}
-                    {this.renderNavLink(ProfileField.Projects)}
-                    {this.renderNavLink(ProfileField.Gallery)}
-                    {this.renderNavLink(ProfileField.Work)}
+                    {this.props.sectionRanks
+                      ? this.props.sectionRanks.map((item: string) => {
+                          return this.renderNavLink(item);
+                        })
+                      : ''}
                     <Nav.Link href="/files/resume.pdf">
                       <p className="nav-link active">CV</p>
                     </Nav.Link>

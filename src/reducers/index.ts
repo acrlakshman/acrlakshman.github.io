@@ -31,7 +31,7 @@ export const reducers = combineReducers<StoreState>({
   },
   slugMap: () => {
     return 'slugMap' in profileWebData
-      ? profileWebData[ProfileField.SlugMap]
+      ? { ...profileWebData[ProfileField.SlugMap] }
       : {};
   },
   sections: () => {

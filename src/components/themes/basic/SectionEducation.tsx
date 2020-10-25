@@ -90,7 +90,7 @@ const renderSectionBody = (
 
 const Section = (props: ComponentProps) => {
   return (
-    <Content id={ProfileField.Projects}>
+    <Content id={ProfileField.Work}>
       {props.renderDividerAboveLabel && <Divider />}
       <SectionLabel label={props.sectionDetail.label} />
       {props.renderDividerBelowLabel && <Divider />}

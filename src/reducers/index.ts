@@ -7,8 +7,8 @@ import {
   ProfileWeb,
   SlugMap,
 } from '../types/profileWeb';
-import profileWebData from '../preprocessor/profile_web.json';
-import profileResumeData from '../preprocessor/profile_web.json';
+import profileWebData from '../preprocessors/profile_web.json';
+import profileResumeData from '../preprocessors/profile_web.json';
 import { ProfileField } from '../types/fields';
 
 export interface StoreState {

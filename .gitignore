@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # exclude few files
-src/preprocessor/*.json
+src/preprocessors/*.json
 public/images
 public/videos
 public/files

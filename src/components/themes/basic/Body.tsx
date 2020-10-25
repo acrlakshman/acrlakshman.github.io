@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 import { StoreState } from '../../../reducers';
 import Introduction from './Introduction';
 import Section from './Section';
-import {
-  getSortedArray,
-  getProfileRankings,
-} from '../../../auxiliaries/rankSections';
-import sectionRanksTheme from './ranking';
 
 import { Basics, ProfileSectionsWeb } from '../../../types/profileWeb';
 

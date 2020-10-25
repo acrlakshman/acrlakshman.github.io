@@ -72,7 +72,7 @@ const processProfileSummary = (jsonObj) => {
   let summary = jsonObj['basics']['summary']['value'];
 
   if (isValidFilePath(summary)) {
-    let fileAbs = appendToRootFolder(`profile/${summary}`, 2);
+    let fileAbs = appendToRootFolder(`_profile/${summary}`, 2);
     try {
       fs.accessSync(fileAbs, fs.constants.F_OK);
       summary = fs.readFileSync(fileAbs, 'utf8');
@@ -99,7 +99,7 @@ const processProjectsMarkdownFields = (jsonObj) => {
       )
     ) {
       let file_ = item['value']['webPage']['detail'];
-      let fileAbs = appendToRootFolder(`profile/${file_}`, 2);
+      let fileAbs = appendToRootFolder(`_profile/${file_}`, 2);
       try {
         fs.accessSync(fileAbs, fs.constants.F_OK);
         jsonObj['projects']['list'][i]['value']['webPage'][
@@ -125,7 +125,7 @@ const processPublicationsMarkdownFields = (jsonObj) => {
       isValidFilePath(item['value']['webPage']['detail'])
     ) {
       let file_ = item['value']['webPage']['detail'];
-      let fileAbs = appendToRootFolder(`profile/${file_}`, 2);
+      let fileAbs = appendToRootFolder(`_profile/${file_}`, 2);
       try {
         fs.accessSync(fileAbs, fs.constants.F_OK);
         jsonObj['publications']['list'][i]['value']['webPage'][
@@ -149,7 +149,7 @@ const processCustomSectionsMarkdownFields = (jsonObj) => {
       isValidFilePath(jsonObj['custom'][i]['value'])
     ) {
       let fileAbs = appendToRootFolder(
-        `profile/${jsonObj['custom'][i]['value']}`,
+        `_profile/${jsonObj['custom'][i]['value']}`,
         2
       );
 
@@ -167,7 +167,7 @@ const processCustomSectionsMarkdownFields = (jsonObj) => {
         isValidFilePath(jsonObj['custom'][i]['webPage']['detail'])
       ) {
         let fileAbs = appendToRootFolder(
-          `profile/${jsonObj['custom'][i]['webPage']['detail']}`,
+          `_profile/${jsonObj['custom'][i]['webPage']['detail']}`,
           2
         );
 

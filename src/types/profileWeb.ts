@@ -53,7 +53,7 @@ export interface Basics extends OptionalArgs {
     value: string;
     render: boolean;
   };
-  phone: {
+  phone?: {
     value: string;
     render: boolean;
   };

@@ -23,7 +23,7 @@ basics:
     value: anumolu@uwalumni.com
     render: true
   phone:
-    value: 206-486-2546
+    value: ''
     render: false
   url:
     value: 'https://lakshmananumolu.com'

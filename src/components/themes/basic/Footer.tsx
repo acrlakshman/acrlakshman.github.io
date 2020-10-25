@@ -23,7 +23,7 @@ const Footer: FunctionComponent<React.PropsWithChildren<ComponentProps>> = (
             <div></div>
           ) : (
             <div>
-              Created using{' '}
+              Generated using{' '}
               <a href="https://github.com/acrlakshman/profileio">ProfileIO</a>
             </div>
           )}

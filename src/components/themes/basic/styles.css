@@ -1,4 +1,4 @@
-body {
+body::after {
   font-family: 'Roboto', monospace;
 	background-attachment: fixed;
 	background-image: url("https://www.theprogress.com/wp-content/uploads/2020/04/21333414_web1_200420-CRM-earth-day-EARTHDAY_1.jpg");
@@ -8,7 +8,7 @@ body {
 	position: relative;
 }
 
-body:after {
+body::after {
   position: absolute;
   content: "";
   left: 0;

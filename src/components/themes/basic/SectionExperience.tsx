@@ -34,6 +34,7 @@ const renderItem = (
   key: string,
   className: string
 ): JSX.Element => {
+  const color = data.active ? '' : 'grey';
   return (
     <div key={key} className={className}>
       <div
@@ -44,10 +45,12 @@ const renderItem = (
           marginTop: '1.5rem',
           marginBottom: '1.5rem',
           boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+          color
         }}
       >
         <div className="row">
           <div className="col-md-6" style={{ textAlign: 'left' }}>
+            {data.active &&
             <b>
               {re_weburl.test(data.url || '') ? (
                 <a href={data.url}>{data.name}</a>
@@ -55,6 +58,14 @@ const renderItem = (
                 data.name
               )}
             </b>
+            }
+            {!data.active &&
+              (re_weburl.test(data.url || '') ? (
+                <a href={data.url}>{data.name}</a>
+              ) : (
+                data.name
+              ))
+            }
           </div>
           {data.startDate && data.endDate ? (
             <div className="col-md-6" style={{ textAlign: 'right' }}>

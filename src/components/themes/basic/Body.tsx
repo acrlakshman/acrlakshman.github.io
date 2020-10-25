@@ -11,29 +11,15 @@ import sectionRanksTheme from './ranking';
 
 import { Basics, ProfileSectionsWeb } from '../../../types/profileWeb';
 
-interface Props {
+interface ComponentProps {
   basics: Basics;
   sections: ProfileSectionsWeb;
-}
-
-interface State {
   sectionRanks: string[];
 }
 
-class Body extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { sectionRanks: [] };
-  }
-
-  componentDidMount() {
-    let sectionRanksUser = getProfileRankings(this.props.sections);
-    let sectionRanks = getSortedArray(sectionRanksTheme, sectionRanksUser);
-    this.setState({ sectionRanks });
-  }
-
+class Body extends Component<ComponentProps> {
   renderSections = () => {
-    return this.state.sectionRanks.map((section: string) => {
+    return this.props.sectionRanks.map((section: string) => {
       return (
         <Section
           key={section}

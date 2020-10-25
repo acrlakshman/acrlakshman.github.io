@@ -87,6 +87,7 @@ export interface WorkDetail {
   url?: string;
   startDate: string;
   endDate: string;
+  active?: boolean;
   highlights: string[];
 }
 

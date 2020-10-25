@@ -4,17 +4,38 @@ import { StoreState } from '../../../reducers';
 import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
+import {
+  getSortedArray,
+  getProfileRankings,
+} from '../../../auxiliaries/rankSections';
+import sectionRanksTheme from './ranking';
 
-import { Basics, Config } from '../../../types/profileWeb';
+import { Basics, Config, ProfileSectionsWeb } from '../../../types/profileWeb';
 
 interface ComponentProps {
   config: Config;
   basics: Basics;
+  sections: ProfileSectionsWeb;
 }
 
-class Home extends Component<ComponentProps> {
+interface ComponentState {
+  sectionRanks: string[];
+}
+
+class Home extends Component<ComponentProps, ComponentState> {
+  constructor(props: ComponentProps) {
+    super(props);
+    this.state = { sectionRanks: [] };
+  }
+
+  componentDidMount() {
+    let sectionRanksUser = getProfileRankings(this.props.sections);
+    let sectionRanks = getSortedArray(sectionRanksTheme, sectionRanksUser);
+    this.setState({ sectionRanks });
+  }
+
   renderBody = (): JSX.Element => {
-    return <Body />;
+    return <Body sectionRanks={this.state.sectionRanks} />;
   };
 
   renderItem = () => {
@@ -41,7 +62,11 @@ class Home extends Component<ComponentProps> {
 }
 
 const mapStateToProps = (state: StoreState) => {
-  return { config: state.config, basics: state.basics };
+  return {
+    config: state.config,
+    basics: state.basics,
+    sections: state.sections,
+  };
 };
 
 export default connect(mapStateToProps, {})(Home);

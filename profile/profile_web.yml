@@ -74,9 +74,22 @@ work:
         url: https://convergecfd.com
         startDate: March, 2017
         endDate: Present
+        active: true
         highlights:
           - Implemented interface reconstruction algorithm for photo-realistic rendering
           - Implemented new data structures
+      render: true
+    - value: # check
+        name: University of Wisconsin-Madison
+        location: Madison, WI
+        description: University
+        position: Research Assistant
+        url: https://wisc.edu
+        startDate: '2011'
+        endDate: '2017'
+        highlights:
+          - Built in-house CFD tool
+          - Particle identification algorithm
       render: true
       # - value: # provide an example for university jobs
 education:

@@ -3,7 +3,7 @@ config:
   theme:
     value: basic
     render: true
-  analytics: # TODO
+  analytics:
     ga:
       trackingId: "UA-37418034-1"
       enable: true

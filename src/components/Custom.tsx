@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import { StoreState } from '../reducers';
 import CustomBasic from './themes/basic/Custom';
 
@@ -13,6 +14,21 @@ interface ComponentProps extends RouteComponentProps<{ id: string }> {
 }
 
 class Custom extends Component<ComponentProps> {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    this.props.history.listen((location) => {
+      if (
+        this.props.config.analytics &&
+        this.props.config.analytics.ga &&
+        this.props.config.analytics.ga.enable
+      ) {
+        ReactGA.initialize(this.props.config.analytics.ga.trackingId);
+        ReactGA.set({ page: location.pathname });
+        ReactGA.pageview(location.pathname);
+      }
+    });
+  }
+
   renderItem = () => {
     if (this.props.config.theme.value === WebThemes.BASIC) {
       return (

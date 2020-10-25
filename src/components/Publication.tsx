@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import { StoreState } from '../reducers';
 import PublicationBasic from './themes/basic/Publication';
 
@@ -31,6 +32,17 @@ class Publication extends Component<ComponentProps, ComponentState> {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.history.listen((location) => {
+      if (
+        this.props.config.analytics &&
+        this.props.config.analytics.ga &&
+        this.props.config.analytics.ga.enable
+      ) {
+        ReactGA.initialize(this.props.config.analytics.ga.trackingId);
+        ReactGA.set({ page: location.pathname });
+        ReactGA.pageview(location.pathname);
+      }
+    });
   }
 
   pageContent = (): PublicationType | undefined => {

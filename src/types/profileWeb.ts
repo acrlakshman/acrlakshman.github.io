@@ -79,16 +79,21 @@ export interface Basics extends OptionalArgs {
   profiles: SocialProfile[];
 }
 
+export interface BriefAndDescription {
+  brief: string;
+  description: string;
+}
+
 export interface WorkDetail {
   name: string;
   location: string;
-  description: string;
+  brief: string;
   position: string;
   url?: string;
   startDate: string;
   endDate: string;
   active?: boolean;
-  highlights: string[];
+  highlights: BriefAndDescription[];
 }
 
 export interface Work extends OptionalArgs {
@@ -104,7 +109,7 @@ export interface EducationDetail {
   url?: string;
   major: string;
   minor?: string;
-  studyType?: string;
+  degree?: string;
   startDate?: string;
   endDate?: string;
   grade?: number;
@@ -124,8 +129,9 @@ export interface Project {
   name: string;
   description: string;
   team?: string;
+  note?: string;
   thumbnail?: string;
-  hightlights?: string[];
+  hightlights?: BriefAndDescription[];
   keywords?: string[];
   startDate?: string;
   endDate?: string;

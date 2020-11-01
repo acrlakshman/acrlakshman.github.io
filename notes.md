@@ -123,6 +123,12 @@ const RenderImage = (props: ImageProps) => {
 [2]     25 |   },
 ```
 
+## yarn build with image compress
+
+```sh
+"build": "node ./src/preprocessors/profile.js ./_profile/profile_web.yml && react-scripts build && node ./scripts/createDirectory ./build/images && node ./scripts/createDirectory ./build/videos && node ./scripts/createDirectory ./build/files && npm run images:compress && ncp './_profile/compressed-images' './build/images' && node ./src/preprocessors/removeDir.js ./_profile/compressed-images && ncp './_profile/videos' './build/videos' && ncp './_profile/files' './build/files'",
+```
+
 ## section dividers
 
 * https://uicookies.com/css-divider/

@@ -33,7 +33,7 @@ const renderItem = (
       >
         <div className="row">
           <div className="col-md-6" style={{ textAlign: 'left' }}>
-            <b>{data.studyType || ''}</b>
+            <b>{data.degree || ''}</b>
           </div>
           {data.startDate && data.endDate ? (
             <div className="col-md-6" style={{ textAlign: 'right' }}>

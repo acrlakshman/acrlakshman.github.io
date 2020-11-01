@@ -52,7 +52,7 @@
     "copy-images": "node ./scripts/createDirectory ./public/images && node ./scripts/createDirectory ./public/videos && node ./scripts/createDirectory ./public/files && ncp './_profile/images' './public/images' && ncp './_profile/videos' './public/videos' && ncp './_profile/files' './public/files'",
     "start": "concurrently npm:profile npm:copy-images \"react-scripts start\"",
     "images:compress": "node ./src/preprocessors/imageCompress.js ./_profile/images",
-    "build": "node ./src/preprocessors/profile.js ./_profile/profile_web.yml && react-scripts build && node ./scripts/createDirectory ./build/images && node ./scripts/createDirectory ./build/videos && node ./scripts/createDirectory ./build/files && npm run images:compress && ncp './_profile/compressed-images' './build/images' && node ./src/preprocessors/removeDir.js ./_profile/compressed-images && ncp './_profile/videos' './build/videos' && ncp './_profile/files' './build/files'",
+    "build": "node ./src/preprocessors/profile.js ./_profile/profile_web.yml && react-scripts build && node ./scripts/createDirectory ./build/images && node ./scripts/createDirectory ./build/videos && node ./scripts/createDirectory ./build/files && ncp './_profile/images' './build/images' && ncp './_profile/videos' './build/videos' && ncp './_profile/files' './build/files'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

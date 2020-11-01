@@ -69,27 +69,31 @@ work:
     - value: # check
         name: Convergent Science
         location: Madison, WI
-        description: CFD company
+        brief: CFD company
         position: Senior Software Engineer
         url: https://convergecfd.com
         startDate: March, 2017
         endDate: Present
         active: true
         highlights:
-          - Implemented interface reconstruction algorithm for photo-realistic rendering
-          - Implemented new data structures
+          - brief: ""
+            description: Implemented interface reconstruction algorithm for photo-realistic rendering
+          - brief: ""
+            description: Implemented new data structures
       render: false
     - value: # check
         name: University of Wisconsin-Madison
         location: Madison, WI
-        description: University
+        brief: University
         position: Research Assistant
         url: https://wisc.edu
         startDate: '2011'
         endDate: '2017'
         highlights:
-          - Built in-house CFD tool
-          - Particle identification algorithm
+          - brief: ""
+            description: Built in-house CFD tool
+          - brief: ""
+            description: Particle identification algorithm
       render: false
       # - value: # provide an example for university jobs
 education:
@@ -101,7 +105,7 @@ education:
         url: https://nitdgp.ac.in
         major: Mechanical Engineering
         minor: ''
-        studyType: B.Tech
+        degree: B.Tech
         # startDate: September 2004
         # endDate: May 2008
       render: false
@@ -110,7 +114,7 @@ education:
     #     url: https://wisc.edu
     #     major: Mechanical Engineering
     #     minor: ''
-    #     studyType: MS
+    #     degree: MS
     #     # startDate: June 2009
     #     # endDate: August 2011
     #   render: false
@@ -119,7 +123,7 @@ education:
         url: https://wisc.edu
         major: Mechanical Engineering
         minor: Computer Science
-        studyType: PhD
+        degree: PhD
         # startDate: September 2011
         # endDate: May 2017
         grade: 3.9
@@ -136,9 +140,11 @@ projects:
         name: ProfileIO
         description: "Delightfully simple website and resume generator for students and researchers"
         team: "_Lakshman Anumolu_"
+        note: ""
         thumbnail: profileio.png
         highlights:
-          - Website and resume generator via YAML
+          - brief: ""
+            description: Website and resume generator via YAML
         keywords:
           - resume
           - website
@@ -160,9 +166,11 @@ projects:
         name: Framework to Photorealistic Render Computational Fluid Dynamics Results
         description: "Scene templates to kick-start scalable rendering of CFD results photorealistically."
         team: "_Lakshman Anumolu_"
+        note: ""
         thumbnail: scene_templates.png
         highlights:
-          - Scene templates to process CFD results photorealistically
+          - brief: ""
+            description: Scene templates to process CFD results photorealistically
         keywords:
           - CFD
           - photorealistic
@@ -183,9 +191,11 @@ projects:
         name: MeshIO
         description: A header only C++ library to read/write various surface mesh formats
         team: "_with [Pradeep Garigipati](//pradeepgarigipati.com)_"
+        note: ""
         thumbnail: meshio_t.png
         highlights:
-          - Read and write STL file format
+          - brief: ""
+            description: Read and write STL file format
         keywords:
           - STL
           - OBJ
@@ -204,9 +214,11 @@ projects:
         name: Basic Model Viewer
         description: Qt based Visualization application written in Modern OpenGL
         team: "_Lakshman Anumolu_"
+        note: ""
         thumbnail: bmv_t.gif
         highlights:
-          - Visualizes 3D surface mesh
+          - brief: ""
+            description: Visualizes 3D surface mesh
         keywords:
           - ModernGL
           - Qt
@@ -226,9 +238,11 @@ projects:
         description: "This was my final project for [Prof. Eftychios Sifakis's](http://pages.cs.wisc.edu/~sifakis) course [CS838](http://pages.cs.wisc.edu/~sifakis/courses/cs838-f12/) (_Advanced Modelling and Simulation_) (Fall-2012).  \n
         *Video along with the related files are included*"
         team: "_Lakshman Anumolu_"
+        note: ""
         thumbnail: crystal_growth_t.png
         highlights:
-          - 3D Crystal growth simulated using PhysBAM
+          - brief: ""
+            description: 3D Crystal growth simulated using PhysBAM
         keywords:
           - PhysBAM
         startDate: '2012'
@@ -243,9 +257,11 @@ projects:
         name: Simulation of Smoke in OpenFOAM Framework
         description: "My project for [Prof. Mario F. Trujillo's](http://www.engr.wisc.edu/me/faculty/trujillo_mario.html) course ME964 (_Two-Phase Flows Fundamentals_) (Fall-2012), completed in collaboration with [Imaduddin Ahmed](https://multiphaseflow.erc.wisc.edu/)"
         team: "_with [Imaduddin Ahmed](https://multiphaseflow.erc.wisc.edu/people/)_"
+        note: ""
         thumbnail: taup_0_frame20.png
         highlights:
-          - Smoke simulation using OpenFOAM
+          - brief: ""
+            description: Smoke simulation using OpenFOAM
         keywords:
           - OpenFOAM
         startDate: '2012'
@@ -261,9 +277,11 @@ projects:
         description: "My final project for [Perry Kivolowitz's](https://www.carthage.edu/live/profiles/1477-perry-kivolowitz) course CS559 (_Computer Graphics_) at [UW-Madison](https://wisc.edu) (Fall-2013).  \n
         _Video and executables (along with required dlls) are included._"
         team: "_Lakshman Anumolu_"
+        note: ""
         thumbnail: screensaver_t.png
         highlights:
-          - Screensaver in ModernGL
+          - brief: ""
+            description: Screensaver in ModernGL
         keywords:
           - ModernGL
         startDate: '2013'
@@ -278,11 +296,15 @@ projects:
         name: Desktop, web apps, games built while learning app development
         description: Apps written during hackathons or free time
         team: "_Lakshman Anumolu_"
+        note: ""
         thumbnail: apps_t.jpg
         highlights:
-          - Facebook friend sentiment analysis
-          - Facebook speech-to-text enabled chat
-          - Air hockey
+          - brief: ""
+            description: Facebook friend sentiment analysis
+          - brief: ""
+            description: Facebook speech-to-text enabled chat
+          - brief: ""
+            description: Air hockey
         startDate: '2013'
         endDate: '2014'
         # If webPage is not provided, then url will be linked in the homepage for this project

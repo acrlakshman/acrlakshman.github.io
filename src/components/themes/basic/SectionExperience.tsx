@@ -3,7 +3,7 @@ import SectionLabel from './SectionLabel';
 import Content from './Content';
 import Divider from './SectionDivider';
 
-import { Work, WorkDetail } from '../../../types/profileWeb';
+import { BriefAndDescription, Work, WorkDetail } from '../../../types/profileWeb';
 import { ProfileField } from '../../../types/fields';
 
 import './styles.css';
@@ -15,12 +15,12 @@ interface ComponentProps {
   renderDividerBelowLabel?: boolean;
 }
 
-const renderWorkHighlights = (highlights: string[]): JSX.Element => {
+const renderWorkHighlights = (highlights: BriefAndDescription[]): JSX.Element => {
   if (highlights.length) {
     return (
       <ul>
-        {highlights.map((item: string) => {
-          return <li style={{ textAlign: 'left' }}>{item}</li>;
+        {highlights.map((item: BriefAndDescription) => {
+          return <li style={{ textAlign: 'left' }}>{item.description}</li>;
         })}
       </ul>
     );

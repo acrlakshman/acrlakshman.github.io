@@ -77,9 +77,9 @@ work:
         active: true
         highlights:
           - brief: ""
-            description: Implemented interface reconstruction algorithm for photo-realistic rendering
+            detail: Implemented interface reconstruction algorithm for photo-realistic rendering
           - brief: ""
-            description: Implemented new data structures
+            detail: Implemented new data structures
       render: false
     - value: # check
         name: University of Wisconsin-Madison
@@ -91,9 +91,9 @@ work:
         endDate: '2017'
         highlights:
           - brief: ""
-            description: Built in-house CFD tool
+            detail: Built in-house CFD tool
           - brief: ""
-            description: Particle identification algorithm
+            detail: Particle identification algorithm
       render: false
       # - value: # provide an example for university jobs
 education:
@@ -144,7 +144,7 @@ projects:
         thumbnail: profileio.png
         highlights:
           - brief: ""
-            description: Website and resume generator via YAML
+            detail: Website and resume generator via YAML
         keywords:
           - resume
           - website
@@ -170,7 +170,7 @@ projects:
         thumbnail: scene_templates.png
         highlights:
           - brief: ""
-            description: Scene templates to process CFD results photorealistically
+            detail: Scene templates to process CFD results photorealistically
         keywords:
           - CFD
           - photorealistic
@@ -195,7 +195,7 @@ projects:
         thumbnail: meshio_t.png
         highlights:
           - brief: ""
-            description: Read and write STL file format
+            detail: Read and write STL file format
         keywords:
           - STL
           - OBJ
@@ -218,7 +218,7 @@ projects:
         thumbnail: bmv_t.gif
         highlights:
           - brief: ""
-            description: Visualizes 3D surface mesh
+            detail: Visualizes 3D surface mesh
         keywords:
           - ModernGL
           - Qt
@@ -242,7 +242,7 @@ projects:
         thumbnail: crystal_growth_t.png
         highlights:
           - brief: ""
-            description: 3D Crystal growth simulated using PhysBAM
+            detail: 3D Crystal growth simulated using PhysBAM
         keywords:
           - PhysBAM
         startDate: '2012'
@@ -261,7 +261,7 @@ projects:
         thumbnail: taup_0_frame20.png
         highlights:
           - brief: ""
-            description: Smoke simulation using OpenFOAM
+            detail: Smoke simulation using OpenFOAM
         keywords:
           - OpenFOAM
         startDate: '2012'
@@ -281,7 +281,7 @@ projects:
         thumbnail: screensaver_t.png
         highlights:
           - brief: ""
-            description: Screensaver in ModernGL
+            detail: Screensaver in ModernGL
         keywords:
           - ModernGL
         startDate: '2013'
@@ -300,11 +300,11 @@ projects:
         thumbnail: apps_t.jpg
         highlights:
           - brief: ""
-            description: Facebook friend sentiment analysis
+            detail: Facebook friend sentiment analysis
           - brief: ""
-            description: Facebook speech-to-text enabled chat
+            detail: Facebook speech-to-text enabled chat
           - brief: ""
-            description: Air hockey
+            detail: Air hockey
         startDate: '2013'
         endDate: '2014'
         # If webPage is not provided, then url will be linked in the homepage for this project

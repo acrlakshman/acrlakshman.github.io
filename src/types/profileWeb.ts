@@ -79,9 +79,9 @@ export interface Basics extends OptionalArgs {
   profiles: SocialProfile[];
 }
 
-export interface BriefAndDescription {
+export interface BriefAndDetail {
   brief: string;
-  description: string;
+  detail: string;
 }
 
 export interface WorkDetail {
@@ -93,7 +93,7 @@ export interface WorkDetail {
   startDate: string;
   endDate: string;
   active?: boolean;
-  highlights: BriefAndDescription[];
+  highlights: BriefAndDetail[];
 }
 
 export interface Work extends OptionalArgs {
@@ -131,7 +131,7 @@ export interface Project {
   team?: string;
   note?: string;
   thumbnail?: string;
-  hightlights?: BriefAndDescription[];
+  hightlights?: BriefAndDetail[];
   keywords?: string[];
   startDate?: string;
   endDate?: string;

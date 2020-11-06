@@ -29,3 +29,8 @@ public/videos
 public/files
 *.mp4
 *.avi
+
+*.log
+*.aux
+*.pdf
+*.tmpl

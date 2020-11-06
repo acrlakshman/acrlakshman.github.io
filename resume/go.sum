@@ -1,0 +1,4 @@
+github.com/acrlakshman/profileio-resume v0.0.0-20201106041541-6a963ef1d523 h1:Cqhix9ME7eFLZFUJME0Vo3o3+hdUKkdINhdPIYoHhi4=
+github.com/acrlakshman/profileio-resume v0.0.0-20201106041541-6a963ef1d523/go.mod h1:rzlMVKhvaeX646Ls+0A9raPkTiGnKzHIbyfgMJ2LokE=
+github.com/buger/jsonparser v1.0.0 h1:etJTGF5ESxjI0Ic2UaLQs2LQQpa8G9ykQScukbh4L8A=
+github.com/buger/jsonparser v1.0.0/go.mod h1:tgcrVJ81GPSF0mz+0nu1Xaz0fazGPrmmJfJtxjbHhUQ=

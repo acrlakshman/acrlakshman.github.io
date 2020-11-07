@@ -2,7 +2,7 @@ name: Build and deploy personal website
 on: [push]
 
 jobs:
-  build-and-deploy:
+  build:
 
     strategy:
       matrix:
@@ -25,6 +25,12 @@ jobs:
         npm install
         npm run build
 
+    - uses: actions/upload-artifact@v2
+      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+      with:
+        name: web-build
+        path: build/
+
     - name: Generate tex file for resume
       uses: actions/setup-go@v2
       with:
@@ -33,23 +39,55 @@ jobs:
         cd resume
         go run main.go
 
-    - run: cd resume/resume && ls
-    - name: TeX to pdf on Linux
+    - uses: actions/upload-artifact@v2
       if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+      with:
+        name: resume-tex-ubuntu
+        path: ./resume/resume/
+
+    - uses: actions/upload-artifact@v2
+      if: matrix.os == 'macos-latest' && matrix.node-version == '14.x'
+      with:
+        name: resume-tex-macos
+        path: ./resume/resume/
+
+    # - run: cd resume && ls
+    # - name: TeX to pdf on Linux
+    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+    #   uses: xu-cheng/latex-action@v2
+    #   with:
+    #     root_file: ./resume.tex
+    #     latexmk_use_xelatex: true
+    # - name: Copy pdf to build directory
+    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+    #   run: |
+    #     cp resume.pdf ../../build/files/
+    #     cd ../..
+    
+    # - name: deploy
+    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+    #   uses: JamesIves/github-pages-deploy-action@3.5.8
+    #   with:
+    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #       BRANCH: gh-pages
+    #       FOLDER: build
+
+  build-resume-linux:
+    needs: [build]
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download tex files
+      uses: actions/download-artifact@v2
+      with:
+        name: resume-tex-ubuntu
+    - name: TeX to pdf on Linux
       uses: xu-cheng/latex-action@v2
       with:
         root_file: ./resume.tex
         latexmk_use_xelatex: true
-    - name: Copy pdf to build directory
-      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-      run: |
-        ls && cp resume.pdf ../../build/files/
-        cd ../..
-    
-    - name: deploy
-      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-      uses: JamesIves/github-pages-deploy-action@3.5.8
+    - uses: actions/upload-artifact@v2
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
+        name: resume-ubuntu
+        path: ./*

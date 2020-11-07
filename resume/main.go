@@ -23,9 +23,9 @@ func main() {
 
 	os.Chdir("./resume")
 	cmd := exec.Command(app, "resume.tex")
-	out, err := cmd.Output()
+	_, err := cmd.Output()
 	if err != nil {
-		log.Printf("%v; %v", string(out), err)
+		log.Printf("%v", err)
 	}
 }
 

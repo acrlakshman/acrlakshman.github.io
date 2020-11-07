@@ -8,6 +8,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-2016, macos-latest]
         node-version: [12.x, 14.x]
+        go: ['1.15']
 
     runs-on: ${{ matrix.os }}
 
@@ -23,6 +24,27 @@ jobs:
       run: |
         npm install
         npm run build
+
+    - name: Generate tex file for resume
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go }}
+      run: |
+        cd resume
+        go run main.go
+
+    - run: cd resume
+    - name: TeX to pdf on Linux
+      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: ./resume.tex
+        latexmx_use_xelatex: true
+    - name: Copy pdf to build directory
+      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+      run: |
+        cp resume.pdf ../../build/files/
+        cd ../..
     
     - name: deploy
       if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'

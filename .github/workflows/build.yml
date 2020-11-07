@@ -140,6 +140,7 @@ jobs:
         cp -r web-build/* gh-pages/
         mkdir -p gh-pages/files/resume
         cp -r resume-ubuntu/* gh-pages/files/resume/
+        ls -a
     - name: Push to gh-pages
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:

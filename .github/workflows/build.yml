@@ -32,14 +32,16 @@ jobs:
     - run: |
         cd resume
         go run main.go
+        pwd
+        ls
 
-    - run: cd resume
+    - run: cd resume && ls
     - name: TeX to pdf on Linux
       if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
       uses: xu-cheng/latex-action@v2
       with:
         root_file: ./resume.tex
-        latexmx_use_xelatex: true
+        latexmk_use_xelatex: true
     - name: Copy pdf to build directory
       if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
       run: |

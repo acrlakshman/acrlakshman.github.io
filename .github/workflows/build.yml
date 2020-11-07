@@ -29,11 +29,11 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: ${{ matrix.go }}
-      run: |
+    - run: |
         cd resume
         go run main.go
+        cd resume
 
-    - run: cd resume
     - name: TeX to pdf on Linux
       if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
       uses: xu-cheng/latex-action@v2

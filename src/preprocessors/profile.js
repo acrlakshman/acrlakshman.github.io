@@ -243,15 +243,14 @@ const processMarkdownFieldsAndSlugs = (jsonObj) => {
   return jsonObj;
 };
 
-const processProfile = (relativeFilePath, depth, outFile) => {
+const processProfile = (relativeFilePath, depth, outFileRelativePath) => {
   let jsonObj = getJSONFromYAML(relativeFilePath, depth);
-  const jsonFile = path.resolve(__dirname, outFile);
+  const jsonFile = appendToRootFolder(outFileRelativePath, 2);
 
   // process markdown files
   jsonObj = processMarkdownFieldsAndSlugs(jsonObj);
-  // console.log(jsonObj);
 
   fs.writeFileSync(jsonFile, JSON.stringify(jsonObj));
-}
+};
 
-processProfile(process.argv[2], 2, 'profile_web.json');
+processProfile(process.argv[2], 2, process.argv[3]);

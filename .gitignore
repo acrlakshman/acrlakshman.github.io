@@ -34,3 +34,6 @@ public/files
 *.aux
 *.pdf
 *.tmpl
+
+resume/*.json
+resume/resume/

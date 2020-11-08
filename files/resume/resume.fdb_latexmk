@@ -1,10 +1,10 @@
 # Fdb version 3
-["xdvipdfmx"] 1604805806 "resume.xdv" "resume.pdf" "resume" 1604805806
-  "resume.xdv" 1604805806 25928 195ff1d63fd0a89c3b42232f35f1cc7d "xelatex"
+["xdvipdfmx"] 1604806686 "resume.xdv" "resume.pdf" "resume" 1604806686
+  "resume.xdv" 1604806686 25928 ca56668ccbdf81d01e54d1739c8ab1d9 "xelatex"
   (generated)
   "resume.pdf"
-["xelatex"] 1604805800 "./resume.tex" "resume.xdv" "resume" 1604805806
-  "./resume.tex" 1604805799 6157 bfb9415520a8140111ebe10b4e9817d1 ""
+["xelatex"] 1604806681 "./resume.tex" "resume.xdv" "resume" 1604806686
+  "./resume.tex" 1604806680 6157 bfb9415520a8140111ebe10b4e9817d1 ""
   "/opt/texlive/texdir/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/texlive/texdir/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/opt/texlive/texdir/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -59,10 +59,10 @@
   "/opt/texlive/texdir/texmf-dist/tex/latex/xcolor/xcolor.sty" 1463002160 55589 34128738f682d033422ca125f82e5d62 ""
   "/opt/texlive/texdir/texmf-dist/web2c/texmf.cnf" 1598393674 39451 15a3ebee027466ecb89701aa91dfebaf ""
   "/opt/texlive/texdir/texmf.cnf" 1601516743 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "/root/texlive/texmf-var/web2c/xetex/xelatex.fmt" 1604805805 4783753 56273b5e7ac4a0785173065e6f027012 ""
-  "res.cls" 1604805799 25065 00878584ba637ae375b57ce6f6d58323 ""
-  "resume.aux" 1604805800 8 a94a2480d3289e625eea47cd1b285758 ""
-  "resume.tex" 1604805799 6157 bfb9415520a8140111ebe10b4e9817d1 ""
+  "/root/texlive/texmf-var/web2c/xetex/xelatex.fmt" 1604806685 4783752 3b57049fb08bb30e520c5f87ec6420ed ""
+  "res.cls" 1604806680 25065 00878584ba637ae375b57ce6f6d58323 ""
+  "resume.aux" 1604806681 8 a94a2480d3289e625eea47cd1b285758 ""
+  "resume.tex" 1604806680 6157 bfb9415520a8140111ebe10b4e9817d1 ""
   (generated)
   "resume.xdv"
   "resume.log"

@@ -1,0 +1,525 @@
+config:
+  homepage: ""
+  theme:
+    value: basic
+    render: true
+  analytics:
+    ga:
+      trackingId: "UA-37418034-1"
+      enable: true
+  meta:
+    showResumeLink: true
+    hideFooterCredit: true
+basics:
+  name:
+    value: Lakshman Anumolu
+    render: true
+  label:
+    value: Senior Research Engineer
+    render: false
+  image:
+    value: pic.png
+    render: true
+  email:
+    value: anumolu@uwalumni.com
+    render: true
+  phone:
+    value: ''
+    render: false
+  url:
+    value: 'https://lakshmananumolu.com'
+    render: false
+  summary:
+    label: About me
+    value: summary.md
+    render: true
+  location:
+    value:
+      address: Street
+      postalCode: WI 53705
+      city: Madison
+      countryName: USA
+      region: Wisconsin
+    render: false
+  profiles:
+    - value:
+        network: googlescholar
+        url: https://scholar.google.com/citations?user=VcGv5cEAAAAJ&hl=en
+      render: true
+    - value: # if username is provided but not url, then we generate
+        network: github
+        username: acrlakshman
+      render: true
+    - value:
+        network: linkedin
+        url: https://www.linkedin.com/in/lakshmananumolu/
+      render: true
+    - value:
+        network: twitter
+        username: acrlakshman
+        url: https://twitter.com/acrlakshman
+      render: true
+    - value:
+        network: vimeo
+        url: https://vimeo.com/user24179204
+      render: false
+work:
+  label: Experience
+  rank: 1
+  list:
+    - value: # check
+        name: Convergent Science
+        location: Madison, WI
+        brief: CFD company
+        position: Senior Software Engineer
+        url: https://convergecfd.com
+        startDate: March, 2017
+        endDate: Present
+        active: true
+        highlights:
+          - brief: ""
+            detail: Implemented interface reconstruction algorithm for photo-realistic rendering
+          - brief: ""
+            detail: Implemented new data structures
+      render: false
+    - value: # check
+        name: University of Wisconsin-Madison
+        location: Madison, WI
+        brief: University
+        position: Research Assistant
+        url: https://wisc.edu
+        startDate: '2011'
+        endDate: '2017'
+        highlights:
+          - brief: ""
+            detail: Built in-house CFD tool
+          - brief: ""
+            detail: Particle identification algorithm
+      render: false
+      # - value: # provide an example for university jobs
+education:
+  label: Education
+  rank: 2
+  list:
+    - value:
+        institution: National Institute of Technology Durgapur
+        url: https://nitdgp.ac.in
+        major: Mechanical Engineering
+        minor: ''
+        degree: B.Tech
+        # startDate: September 2004
+        # endDate: May 2008
+      render: false
+    # - value:
+    #     institution: University of Wisconsin-Madison
+    #     url: https://wisc.edu
+    #     major: Mechanical Engineering
+    #     minor: ''
+    #     degree: MS
+    #     # startDate: June 2009
+    #     # endDate: August 2011
+    #   render: false
+    - value:
+        institution: University of Wisconsin-Madison
+        url: https://wisc.edu
+        major: Mechanical Engineering
+        minor: Computer Science
+        degree: PhD
+        # startDate: September 2011
+        # endDate: May 2017
+        grade: 3.9
+        gradeTotal: 4.0
+        courses:
+          - CS521 - Computer Graphics
+          - ME801 - HPC
+      render: false
+projects:
+  label: "Projects"
+  rank: 4
+  list:
+    - value:
+        name: ProfileIO
+        description: "Delightfully simple website and resume generator for students and researchers"
+        team: "_Lakshman Anumolu_"
+        note: ""
+        thumbnail: profileio.png
+        highlights:
+          - brief: ""
+            detail: Website and resume generator via YAML
+        keywords:
+          - resume
+          - website
+          - YAML
+          - markdown
+        startDate: '2020'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://github.com/acrlakshman/profileio
+        roles:
+          - Architect
+          - Developer
+        type: application
+        webPage:
+          slug: profileio
+          detail: project/profileio.md
+      render: false
+    - value:
+        name: Framework to Photorealistic Render Computational Fluid Dynamics Results
+        description: "Scene templates to kick-start scalable rendering of CFD results photorealistically."
+        team: "_Lakshman Anumolu_"
+        note: ""
+        thumbnail: scene_templates.png
+        highlights:
+          - brief: ""
+            detail: Scene templates to process CFD results photorealistically
+        keywords:
+          - CFD
+          - photorealistic
+          - mitsuba
+        startDate: '2020'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://github.com/acrlakshman/scene_templates
+        roles:
+          - Architect
+          - Developer
+        type: application
+        webPage:
+          slug: photorealistic-computational-fluid-dynamics
+          detail: project/photorealistic-cfd.md
+      render: true
+    - value:
+        name: MeshIO
+        description: A header only C++ library to read/write various surface mesh formats
+        team: "_with [Pradeep Garigipati](//pradeepgarigipati.com)_"
+        note: ""
+        thumbnail: meshio_t.png
+        highlights:
+          - brief: ""
+            detail: Read and write STL file format
+        keywords:
+          - STL
+          - OBJ
+          - TLGF
+          - surface mesh
+        startDate: '2015'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://github.com/acrlakshman/MeshIO
+        roles:
+          - Architect
+          - Developer
+        type: application
+      render: true
+    - value:
+        name: Basic Model Viewer
+        description: Qt based Visualization application written in Modern OpenGL
+        team: "_Lakshman Anumolu_"
+        note: ""
+        thumbnail: bmv_t.gif
+        highlights:
+          - brief: ""
+            detail: Visualizes 3D surface mesh
+        keywords:
+          - ModernGL
+          - Qt
+        startDate: '2014'
+        endDate: present
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/basic-model-viewer
+        roles:
+          - Architect
+        type: application
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: basic-model-viewer
+          detail: project/basic-model-viewer.md # If this is empty url above will be used.
+      render: true
+    - value:
+        name: Weak Formulation of Gradient Augmented Level Set Method to Stephan Type Problems
+        description: "This was my final project for [Prof. Eftychios Sifakis's](http://pages.cs.wisc.edu/~sifakis) course [CS838](http://pages.cs.wisc.edu/~sifakis/courses/cs838-f12/) (_Advanced Modelling and Simulation_) (Fall-2012).  \n
+        *Video along with the related files are included*"
+        team: "_Lakshman Anumolu_"
+        note: ""
+        thumbnail: crystal_growth_t.png
+        highlights:
+          - brief: ""
+            detail: 3D Crystal growth simulated using PhysBAM
+        keywords:
+          - PhysBAM
+        startDate: '2012'
+        endDate: '2012'
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/crystal-growth
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: crystal-growth
+          detail: project/crystal-growth.md
+      render: true
+    - value:
+        name: Simulation of Smoke in OpenFOAM Framework
+        description: "My project for [Prof. Mario F. Trujillo's](http://www.engr.wisc.edu/me/faculty/trujillo_mario.html) course ME964 (_Two-Phase Flows Fundamentals_) (Fall-2012), completed in collaboration with [Imaduddin Ahmed](https://multiphaseflow.erc.wisc.edu/)"
+        team: "_with [Imaduddin Ahmed](https://multiphaseflow.erc.wisc.edu/people/)_"
+        note: ""
+        thumbnail: taup_0_frame20.png
+        highlights:
+          - brief: ""
+            detail: Smoke simulation using OpenFOAM
+        keywords:
+          - OpenFOAM
+        startDate: '2012'
+        endDate: '2012'
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/smoke-simulation-openfoam
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: smoke-simulation-openfoam
+          detail: project/smoke-simulation-openfoam.md
+      render: true
+    - value:
+        name: Screensaver using ModernGL
+        description: "My final project for [Perry Kivolowitz's](https://www.carthage.edu/live/profiles/1477-perry-kivolowitz) course CS559 (_Computer Graphics_) at [UW-Madison](https://wisc.edu) (Fall-2013).  \n
+        _Video and executables (along with required dlls) are included._"
+        team: "_Lakshman Anumolu_"
+        note: ""
+        thumbnail: screensaver_t.png
+        highlights:
+          - brief: ""
+            detail: Screensaver in ModernGL
+        keywords:
+          - ModernGL
+        startDate: '2013'
+        endDate: '2013'
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/cs559-f13
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: cs559-f13
+          detail: project/screen-saver-cs559-f13.md
+      render: true
+    - value:
+        name: Desktop, web apps, games built while learning app development
+        description: Apps written during hackathons or free time
+        team: "_Lakshman Anumolu_"
+        note: ""
+        thumbnail: apps_t.jpg
+        highlights:
+          - brief: ""
+            detail: Facebook friend sentiment analysis
+          - brief: ""
+            detail: Facebook speech-to-text enabled chat
+          - brief: ""
+            detail: Air hockey
+        startDate: '2013'
+        endDate: '2014'
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://lakshmananumolu.com/project/basic-model-viewer
+        roles:
+          - Architect
+        type: application
+        webPage: # optional, if this is provided this section will be linked to this page, otherwise linked to url
+          slug: initial-apps
+          detail: project/initial-apps.md
+      render: true
+awards:
+  label: Awards & Achievements
+  rank: 11
+  list:
+    - value:
+        title: Marshal award
+        date: May 2014
+        awarder: ILASS
+        summary: Best paper for numerical work
+      render: false
+publications:
+  # Format extends: http://web.mit.edu/rsi/www/pdfs/bibtex-format.pdf
+  label: Publications
+  rank: 3
+  list:
+    - value:
+        type: article
+        author: "**Lakshman Anumolu**, Mario F. Trujillo"
+        title: "Gradient augmented level set method for phase change simulations"
+        journal: Journal of Computational Physics
+        volume: 353
+        year: 2018
+        number: 0
+        pages: 377-406
+        thumbnail: gals_phase_change.png
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://www.sciencedirect.com/science/article/pii/S0021999117307696
+        # webPage:
+        #   slug: gals
+        #   detail: project/basic-model-viewer.md
+      render: true
+    - value:
+        type: book
+        author: "Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner"
+        title: "Direct Numerical Simulations for Two-Phase Flows with Phase Change"
+        series: "Encyclopedia of Two-Phase Heat Transfer and Flow"
+        volume: 3
+        publisher: World Scientific
+        address: ''
+        year: 2018
+        thumbnail: dns_phasechange.png
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://www.worldscientific.com/doi/abs/10.1142/9789813229440_0008
+      render: true
+    - value:
+        type: article
+        author: "Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner"
+        title: "The distortion of the level set gradient under advection"
+        journal: Journal of Computational Physics
+        volume: 334
+        year: 2017
+        number: 0
+        pages: 81-101
+        thumbnail: levelset_deformation.png
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://www.sciencedirect.com/science/article/pii/S0021999116307045
+      render: true
+    - value:
+        type: article
+        author: Steven R. Lewis, **Lakshman Anumolu**, Mario F. Trujillo
+        title: Numerical Simulation of Droplet Train and Free Surface Jet Impingement
+        journal: International Journal of Heat and Fluid Flow
+        volume: 44
+        year: 2013
+        number: 0
+        pages: 610-623
+        thumbnail: jet_paper.jpg
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: https://www.sciencedirect.com/science/article/pii/S0142727X13001707
+      render: true
+    - value:
+        type: article
+        author: "**Lakshman Anumolu**, Mario F. Trujillo"
+        title: Gradient Augmented Reinitialization Scheme for the Level Set Method
+        journal: International Journal of Numerical Methods in Fluids
+        volume: 73
+        year: 2013
+        number: 12
+        pages: 1011-1041
+        thumbnail: gals_reinit.jpg
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: http://onlinelibrary.wiley.com/doi/10.1002/fld.3834/abstract
+      render: true
+    - value:
+        type: article
+        author: "Suraj S. Deshpande, **Lakshman Anumolu**, Mario F. Trujillo"
+        title: Evaluating the performance of the two-phase flow solver interFoam
+        journal: "Computational Science & Discovery"
+        volume: 5
+        year: 2012
+        number: 0
+        pages: "014016: 1-36"
+        thumbnail: interfoam_thumbnail.png
+        # If webPage is not provided, then url will be linked in the homepage for this project
+        url: http://iopscience.iop.org/1749-4699/5/1/014016
+      render: true
+    - value:
+        type: thesis
+        category: masters # php, masters, bachelors
+        author: "**Lakshman Anumolu**"
+        title: "Local, Higher Order Accurate, Level Set Redistancing Methods"
+        publisher: "University of Wisconsin-Madison"
+        address: "Madison WI"
+        year: 2011
+        thumbnail: "ms_thesis_thumbnail.png"
+      render: true
+gallery:
+  label: Gallery
+  rank: 5
+  list:
+    - value:
+        type: image
+        src: pic.png
+        caption:
+          title: Basic Model Viewer
+          description: A project
+      render: false
+    - value:
+        type: video
+        platform: youtube
+        videoId: Wsije1KetVw
+      render: false
+    - value:
+        type: video
+        platform: youtube
+        videoId: Wsije1KetVw
+      render: false
+    - value:
+        type: video
+        platform: youtube
+        videoId: Wsije1KetVw
+      render: false
+    - value:
+        type: video
+        platform: vimeo
+        videoId: '459803240'
+      render: false
+skills:
+  label: Skills
+  rank: 6
+  list:
+    - value:
+        name: Web development
+        level: Master
+        keywords:
+          - HTML
+          - CSS
+          - Javascript
+      render: false
+languages:
+  label: Languages
+  rank: 7
+  list:
+    - value:
+        language: English
+        fluency: Native speaker
+      render: false
+interests:
+  label: Interests
+  rank: 8
+  list:
+    - value:
+        name: Wildlife
+        keywords:
+          - Ferrets
+          - Unicorns
+      render: false
+references:
+  label: References
+  rank: 9
+  list:
+    - value:
+        name: David
+        title: Professor
+        affiliation: University
+        address: 1111 University Ave
+        postalCode: WI 53705
+        city: Madison
+        countryName: USA
+        region: Wisconsin
+        phoneNumber: '1111111111'
+        email: email@email.com
+      render: false
+custom:
+  # In the home page, these sections are always rendered at the end.
+  # TODO: Make rank for custom sections in home page as relative to pages within custom section.
+  - label: Custom # rendered in home page
+    rank: 1
+    value: project/crystal-growth.md
+    render: false
+  - label: Custom2
+    rank: 2
+    value: project/basic-model-viewer.md
+    render: false
+  - label: Custom page 1 # rendered as another page
+    # value: project/crystal-growth.md
+    webPage:
+      slug: custom/custom-page-1
+      detail: project/basic-model-viewer.md
+    render: true
+  - label: blog # rendered as section and another page
+    value: "[Blog](blog/blog-1/blog-1-1)"
+    webPage:
+      slug: blog/blog-1/blog-1-1
+      detail: project/crystal-growth.md
+    render: false

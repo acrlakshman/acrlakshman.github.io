@@ -2,32 +2,52 @@
 	\documentclass{res}
 	\usepackage{fancyhdr}
 	\usepackage{fontspec}
+	\usepackage{color}
 	\usepackage{multicol}
 	\usepackage{setspace}
-	\usepackage[hidelinks]{hyperref}
-	\usepackage{enumitem}
+	\usepackage{xcolor}
+	\usepackage{hyperref}
+	\usepackage{enumitem}\setmainfont{Helvetica Neue Light}[ItalicFont=Helvetica Neue Light Italic]
 	\setlength{\textwidth}{6.5in}
 	
 	\newcommand{\HRule}{\rule{\linewidth}{0.25pt}}
-	\newsectionwidth{0.0in}
-	\sectionskip=0.15in
+	\newsectionwidth{0.25in}
+
+	% format URLs
+	\colorlet{ucolor}{yellow!14!black!14!red!72!}
+	\urlstyle{same}
+	\hypersetup{
+		colorlinks=true,
+		linkcolor=ucolor,
+		urlcolor=ucolor
+	}
 
 	
-	
-	\begin{document}
+
+	\newcommand{\spacedsc}{\scshape\addfontfeatures{LetterSpace=15}}
+	\renewcommand{\sectionfont}{\normalfont\Large\spacedsc\color{gray}\raggedright}
 	\renewcommand{\headrulewidth}{0.0pt}
 	
-	% Center the name over the entire width of resume:
-	\moveleft.5\hoffset\centerline{\large L\small {AKSHMAN} \large A\small {NUMOLU} }
-	\moveleft.5\hoffset\centerline{\url{ https://lakshmananumolu.com }}
-	\moveleft.5\hoffset\centerline{ \href{mailto:anumolu@uwalumni.com}{anumolu@uwalumni.com} }
-	
+	\begin{document}
+
+	\hspace*{-0.05\textwidth}
+	\begin{minipage}[t]{0.7\textwidth}
+	\begin{flushleft}
+	\vspace*{\fill}
+	{\fontsize{35 }{35 }\selectfont Lakshman\textbf{Anumolu}}
+	\end{flushleft}
+	\end{minipage}
+	\begin{minipage}[t]{0.34\textwidth}
+	\begin{flushright}
+	\href{mailto:anumolu@uwalumni.com}{anumolu@uwalumni.com} \\ 
+	\end{flushright}
+	\end{minipage}
+
 	\begin{resume}
 	
+	%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	% Summary
-	\section{\sc \large A\small {BOUT} \large M\small {E} } \smallskip
-	\moveleft\hoffset\vbox{\hrule width\resumewidth height 0.25pt} \vskip -0.15in
+	\section{\MakeUppercase{About me}} \vskip 0.15in
 	Hi this is about me
 	
 	
@@ -37,96 +57,96 @@
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Publications %%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{\sc \large P\small {UBLICATIONS} } \smallskip
-	\moveleft\hoffset\vbox{\hrule width\resumewidth height 0.25pt} \vskip -0.05in
-    \begin{itemize}[leftmargin=0pt]
-    \setlength{\itemsep}{2pt} \smallskip
+	\section{\MakeUppercase{Publications}} \vskip 0.35in
+	\begin{itemize}[leftmargin=\parindent]
+	\setlength{\itemsep}{4pt}
 	
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Publication 0 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	\item[] **Lakshman Anumolu**, Mario F. Trujillo. Gradient augmented level set method for phase change simulations. {\it Journal of Computational Physics}, 353:377-406, 2018.
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Publication 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	\item[] Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner. {\it Direct Numerical Simulations For Two-Phase Flows With Phase Change}, volume 3 of {\it Encyclopedia of Two-Phase Heat Transfer and Flow}. World Scientific, 2018.
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Publication 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	\item[] Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner. The distortion of the level set gradient under advection. {\it Journal of Computational Physics}, 334:81-101, 2017.
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Publication 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	\item[] Steven R. Lewis, **Lakshman Anumolu**, Mario F. Trujillo. Numerical Simulation of Droplet Train and Free Surface Jet Impingement. {\it International Journal of Heat and Fluid Flow}, 44:610-623, 2013.
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Publication 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	\item[] **Lakshman Anumolu**, Mario F. Trujillo. Gradient Augmented Reinitialization Scheme for the Level Set Method. {\it International Journal of Numerical Methods in Fluids}, 73(12):1011-1041, 2013.
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Publication 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	\item[] Suraj S. Deshpande, **Lakshman Anumolu**, Mario F. Trujillo. Evaluating the performance of the two-phase flow solver interFoam. {\it Computational Science \& Discovery}, 5:014016: 1-36, 2012.
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Publication 6 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	\item[] **Lakshman Anumolu**. {\it Local, Higher Order Accurate, Level Set Redistancing Methods}. Masters thesis, Madison WI, 2011.
-    \end{itemize}
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 0 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\item[] \href{https://www.sciencedirect.com/science/article/pii/S0021999117307696}{Gradient augmented level set method for phase change simulations}, Lakshman Anumolu, Mario F. Trujillo, Journal of Computational Physics, 353:377-406, 2018.
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\item[] \href{https://www.worldscientific.com/doi/abs/10.1142/9789813229440_0008}{Direct Numerical Simulations for Two-Phase Flows with Phase Change}, Mario F. Trujillo, Lakshman Anumolu, Douglas Ryddner, volume 3 of Encyclopedia of Two-Phase Heat Transfer and Flow, World Scientific, 2018.
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\item[] \href{https://www.sciencedirect.com/science/article/pii/S0021999116307045}{The distortion of the level set gradient under advection}, Mario F. Trujillo, Lakshman Anumolu, Douglas Ryddner, Journal of Computational Physics, 334:81-101, 2017.
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\item[] \href{https://www.sciencedirect.com/science/article/pii/S0142727X13001707}{Numerical Simulation of Droplet Train and Free Surface Jet Impingement}, Steven R. Lewis, Lakshman Anumolu, Mario F. Trujillo, International Journal of Heat and Fluid Flow, 44:610-623, 2013.
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\item[] \href{http://onlinelibrary.wiley.com/doi/10.1002/fld.3834/abstract}{Gradient Augmented Reinitialization Scheme for the Level Set Method}, Lakshman Anumolu, Mario F. Trujillo, International Journal of Numerical Methods in Fluids, 73(12):1011-1041, 2013.
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\item[] \href{http://iopscience.iop.org/1749-4699/5/1/014016}{Evaluating the performance of the two-phase flow solver interFoam}, Suraj S. Deshpande, Lakshman Anumolu, Mario F. Trujillo, Computational Science \& Discovery, 5:014016: 1-36, 2012.
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 6 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\item[] Local, Higher Order Accurate, Level Set Redistancing Methods, Lakshman Anumolu, Masters thesis, Madison WI, 2011.
+	\end{itemize}
 	
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{\sc \large P\small {ROJECTS} } \smallskip
-	\moveleft\hoffset\vbox{\hrule width\resumewidth height 0.25pt} \vskip -0.15in
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	{\bf Framework to Photorealistic Render Computational Fluid Dynamics Results} \\
-	Lakshman Anumolu \hfill {\it 2020 - present}
-	\begin{itemize}[leftmargin=*]
+	\section{\MakeUppercase{Projects}} \vskip 0.15in
+	
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\hspace*{-0.25in}{\bf Framework to Photorealistic Render Computational Fluid Dynamics Results} \\
+	\hspace*{-0.25in}Lakshman Anumolu \hfill 2020-present
+	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	
 	\item Scene templates to process CFD results photorealistically
 	\end{itemize}
 	
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	{\bf MeshIO} \\
-	with [Pradeep Garigipati](//pradeepgarigipati.com) \hfill {\it 2015 - present}
-	\begin{itemize}[leftmargin=*]
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\hspace*{-0.25in}{\bf MeshIO} \\
+	\hspace*{-0.25in}with [Pradeep Garigipati](//pradeepgarigipati.com) \hfill 2015-present
+	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	
 	\item Read and write STL file format
 	\end{itemize}
 	
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	{\bf Basic Model Viewer} \\
-	Lakshman Anumolu \hfill {\it 2014 - present}
-	\begin{itemize}[leftmargin=*]
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\hspace*{-0.25in}{\bf Basic Model Viewer} \\
+	\hspace*{-0.25in}Lakshman Anumolu \hfill 2014-present
+	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	
 	\item Visualizes 3D surface mesh
 	\end{itemize}
 	
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	{\bf Weak Formulation of Gradient Augmented Level Set Method to Stephan Type Problems} \\
-	Lakshman Anumolu \hfill {\it 2012 - 2012}
-	\begin{itemize}[leftmargin=*]
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\hspace*{-0.25in}{\bf Weak Formulation of Gradient Augmented Level Set Method to Stephan Type Problems} \\
+	\hspace*{-0.25in}Lakshman Anumolu \hfill 2012-2012
+	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	
 	\item 3D Crystal growth simulated using PhysBAM
 	\end{itemize}
 	
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	{\bf Simulation of Smoke in OpenFOAM Framework} \\
-	with [Imaduddin Ahmed](https://multiphaseflow.erc.wisc.edu/people/) \hfill {\it 2012 - 2012}
-	\begin{itemize}[leftmargin=*]
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\hspace*{-0.25in}{\bf Simulation of Smoke in OpenFOAM Framework} \\
+	\hspace*{-0.25in}with [Imaduddin Ahmed](https://multiphaseflow.erc.wisc.edu/people/) \hfill 2012-2012
+	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	
 	\item Smoke simulation using OpenFOAM
 	\end{itemize}
 	
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project 6 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	{\bf Screensaver using ModernGL} \\
-	Lakshman Anumolu \hfill {\it 2013 - 2013}
-	\begin{itemize}[leftmargin=*]
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 6 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\hspace*{-0.25in}{\bf Screensaver using ModernGL} \\
+	\hspace*{-0.25in}Lakshman Anumolu \hfill 2013-2013
+	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	
 	\item Screensaver in ModernGL
 	\end{itemize}
 	
-	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project 7 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
-	{\bf Desktop, web apps, games built while learning app development} \\
-	Lakshman Anumolu \hfill {\it 2013 - 2014}
-	\begin{itemize}[leftmargin=*]
+	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item 7 ~~~~~~~~~~~~~~~~~~~~~~~~~~%
+	\hspace*{-0.25in}{\bf Desktop, web apps, games built while learning app development} \\
+	\hspace*{-0.25in}Lakshman Anumolu \hfill 2013-2014
+	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	
 	\item Facebook friend sentiment analysis
 	\item Facebook speech-to-text enabled chat
 	\item Air hockey
 	\end{itemize}
+	
 	
 	
 	

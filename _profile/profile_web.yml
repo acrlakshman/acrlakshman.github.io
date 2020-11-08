@@ -1,5 +1,5 @@
 config:
-  homepage: https://lakshmananumolu.com
+  homepage: ""
   theme:
     value: basic
     render: true

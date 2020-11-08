@@ -115,7 +115,7 @@ jobs:
         path: ./*
 
   build-resume-macos:
-    needs: [build-macos]
+    needs: [build-linux, build-macos]
 
     runs-on: macos-latest
 

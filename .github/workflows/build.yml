@@ -152,7 +152,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: gh-pages
-    - run: ls -l gh-pages/files/resume/
+    - run: |
+        ls -l gh-pages/files/resume/
+        ls -l resume-ubuntu
     - name: Update _profile of netlify branch with resume
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:

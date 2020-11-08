@@ -135,9 +135,9 @@ jobs:
     - name: Update netlify with main
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: netlify
-          FOLDER: .
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: netlify
+        FOLDER: .
     - name: Download artifacts
       uses: actions/download-artifact@v2
     - name: Prepare gh-pages
@@ -149,21 +149,24 @@ jobs:
     - name: Push to gh-pages
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: gh-pages
-    - run: ls -a
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: gh-pages
+    - run: ls -l gh-pages/files/resume/
     - name: Prepare _profile to update netlify branch
       run: |
+        ls -l resume-ubuntu/
         mkdir -p _profile/files/resume
         cp -r resume-ubuntu/* _profile/files/resume/
     - name: Update _profile of netlify branch with resume
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: netlify
-          FOLDER: _profile
-    - run: ls -a
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: netlify
+        FOLDER: _profile
+    - run: |
+        ls -l _profile/files/
+        ls -l _profile/files/resume/
 
   deploy-gh-pages-mac:
     needs: [build-resume-macos]
@@ -186,9 +189,9 @@ jobs:
     - name: Push to gh-pages-mac
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages-mac
-          FOLDER: gh-pages-mac
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages-mac
+        FOLDER: gh-pages-mac
 
   build-all:
 

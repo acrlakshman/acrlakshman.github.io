@@ -13,11 +13,6 @@
   [build.processing.images]
     compress = true
 
-[context.netlify]
-  command = "make production"
-[context.branch-deploy]
-  command = "make production"
-
 [[redirect]]
   from="/*"
   to="/index.html"

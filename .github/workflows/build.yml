@@ -21,14 +21,27 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: npm install and build
+    # Currently build is only made for gh-pages, this is not necessary.
+    # - name: npm install and build
+    #   run: |
+    #     npm install
+    #     npm run build
+
+    # - uses: actions/upload-artifact@v2
+    #   with:
+    #     name: web-build
+    #     path: build/
+
+    - name: npm install and build with spa-github-pages
       run: |
+        cp spa-github-pages/index.html public/index.html
         npm install
         npm run build
+        cp spa-github-pages/404.html build/
 
     - uses: actions/upload-artifact@v2
       with:
-        name: web-build
+        name: web-build-gh-pages
         path: build/
 
     - uses: actions/setup-go@v2
@@ -62,6 +75,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    # No need to build here, all that is needed is profile_resume.json.
     - name: npm install and build
       run: |
         npm install
@@ -132,18 +146,18 @@ jobs:
       uses: actions/checkout@v2.3.1
       with:
         persist-credentials: false
-    - name: Update netlify with main
+    - name: Update branch deployment_platforms with main
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: netlify
+        BRANCH: deployment_platforms
         FOLDER: .
     - name: Download artifacts
       uses: actions/download-artifact@v2
     - name: Prepare gh-pages
       run: |
         mkdir -p gh-pages
-        cp -r web-build/* gh-pages/
+        cp -r web-build-gh-pages/* gh-pages/
         mkdir -p gh-pages/files/resume
         cp -r resume-ubuntu/* gh-pages/files/resume/
     - name: Push to gh-pages
@@ -152,11 +166,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: gh-pages
-    - name: Update _profile of netlify branch with resume
+    - name: Update _profile of deployment_platforms branch with resume
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: netlify
+        BRANCH: deployment_platforms
         FOLDER: resume-ubuntu
         TARGET_FOLDER: _profile/files/resume
 
@@ -172,10 +186,10 @@ jobs:
         persist-credentials: false
     - name: Download artifacts
       uses: actions/download-artifact@v2
-    - name: Prepare gh-pages
+    - name: Prepare gh-pages-mac
       run: |
         mkdir -p gh-pages-mac
-        cp -r web-build/* gh-pages-mac/
+        cp -r web-build-gh-pages/* gh-pages-mac/
         mkdir -p gh-pages-mac/files/resume
         cp -r resume-macos/* gh-pages-mac/files/resume/
     - name: Push to gh-pages-mac
@@ -184,11 +198,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages-mac
         FOLDER: gh-pages-mac
-    - name: Update _profile of netlify branch with resume
+    - name: Update _profile of deployment_platforms branch with resume
       uses: JamesIves/github-pages-deploy-action@3.5.8
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: netlify
+        BRANCH: deployment_platforms
         FOLDER: resume-macos
         TARGET_FOLDER: _profile/files/resume
 
@@ -215,12 +229,6 @@ jobs:
         npm install
         npm run build
 
-    # - uses: actions/upload-artifact@v2
-    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-    #   with:
-    #     name: web-build
-    #     path: build/
-
     - uses: actions/setup-go@v2
       with:
         go-version: ${{ matrix.go }}
@@ -228,37 +236,3 @@ jobs:
       run: |
         cd resume
         go run main.go
-
-    # - uses: actions/upload-artifact@v2
-    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-    #   with:
-    #     name: resume-tex-ubuntu
-    #     path: ./resume/resume/
-
-    # - uses: actions/upload-artifact@v2
-    #   if: matrix.os == 'macos-latest' && matrix.node-version == '14.x'
-    #   with:
-    #     name: resume-tex-macos
-    #     path: ./resume/resume/
-
-    # - run: cd resume && ls
-    # - name: TeX to pdf on Linux
-    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-    #   uses: xu-cheng/latex-action@v2
-    #   with:
-    #     root_file: ./resume.tex
-    #     latexmk_use_xelatex: true
-    # - name: Copy pdf to build directory
-    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-    #   run: |
-    #     cp resume.pdf ../../build/files/
-    #     cd ../..
-    
-    # - name: deploy
-    #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-    #   uses: JamesIves/github-pages-deploy-action@3.5.8
-    #   with:
-    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #       BRANCH: gh-pages
-    #       FOLDER: build
-        

@@ -333,7 +333,7 @@ publications:
   list:
     - value:
         type: article
-        author: "**Lakshman Anumolu**, Mario F. Trujillo"
+        author: "Lakshman Anumolu, Mario F. Trujillo"
         title: "Gradient augmented level set method for phase change simulations"
         journal: Journal of Computational Physics
         volume: 353
@@ -349,7 +349,7 @@ publications:
       render: true
     - value:
         type: book
-        author: "Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner"
+        author: "Mario F. Trujillo, Lakshman Anumolu, Douglas Ryddner"
         title: "Direct Numerical Simulations for Two-Phase Flows with Phase Change"
         series: "Encyclopedia of Two-Phase Heat Transfer and Flow"
         volume: 3
@@ -362,7 +362,7 @@ publications:
       render: true
     - value:
         type: article
-        author: "Mario F. Trujillo, **Lakshman Anumolu**, Douglas Ryddner"
+        author: "Mario F. Trujillo, Lakshman Anumolu, Douglas Ryddner"
         title: "The distortion of the level set gradient under advection"
         journal: Journal of Computational Physics
         volume: 334
@@ -375,7 +375,7 @@ publications:
       render: true
     - value:
         type: article
-        author: Steven R. Lewis, **Lakshman Anumolu**, Mario F. Trujillo
+        author: Steven R. Lewis, Lakshman Anumolu, Mario F. Trujillo
         title: Numerical Simulation of Droplet Train and Free Surface Jet Impingement
         journal: International Journal of Heat and Fluid Flow
         volume: 44
@@ -388,7 +388,7 @@ publications:
       render: true
     - value:
         type: article
-        author: "**Lakshman Anumolu**, Mario F. Trujillo"
+        author: "Lakshman Anumolu, Mario F. Trujillo"
         title: Gradient Augmented Reinitialization Scheme for the Level Set Method
         journal: International Journal of Numerical Methods in Fluids
         volume: 73
@@ -401,7 +401,7 @@ publications:
       render: true
     - value:
         type: article
-        author: "Suraj S. Deshpande, **Lakshman Anumolu**, Mario F. Trujillo"
+        author: "Suraj S. Deshpande, Lakshman Anumolu, Mario F. Trujillo"
         title: Evaluating the performance of the two-phase flow solver interFoam
         journal: "Computational Science & Discovery"
         volume: 5
@@ -415,7 +415,7 @@ publications:
     - value:
         type: thesis
         category: masters # php, masters, bachelors
-        author: "**Lakshman Anumolu**"
+        author: "Lakshman Anumolu"
         title: "Local, Higher Order Accurate, Level Set Redistancing Methods"
         publisher: "University of Wisconsin-Madison"
         address: "Madison WI"

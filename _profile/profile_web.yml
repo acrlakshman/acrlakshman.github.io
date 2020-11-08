@@ -8,6 +8,7 @@ config:
       trackingId: "UA-37418034-1"
       enable: true
   meta:
+    showResumeLink: true
     hideFooterCredit: true
 basics:
   name:

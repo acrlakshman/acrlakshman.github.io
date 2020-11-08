@@ -23,6 +23,7 @@ export interface Config extends OptionalArgs {
     };
   };
   meta?: {
+    showResumeLink: boolean;
     hideFooterCredit: boolean;
   };
 }

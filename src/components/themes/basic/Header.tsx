@@ -6,7 +6,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { StoreState } from '../../../reducers';
 import { sectionListHasRender } from './Section';
 
-import { Basics, ProfileSectionsWeb } from '../../../types/profileWeb';
+import { Basics, Config, ProfileSectionsWeb } from '../../../types/profileWeb';
 import { ProfileField } from '../../../types/fields';
 
 import './styles.css';
@@ -14,6 +14,7 @@ import './styles.css';
 interface ComponentProps {
   sectionRanks?: string[];
   renderSectionsInNavBar: boolean;
+  config: Config;
   basics: Basics;
   sections: ProfileSectionsWeb;
 }
@@ -137,9 +138,12 @@ class Header extends Component<ComponentProps, ComponentState> {
                           return this.renderNavLink(item);
                         })
                       : ''}
-                    <Nav.Link href="/files/resume.pdf">
-                      <p className="nav-link active">CV</p>
-                    </Nav.Link>
+                    {(this.props.config.meta &&
+                      this.props.config.meta.showResumeLink) ?
+                      <Nav.Link href="/files/resume/resume.pdf">
+                        <p className="nav-link active">CV</p>
+                      </Nav.Link>
+                    : ''}
                   </Nav>
                 </Navbar.Collapse>
               ))()}
@@ -155,7 +159,11 @@ class Header extends Component<ComponentProps, ComponentState> {
 }
 
 const mapStateToProps = (state: StoreState) => {
-  return { basics: state.basics, sections: state.sections };
+  return {
+    config: state.config,
+    basics: state.basics,
+    sections: state.sections,
+  };
 };
 
 export default connect(mapStateToProps, {})(Header);

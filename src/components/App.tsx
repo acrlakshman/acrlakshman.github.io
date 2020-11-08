@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter basename={`${process.env.PUBLIC_URL}/profileio-v2`}>
+        <BrowserRouter basename={`${process.env.PUBLIC_URL}/profileio-test`}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/projects" component={List} />

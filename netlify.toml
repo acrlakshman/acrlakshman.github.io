@@ -1,0 +1,24 @@
+[build]
+  publish = "build/"
+  # This will be your default build command
+  command = "yarn build"
+  [build.processing.css]
+    bundle = true
+    minify = false
+  [build.processing.js]
+    bundle = true
+    minify = false
+  [build.processing.html]
+    pretty_urls = true
+  [build.processing.images]
+    compress = true
+
+[context.netlify]
+  command = "make production"
+[context.branch-deploy]
+  command = "make production"
+
+[[redirect]]
+  from="/*"
+  to="/index.html"
+  status=200
